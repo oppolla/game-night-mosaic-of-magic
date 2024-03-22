@@ -331,6 +331,28 @@ local alphaRareLand = {
 "MTG Alpha Black Green Land 1"
 }
 
+-- TODO: Rareness for booster packs. Is there a better way?
+local alphaCommons = {}
+
+local alphaUncommons = {}
+
+local alphaRares = {}
+
+local alphaLands = {
+"MTG Alpha Red Land 1",
+"MTG Alpha Red Land 2",
+"MTG Alpha Blue Land 1",
+"MTG Alpha Blue Land 2",
+"MTG Alpha Green Land 1",
+"MTG Alpha Green Land 2",
+"MTG Alpha White Land 1",
+"MTG Alpha White Land 2",
+"MTG Alpha Black Land 1",
+"MTG Alpha Black Land 2",
+}
+
+
+
 local mtgAlpha = {
     table.unpack(alphaArtifacts),
     table.unpack(alphaBlack),
@@ -349,6 +371,7 @@ applyItemDetails.addDeck("mtgAlphaDeck", mtgAlpha)
 
 
 local deckArchetypesList = {
+    -- TODO: Add weights?
     -- mono decks
     "White", -- [1]
     "Black", -- [2]
@@ -379,6 +402,10 @@ local deckArchetypesList = {
     --"Sultai", --Blue/Black/Green -- [23]
     --"Mardu", --White/Black/Red -- [24]
     --"Temur", --Blue/Red/Green -- [25]
+
+    -- Booster packs
+
+    --"AlphaBoosterPack" -- 1 land, 10 common, 3 uncommon, 1 rare [26]
     
     }
 
@@ -631,7 +658,7 @@ local deckArchetypesList = {
 
 
 
-        -- SPECIAL CONTEXT MENU FUNCTION : Tapping (turning card sideways)
+        -- TODO SPECIAL CONTEXT MENU FUNCTION : Tapping (turning card sideways)
         -- function deckActionHandler.onTapCard(deckItem)
 
         --     local deckStates = deckActionHandler.getDeckStates(item)
