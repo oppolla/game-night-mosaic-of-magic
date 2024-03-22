@@ -367,9 +367,9 @@ local alphaLands = {
 "MTG Alpha Black Land 2", -- Swamp
 }
 
--- TODO: There should be a way for future expansions like Ice Age and beyond to seamlessly plug into this base MTG add-on so all potenial future cards are compatable 
+-- TODO: There should be a way for future expansions like Ice Age and beyond to seamlessly plug into this base MTG add-on so all potenial future cards are compatible. Future packs plug into mtgAllCards?
 
-local mtgAlpha = {
+local MagicCardDatabase = {
     table.unpack(alphaArtifacts),
     table.unpack(alphaBlack),
     table.unpack(alphaWhite),
@@ -383,7 +383,7 @@ local mtgAlpha = {
     table.unpack(alphaRareLand),
 }
 
-applyItemDetails.addDeck("mtgAlphaDeck", mtgAlpha)
+applyItemDetails.addDeck("mtgAlphaDeck", MagicCardDatabase)
 
 
 local deckArchetypesList = {
