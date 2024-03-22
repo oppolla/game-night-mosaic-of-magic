@@ -367,7 +367,7 @@ local alphaLands = {
 "MTG Alpha Black Land 2", -- Swamp
 }
 
-
+-- TODO: There should be a way for future expansions like Ice Age and beyond to seamlessly plug into this base MTG add-on so all potenial future cards are compatable 
 
 local mtgAlpha = {
     table.unpack(alphaArtifacts),
@@ -422,9 +422,6 @@ local deckArchetypesList = {
     --"Sultai", --Blue/Black/Green 
     --"Mardu", --White/Black/Red 
     --"Temur", --Blue/Red/Green 
-
-    
-    
     }
 
     -- deck pre-construct shuffler
