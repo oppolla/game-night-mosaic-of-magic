@@ -403,8 +403,6 @@ local deckArchetypesList = {
     --"Mardu", --White/Black/Red -- [24]
     --"Temur", --Blue/Red/Green -- [25]
 
-    -- Booster packs
-
     --"AlphaBoosterPack" -- 1 land, 10 common, 3 uncommon, 1 rare [26]
     
     }
@@ -656,7 +654,7 @@ local deckArchetypesList = {
             print("Invalid archetype")
         end
 
-          -- TODO: connect to applyGameNightToItem??
+          -- TODO: connect to applyGameNightToItem?? Not sure how to do this
             --cards = uniqueDeck
             --deck = uniqueDeck
 
