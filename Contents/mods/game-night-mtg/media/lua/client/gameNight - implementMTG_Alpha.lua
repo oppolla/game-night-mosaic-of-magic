@@ -406,20 +406,22 @@ local deckArchetypesList = {
     "Golgari", --Black/Green -- [13]
     "Boros", --Red/White -- [14]
     "Simic", --Blue/Green -- [15]
+
+    "AlphaBoosterPack" -- 1 land, 10 common, 3 uncommon, 1 rare [16]
     
     -- tri decks -- future option? too complex?
-    --"Bant", --White/Blue/Green -- [16]
-    --"Esper", --White/Blue/Black -- [17]
-    --"Grixis", --Blue/Black/Red -- [18]
-    --"Jund", --Black/Red/Green -- [19]
-    --"Naya", --White/Red/Green -- [20]
-    --"Abzan", --White/Black/Green -- [21]
-    --"Jeskai", --White/Blue/Red -- [22]
-    --"Sultai", --Blue/Black/Green -- [23]
-    --"Mardu", --White/Black/Red -- [24]
-    --"Temur", --Blue/Red/Green -- [25]
+    --"Bant", --White/Blue/Green -- [17]
+    --"Esper", --White/Blue/Black -- [18]
+    --"Grixis", --Blue/Black/Red -- [19]
+    --"Jund", --Black/Red/Green -- [20]
+    --"Naya", --White/Red/Green -- [21]
+    --"Abzan", --White/Black/Green -- [22]
+    --"Jeskai", --White/Blue/Red -- [23]
+    --"Sultai", --Blue/Black/Green -- [24]
+    --"Mardu", --White/Black/Red -- [25]
+    --"Temur", --Blue/Red/Green -- [26]
 
-    --"AlphaBoosterPack" -- 1 land, 10 common, 3 uncommon, 1 rare [26]
+    
     
     }
 
@@ -668,11 +670,26 @@ local deckArchetypesList = {
             for i = 1, 18 do
                 table.insert(uniqueDeck, alphaGreen[i])
             end
+
+            if selectedDeck == "AlphaBoosterPack" then
+            shuffle(alphaCommons)
+            for i = 1, 10 do
+                table.insert(uniqueDeck, alphaCommons[i])
+            end
+            shuffle(alphaUncommons)
+            for i = 1, 3 do
+                table.insert(uniqueDeck, alphaUncommons[i])
+            end
+            shuffle(alphaRares)
+            for i = 1, 1 do
+                table.insert(uniqueDeck, alphaRares[i])
+            end
+            
         else
             print("Invalid archetype")
         end
 
-          -- TODO: connect to applyGameNightToItem?? Not sure how to do this
+          -- TODO: connect to applyGameNightToItem? Not sure how to do this
             --cards = uniqueDeck
             --deck = uniqueDeck
 
@@ -694,8 +711,10 @@ local deckArchetypesList = {
         local state = (current+90) % 360 or current
         
         gamePieceAndBoardHandler.setModDataValue(deckItem, "gameNight_rotation", state)
+            end
         end
     end
+
     
 
 
