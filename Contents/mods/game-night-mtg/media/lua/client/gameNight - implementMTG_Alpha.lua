@@ -331,7 +331,7 @@ local alphaRareLand = {
 "MTG Alpha Black Green Land 1"
 }
 
--- TODO: Rareness for booster packs. Is there a better way?
+-- TODO: Rareness for booster packs. Is there a less redundant way to do this?
 local alphaCommons = {}
 
 local alphaUncommons = {}
@@ -655,6 +655,12 @@ local deckArchetypesList = {
         else
             print("Invalid archetype")
         end
+
+          -- TODO: connect to applyGameNightToItem??
+            --cards = uniqueDeck
+            --deck = uniqueDeck
+
+
 
 
 
