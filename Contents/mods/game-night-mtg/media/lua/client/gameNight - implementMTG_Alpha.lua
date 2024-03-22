@@ -355,16 +355,16 @@ local alphaRares = {
 }
 
 local alphaLands = {
-"MTG Alpha Red Land 1",
-"MTG Alpha Red Land 2",
-"MTG Alpha Blue Land 1",
-"MTG Alpha Blue Land 2",
-"MTG Alpha Green Land 1",
-"MTG Alpha Green Land 2",
-"MTG Alpha White Land 1",
-"MTG Alpha White Land 2",
-"MTG Alpha Black Land 1",
-"MTG Alpha Black Land 2",
+"MTG Alpha Red Land 1", -- Mountain
+"MTG Alpha Red Land 2", -- Mountain
+"MTG Alpha Blue Land 1", -- Island
+"MTG Alpha Blue Land 2", -- Island
+"MTG Alpha Green Land 1", -- Forest
+"MTG Alpha Green Land 2", -- Forest
+"MTG Alpha White Land 1", -- Plains
+"MTG Alpha White Land 2", -- Plains
+"MTG Alpha Black Land 1", -- Swamp
+"MTG Alpha Black Land 2", -- Swamp
 }
 
 
