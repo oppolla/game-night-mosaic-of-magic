@@ -407,19 +407,21 @@ local deckArchetypesList = {
     "Boros", --Red/White -- [14]
     "Simic", --Blue/Green -- [15]
 
-    "AlphaBoosterPack" -- 1 land, 10 common, 3 uncommon, 1 rare [16]
+    "AlphaBoosterPack", -- 1 land, 10 common, 3 uncommon, 1 rare [16]
+    "AlphaStarterPack", -- [17]
+
     
     -- tri decks -- future option? too complex?
-    --"Bant", --White/Blue/Green -- [17]
-    --"Esper", --White/Blue/Black -- [18]
-    --"Grixis", --Blue/Black/Red -- [19]
-    --"Jund", --Black/Red/Green -- [20]
-    --"Naya", --White/Red/Green -- [21]
-    --"Abzan", --White/Black/Green -- [22]
-    --"Jeskai", --White/Blue/Red -- [23]
-    --"Sultai", --Blue/Black/Green -- [24]
-    --"Mardu", --White/Black/Red -- [25]
-    --"Temur", --Blue/Red/Green -- [26]
+    --"Bant", --White/Blue/Green
+    --"Esper", --White/Blue/Black
+    --"Grixis", --Blue/Black/Red
+    --"Jund", --Black/Red/Green
+    --"Naya", --White/Red/Green 
+    --"Abzan", --White/Black/Green
+    --"Jeskai", --White/Blue/Red
+    --"Sultai", --Blue/Black/Green 
+    --"Mardu", --White/Black/Red 
+    --"Temur", --Blue/Red/Green 
 
     
     
@@ -676,6 +678,10 @@ local deckArchetypesList = {
             for i = 1, 10 do
                 table.insert(uniqueDeck, alphaCommons[i])
             end
+            shuffle(alphaLands)
+            for i = 1, 1 do
+                table.insert(uniqueDeck, alphaLands[i])
+            end
             shuffle(alphaUncommons)
             for i = 1, 3 do
                 table.insert(uniqueDeck, alphaUncommons[i])
@@ -683,6 +689,25 @@ local deckArchetypesList = {
             shuffle(alphaRares)
             for i = 1, 1 do
                 table.insert(uniqueDeck, alphaRares[i])
+            end
+
+            if selectedDeck == "AlphaStarterPack" then
+                shuffle(alphaLands)
+                for i = 1, 22 do
+                table.insert(uniqueDeck, alphaLands[i])
+                end
+                shuffle(alphaCommons)
+                for i = 1, 30 do
+                    table.insert(uniqueDeck, alphaCommons[i])
+                end
+                shuffle(alphaUncommons)
+                for i = 1, 12 do
+                    table.insert(uniqueDeck, alphaUncommons[i])
+                end
+                shuffle(alphaRares)
+                for i = 1, 2 do
+                    table.insert(uniqueDeck, alphaRares[i])
+                end
             end
             
         else
