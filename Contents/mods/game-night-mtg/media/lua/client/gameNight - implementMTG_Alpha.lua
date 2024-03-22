@@ -300,6 +300,9 @@ local mtgAlpha = {
 
 applyItemDetails.addDeck("mtgAlphaDeck", mtgAlpha)
 
+-- This method feels stupid. The ALT VERSION is better I think. 
+-- This is a string list that will be used to build the pools that the final decks will be built from
+
 local mtgAlphaArtifacts = {
     "MTG Alpha Artifacts 1",
     "MTG Alpha Artifacts 10",
