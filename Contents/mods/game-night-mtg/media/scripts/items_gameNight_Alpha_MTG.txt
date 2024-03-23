@@ -1,27 +1,27 @@
 module Base
 {
-    	item mtgAlphaDeck
+    	item MTGcardCollection
     {
         DisplayCategory = Deck, Weight = 0.01, Type = Normal,
         DisplayName = Magic The Gathering Deck,
         Icon = mtgAlphaDeck/deck,
-        WorldStaticModel = MTG_Alpha_Deck,
+        WorldStaticModel = MTG_Deck,
     }
 
- item mtgAlphaBox
+ item mtgStarterBox
     {
         DisplayCategory = GameBox, WeightReduction = 20, Weight = 0.1, Type = 	Container, Capacity = 2,
         DisplayName = Magic the Gathering Box, 
 	Icon = mtgAlphaDeck/deck,
-	WorldStaticModel = MTG_Alpha_Deck,
+	WorldStaticModel = MTG_Deck,
     }
 
-	item MTGAlphaCard
+	item MTGCard
     {
         DisplayCategory = Deck, Weight = 0.01, Type = Normal,
         DisplayName = Magic The Gathering Deck,
         Icon = mtgAlphaDeck/deck,
-        WorldStaticModel = MTG_Alpha_Card,
+        WorldStaticModel = MTG_Card,
     }
 
 }

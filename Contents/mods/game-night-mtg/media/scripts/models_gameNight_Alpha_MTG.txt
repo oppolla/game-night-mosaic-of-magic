@@ -1,13 +1,13 @@
 module Base
 {
-    model MTG_Alpha_Deck
+    model MTG_Deck
     {
         mesh = WorldItems/cardpack,
         texture = Item_MTG_Alpha/deckTexture,
         scale = 0.024,
     }
 
- model MTG_Alpha_Card
+ model MTG_Card
     {
         mesh = WorldItems/cardpack,
         texture = Item_MTG_Alpha/deckTexture,

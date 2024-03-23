@@ -383,7 +383,7 @@ local MagicCardDatabase = {
     table.unpack(alphaRareLand),
 }
 
-applyItemDetails.addDeck("mtgAlphaDeck", MagicCardDatabase)
+applyItemDetails.addDeck("MTGcardCollection", MagicCardDatabase)
 
 
 local deckArchetypesList = {
