@@ -1,6 +1,6 @@
 version=1
 id=3194918731
-title=Game Night - Magic
-description=Simple strategies...Infinte possibilies
+title=Game Night: Magic The Gathering
+description=Simple strategies... Infinite possibilities.
 tags=Items
 visibility=unlisted
