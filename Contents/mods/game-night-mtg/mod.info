@@ -1,5 +1,5 @@
-name=Game Night: Magic The Gathering
-id=game night magic
+name=Game Night - Magic The Gathering
+id=gamenight_magic
 description= Simple strategies...Infinte possibilies
 poster=poster.png
 require=gamenight
