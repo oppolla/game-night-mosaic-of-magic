@@ -22,8 +22,8 @@ MTG.alpha = { --"MTG Alpha "
         "Contract from Below", "World of Command", "Unholy Strength", "Animate Dead", "Nettling Imp",
         "Demonic Tutor", "Deathlace", "Demonic Hordes", "Howl from Beyond", "Bog Wraith", "Drain Life",
         "Royal Assassin", "Sengir Vampire", "Bad Moon", "Scavenging Ghoul", "Lich", "Zombie Master",
-        "Weakness", "Simulacrum", "Lord of the Pit", "Deathgrip ", "Drudger Skeletons", "Terror",
-        "Sacrifice", "Fear", "Wvil Presence", "Sinkhole",
+        "Weakness", "Simulacrum", "Lord of the Pit", "Deathgrip ", "Drudge Skeletons", "Terror",
+        "Sacrifice", "Fear", "Evil Presence", "Sinkhole",
     },
 
     ["White"] = {
@@ -44,7 +44,7 @@ MTG.alpha = { --"MTG Alpha "
         "Channel", "Craw Wurm", "Timber Wolves", "Regrowth", "Ironroot Treefolk", "Regenreation", "Kudzu",
         "Wall of Brambles", "Stream of Life", "Natural Selection", "Fastbond", "Verduran Enchantress",
         "Tsunami", "Cockatrice", "Ice Storm", "Wall of Wood", "Shanodin Dryads", "Living Lands", "Giant Spider",
-        "Tranquility", "Scryb Spirites", "Instill Energy", "Fungusaur", "Birds of Paradise", "Hurricane",
+        "Tranquility", "Scryb Sprites", "Instill Energy", "Fungusaur", "Birds of Paradise", "Hurricane",
         "Lifelace", "Camouflage", "Web", "Giant Growth", "Lure", "Wanderlust", "Force of Nature", "Elvish Archers",
     },
 
