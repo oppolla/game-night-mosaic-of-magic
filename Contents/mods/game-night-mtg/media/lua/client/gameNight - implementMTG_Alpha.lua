@@ -176,8 +176,9 @@ local deckArchetypesList = {
     "Boros", --Red/White -- [14]
     "Simic", --Blue/Green -- [15]
 
-    "AlphaBoosterPack", -- 1 land, 10 common, 3 uncommon, 1 rare [16]
-    "AlphaStarterPack", -- [17]
+    ---Lands could appear instead of common slots
+    "AlphaBoosterPack", -- 11 common, 3 uncommon, 1 rare -- [16]
+    "AlphaStarterPack", -- 45 commons, 12 uncommon, 3 rares  -- [17]
 
     -- tri decks -- future option? too complex?
     --"Bant", --White/Blue/Green
