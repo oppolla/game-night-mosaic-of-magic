@@ -112,273 +112,48 @@ applyItemDetails.addDeck("mtgCards", MTG.catalogue, MTG.altNames)
 
 
 local rares = {
-    "MTG Alpha Artifacts 2", -- Gauntlet of Might
-    "MTG Alpha Artifacts 5", -- Disrupting Scepter
-    "MTG Alpha Artifacts 8", -- Sunglasses of Urza
-    "MTG Alpha Artifacts 11", -- Mox Emerald
-    "MTG Alpha Artifacts 16", -- Winter Orb
-    "MTG Alpha Artifacts 17", -- Mox Jet
-    "MTG Alpha Artifacts 18", -- Chaos Orb
-    "MTG Alpha Artifacts 19", -- Time Vault
-    "MTG Alpha Artifacts 20", -- Mox Pearl
-    "MTG Alpha Artifacts 22", -- Cyclopean Tomb
-    "MTG Alpha Artifacts 23", -- Mox Ruby
-    "MTG Alpha Artifacts 28", -- Dingus Egg
-    "MTG Alpha Artifacts 29", -- Illusionary Mask
-    "MTG Alpha Artifacts 35", -- Jade Monolith
-    "MTG Alpha Artifacts 36", -- Kormus Bell
-    "MTG Alpha Artifacts 37", -- Forcefield
-    "MTG Alpha Artifacts 38", -- Helm of Chatzuk
-    "MTG Alpha Artifacts 44", -- Mana Vault
-    "MTG Alpha Artifacts 45", -- Meekstone
-    "MTG Alpha Black 2", -- Nether Shadow
-    "MTG Alpha Black 3", -- Mind Twist
-    "MTG Alpha Black 6", -- Darkpact
-    "MTG Alpha Black 18", -- Will-O-The-Wisp
-    "MTG Alpha Black 19", -- Warp Artifact
-    "MTG Alpha Black 20", -- Contract from Below
-    "MTG Alpha Black 21", -- Word of Command
-    "MTG Alpha Black 26", -- Deathlace
-    "MTG Alpha Black 36", -- Zombie Master
-    "MTG Alpha Black Blue Land 1", -- Underground Sea
-    "MTG Alpha Black Green Land 1", -- Bayou
-    "MTG Alpha Blue 4", -- Drain Power
-    "MTG Alpha Blue 7", -- Time Walk
-    "MTG Alpha Blue 10", -- Sleight of Mind
-    "MTG Alpha Blue 12", -- Pirate Ship
-    "MTG Alpha Blue 15", -- Stasis
-    "MTG Alpha Blue 16", -- Volcanic Eruption
-    "MTG Alpha Blue 18", -- Timetwister
-    "MTG Alpha Blue 25", -- Mana Short
-    "MTG Alpha Blue 26", -- Ancestral Recall
-    "MTG Alpha Blue 33", -- Mahamoti Djinn
-    "MTG Alpha Blue 34", -- Magical Hack
-    "MTG Alpha Blue 37", -- Lord of Atlantis
-    "MTG Alpha Blue 46", -- Copy Artifact
-    "MTG Alpha Blue White Land 1", -- Tundra
-    "MTG Alpha Green 5", -- Gaea's Liege
-    "MTG Alpha Green 16", -- Timber Wolves
-    "MTG Alpha Green 20", -- Kudzu
-    "MTG Alpha Green 23", -- Natural Selection
-    "MTG Alpha Green 25", -- Verduran Enchantress
-    "MTG Alpha Green 27", -- Cockatrice
-    "MTG Alpha Green 31", -- Living Lands
-    "MTG Alpha Green 37", -- Birds of Paradise
-    "MTG Alpha Green 39", -- Lifelace
-    "MTG Alpha Green 41", -- Web
-    "MTG Alpha Green 45", -- Force of Nature
-    "MTG Alpha Green Blue Land 1", -- Tropical Island
-    "MTG Alpha Green Red Land 1", -- Taiga
-    "MTG Alpha Red 1", -- Shivan Dragon
-    "MTG Alpha Red 2", -- Granite Gargoyle
-    "MTG Alpha Red 5", -- Fork
-    "MTG Alpha Red 6", -- Earthquake
-    "MTG Alpha Red 22", -- Mana Flare
-    "MTG Alpha Red 24", -- Smoke
-    "MTG Alpha Red 31", -- Wheel of Fortune
-    "MTG Alpha Red 32", -- Power Surge
-    "MTG Alpha Red 33", -- Raging River
-    "MTG Alpha Red 34", -- Manabarbs
-    "MTG Alpha Red 35", -- Goblin King
-    "MTG Alpha Red 39", -- Rock Hydra
-    "MTG Alpha Red Black Land 1", -- Badlands
-    "MTG Alpha Red White Land 1", -- Plateau
-    "MTG Alpha White 3", -- Blessing
-    "MTG Alpha White 12", -- Righteousness
-    "MTG Alpha White 13", -- Savannah Lions
-    "MTG Alpha White 14", -- Veteran Bodyguard
-    "MTG Alpha White 15", -- Personal Incarnation
-    "MTG Alpha White 20", -- Wrath of God
-    "MTG Alpha White 22", -- Blaze of Glory
-    "MTG Alpha White 27", -- Balance
-    "MTG Alpha White 31", -- Armageddon
-    "MTG Alpha White Black Land 1", -- Scrubland
-    "MTG Alpha White Green Land 1", -- Savannah
+    "Artifacts 2", "Artifacts 5", "Artifacts 8", "Artifacts 11", "Artifacts 16", "Artifacts 17", "Artifacts 18",
+    "Artifacts 19", "Artifacts 20", "Artifacts 22", "Artifacts 23", "Artifacts 28", "Artifacts 29", "Artifacts 35",
+    "Artifacts 36", "Artifacts 37", "Artifacts 38", "Artifacts 44", "Artifacts 45", "Black 2", "Black 3", "Black 6",
+    "Black 18", "Black 19", "Black 20", "Black 21", "Black 26", "Black 36", "Black Blue Land 1", "Black Green Land 1",
+    "Blue 4", "Blue 7", "Blue 10", "Blue 12", "Blue 15", "Blue 16", "Blue 18", "Blue 25", "Blue 26", "Blue 33",
+    "Blue 34", "Blue 37", "Blue 46", "Blue White Land 1", "Green 5", "Green 16", "Green 20", "Green 23", "Green 25",
+    "Green 27", "Green 31", "Green 37", "Green 39", "Green 41", "Green 45", "Green Blue Land 1", "Green Red Land 1",
+    "Red 1", "Red 2", "Red 5", "Red 6", "Red 22", "Red 24", "Red 31", "Red 32", "Red 33", "Red 34", "Red 35", "Red 39",
+    "Red Black Land 1", "Red White Land 1", "White 3", "White 12", "White 13", "White 14", "White 15", "White 20",
+    "White 22", "White 27", "White 31", "White Black Land 1", "White Green Land 1",
 }
 
 local uncommon = {
-    "MTG Alpha Artifacts 1", -- Juggernaut
-    "MTG Alpha Artifacts 6", -- Conservator
-    "MTG Alpha Artifacts 7", -- Sol Ring
-    "MTG Alpha Artifacts 8", -- Sunglasses of Urza
-    "MTG Alpha Artifacts 9", -- Wooden Sphere
-    "MTG Alpha Artifacts 12", -- Rod of Ruin
-    "MTG Alpha Artifacts 13", -- Celestial Prism
-    "MTG Alpha Artifacts 14", -- Throne of Bone
-    "MTG Alpha Artifacts 15", -- Ivory Cup
-    "MTG Alpha Artifacts 21", -- Jade Statue
-    "MTG Alpha Artifacts 25", -- Black Vise
-    "MTG Alpha Artifacts 26", -- Crystal Rod
-    "MTG Alpha Artifacts 27", -- Basalt Monolith
-    "MTG Alpha Artifacts 30", -- Iron Star
-    "MTG Alpha Artifacts 33", -- Obsianus Golem
-    "MTG Alpha Artifacts 34", -- Living Wall
-    "MTG Alpha Artifacts 39", -- Copper Tablet
-    "MTG Alpha Artifacts 40", -- Soul Net
-    "MTG Alpha Artifacts 41", -- Icy Manipulator
-    "MTG Alpha Artifacts 43", -- Library of Leng
-    "MTG Alpha Black 9", -- Cursed Land
-    "MTG Alpha Black 11", -- Black Knight
-    "MTG Alpha Black 14", -- Hypnotic Specter
-    "MTG Alpha Black 16", -- Wall of Bone
-    "MTG Alpha Black 17", -- Gloom
-    "MTG Alpha Black 23", -- Animate Dead
-    "MTG Alpha Black 24", -- Nettling Imp
-    "MTG Alpha Black 25", -- Demonic Tutor
-    "MTG Alpha Black 29", -- Bog Wraith
-    "MTG Alpha Black 32", -- Sengir Vampire
-    "MTG Alpha Black 34", -- Scavenging Ghoul
-    "MTG Alpha Black 38", -- Simulacrum
-    "MTG Alpha Black 40", -- Deathgrip
-    "MTG Alpha Black 43", -- Sacrifice
-    "MTG Alpha Black 45", -- Evil Presence
-    "MTG Alpha Blue 2", -- Clone
-    "MTG Alpha Blue 8", -- Wall of Air
-    "MTG Alpha Blue 9", -- Siren's Call
-    "MTG Alpha Blue 17", -- Psionic Blast
-    "MTG Alpha Blue 19", -- Water Elemental
-    "MTG Alpha Blue 22", -- Steal Artifact
-    "MTG Alpha Blue 23", -- Control Magic
-    "MTG Alpha Blue 27", -- Air Elemental
-    "MTG Alpha Blue 29", -- Animate Artifact
-    "MTG Alpha Blue 32", -- Wall of Water
-    "MTG Alpha Blue 42", -- Lifetap
-    "MTG Alpha Blue 43", -- Feedback
-    "MTG Alpha Blue 44", -- Counterspell
-    "MTG Alpha Blue 45", -- Phantasmal Forces
-    "MTG Alpha Green 3", -- Ley Druid
-    "MTG Alpha Green 4", -- Thicket Basilisk
-    "MTG Alpha Green 6", -- Lifeforce
-    "MTG Alpha Green 7", -- Berserk
-    "MTG Alpha Green 11", -- Wall of Ice
-    "MTG Alpha Green 14", -- Channel
-    "MTG Alpha Green 17", -- Regrowth
-    "MTG Alpha Green 21", -- Wall of Brambles
-    "MTG Alpha Green 26", -- Tsunami
-    "MTG Alpha Green 28", -- Ice Storm
-    "MTG Alpha Green 35", -- Instill Energy
-    "MTG Alpha Green 38", -- Hurricane
-    "MTG Alpha Green 40", -- Camouflage
-    "MTG Alpha Green 43", -- Lure
-    "MTG Alpha Green 44", -- Wanderlust
-    "MTG Alpha Red 3", -- Wall of Fire
-    "MTG Alpha Red 4", -- Flashfires
-    "MTG Alpha Red 7", -- Fire Elemental
-    "MTG Alpha Red 12", -- Earth Elemental
-    "MTG Alpha Red 13", -- Tunnel
-    "MTG Alpha Red 15", -- Orcish Artillery
-    "MTG Alpha Red 17", -- Burrowing
-    "MTG Alpha Red 18", -- Orcish Oriflamme
-    "MTG Alpha Red 19", -- Keldon Warlord
-    "MTG Alpha Red 21", -- Stone Giant
-    "MTG Alpha Red 30", -- Dragon Whelp
-    "MTG Alpha Red 37", -- Goblin balloon Brigade
-    "MTG Alpha Red 42", -- Uthden Troll
-    "MTG Alpha Red 44", -- Wall of Stone
-    "MTG Alpha Red 46", -- Dwarven Demolition Team
-    "MTG Alpha White 2", -- Serra Angel
-    "MTG Alpha White 8", -- Red Ward
-    "MTG Alpha White 9", -- Lance
-    "MTG Alpha White 11", -- Consecrate Land
-    "MTG Alpha White 18", -- Castle
-    "MTG Alpha White 21", -- Wall of Swords
-    "MTG Alpha White 24", -- Blue Ward
-    "MTG Alpha White 28", -- Karma
-    "MTG Alpha White 32", -- White Knight
-    "MTG Alpha White 33", -- Resurrection
-    "MTG Alpha White 34", -- White Ward
-    "MTG Alpha White 35", -- Swords to Plowshares
-    "MTG Alpha White 39", -- Green Ward
-    "MTG Alpha White 41", -- Black Ward
-    "MTG Alpha White 42", -- Conversion
+    "Artifacts 1", "Artifacts 6", "Artifacts 7", "Artifacts 8", "Artifacts 9", "Artifacts 12", "Artifacts 13",
+    "Artifacts 14", "Artifacts 15", "Artifacts 21", "Artifacts 25", "Artifacts 26", "Artifacts 27", "Artifacts 30",
+    "Artifacts 33", "Artifacts 34", "Artifacts 39", "Artifacts 40", "Artifacts 41", "Artifacts 43", "Black 9",
+    "Black 11", "Black 14", "Black 16", "Black 17", "Black 23", "Black 24", "Black 25", "Black 29", "Black 32",
+    "Black 34", "Black 38", "Black 40", "Black 43", "Black 45", "Blue 2", "Blue 8", "Blue 9", "Blue 17", "Blue 19",
+    "Blue 22", "Blue 23", "Blue 27", "Blue 29", "Blue 32", "Blue 42", "Blue 43", "Blue 44", "Blue 45", "Green 3",
+    "Green 4", "Green 6", "Green 7", "Green 11", "Green 14", "Green 17", "Green 21", "Green 26", "Green 28",
+    "Green 35", "Green 38", "Green 40", "Green 43", "Green 44", "Red 3", "Red 4", "Red 7", "Red 12", "Red 13",
+    "Red 15", "Red 17", "Red 18", "Red 19", "Red 21", "Red 30", "Red 37", "Red 42", "Red 44", "Red 46", "White 2",
+    "White 8", "White 9", "White 11", "White 18", "White 21", "White 24", "White 28", "White 32", "White 33",
+    "White 34", "White 35", "White 39", "White 41", "White 42",
 }
 
 local common = {
-    "MTG Alpha Black 4", -- Dark Ritual
-    "MTG Alpha Black 5", -- Scathe Zombies
-    "MTG Alpha Black 7", -- Pestilence
-    "MTG Alpha Black 8", -- Frozen Shade
-    "MTG Alpha Black 10", -- Raise Dead
-    "MTG Alpha Black 12", -- Paralyze
-    "MTG Alpha Black 15", -- Plague Rats
-    "MTG Alpha Black 22", -- Unholy Strength
-    "MTG Alpha Black 30", -- Drain Life
-    "MTG Alpha Black 37", -- Weakness
-    "MTG Alpha Black 41", -- Drudge Skeletons
-    "MTG Alpha Black 42", -- Terror
-    "MTG Alpha Black 44", -- Fear
-    "MTG Alpha Black 46", -- Sinkhole
-    "MTG Alpha Blue 1", -- Psychic Venom
-    "MTG Alpha Blue 3", -- Creature Bond
-    "MTG Alpha Blue 5", -- Prodigal Sorcerer
-    "MTG Alpha Blue 11", -- Sea Serpent
-    "MTG Alpha Blue 13", -- Power Leak
-    "MTG Alpha Blue 14", -- Jump
-    "MTG Alpha Blue 20", -- Unsummon
-    "MTG Alpha Blue 21", -- Spell Blast
-    "MTG Alpha Blue 28", -- Flight
-    "MTG Alpha Blue 31", -- Twiddle
-    "MTG Alpha Blue 35", -- Merfolk of the Pearl Trident
-    "MTG Alpha Blue 38", -- Blue Elemental Blast
-    "MTG Alpha Blue 39", -- Phantasmal Terrain
-    "MTG Alpha Blue 40", -- Power Sink
-    "MTG Alpha Blue 41", -- Invisibility
-    "MTG Alpha Green 2", -- Wild Growth
-    "MTG Alpha Green 8", -- Llanowar Elves
-    "MTG Alpha Green 9", -- Fog
-    "MTG Alpha Green 10", -- Grizzly Bears
-    "MTG Alpha Green 13", -- War Mammoth
-    "MTG Alpha Green 15", -- Craw Wurm
-    "MTG Alpha Green 18", -- Ironroot Treefolk
-    "MTG Alpha Green 19", -- Regeneration
-    "MTG Alpha Green 22", -- Stream of Life
-    "MTG Alpha Green 30", -- Shanodin Dryads
-    "MTG Alpha Green 32", -- Giant Spider
-    "MTG Alpha Green 33", -- Tranquility
-    "MTG Alpha Green 34", -- Scryb Sprites
-    "MTG Alpha Green 42", -- Giant Growth
-    "MTG Alpha Red 8", -- Lightning Bolt
-    "MTG Alpha Red 9", -- Ironclaw Orcs
-    "MTG Alpha Red 10", -- Fireball
-    "MTG Alpha Red 11", -- Mons's Goblin Raiders
-    "MTG Alpha Red 16", -- Earthbind
-    "MTG Alpha Red 20", -- Disintegrate
-    "MTG Alpha Red 23", -- False Orders
-    "MTG Alpha Red 25", -- Hurloon Minotaur
-    "MTG Alpha Red 26", -- Red Elemental Blast
-    "MTG Alpha Red 27", -- Gray Ogre
-    "MTG Alpha Red 36", -- Stone Rain
-    "MTG Alpha Red 38", -- Shatter
-    "MTG Alpha Red 40", -- Firebreathing
-    "MTG Alpha Red 43", -- Dwarven Warriors
-    "MTG Alpha Red 45", -- Hill Giant
-    "MTG Alpha White 1", -- Death Ward
-    "MTG Alpha White 4", -- Samite Healer
-    "MTG Alpha White 5", -- Mesa Pegasus
-    "MTG Alpha White 7", -- Healing Salve
-    "MTG Alpha White 17", -- Circle of Protection: Red
-    "MTG Alpha White 19", -- Holy Armor
-    "MTG Alpha White 25", -- Circle of Protection: White
-    "MTG Alpha White 26", -- Circle of Protection: Blue
-    "MTG Alpha White 29", -- Pearled Unicorn
-    "MTG Alpha White 38", -- Disenchant
-    "MTG Alpha White 40", -- Circle of Protection: Green
-    "MTG Alpha White 43", -- Benalish Hero
-    "MTG Alpha White 44", -- Guardian Angel
+    "Black 4", "Black 5", "Black 7", "Black 8", "Black 10", "Black 12", "Black 15", "Black 22", "Black 30",
+    "Black 37", "Black 41", "Black 42", "Black 44", "Black 46", "Blue 1", "Blue 3", "Blue 5", "Blue 11",
+    "Blue 13", "Blue 14", "Blue 20", "Blue 21", "Blue 28", "Blue 31", "Blue 35", "Blue 38", "Blue 39",
+    "Blue 40", "Blue 41", "Green 2", "Green 8", "Green 9", "Green 10", "Green 13", "Green 15", "Green 18",
+    "Green 19", "Green 22", "Green 30", "Green 32", "Green 33", "Green 34", "Green 42", "Red 8", "Red 9",
+    "Red 10", "Red 11", "Red 16", "Red 20", "Red 23", "Red 25", "Red 26", "Red 27", "Red 36", "Red 38",
+    "Red 40", "Red 43", "Red 45", "White 1", "White 4", "White 5", "White 7", "White 17", "White 19",
+    "White 25", "White 26", "White 29", "White 38", "White 40", "White 43", "White 44",
 }
 
 local lands = {
-    "MTG Alpha Red Land 1", -- Mountain
-    "MTG Alpha Red Land 2", -- Mountain
-    "MTG Alpha Blue Land 1", -- Island
-    "MTG Alpha Blue Land 2", -- Island
-    "MTG Alpha Green Land 1", -- Forest
-    "MTG Alpha Green Land 2", -- Forest
-    "MTG Alpha White Land 1", -- Plains
-    "MTG Alpha White Land 2", -- Plains
-    "MTG Alpha Black Land 1", -- Swamp
-    "MTG Alpha Black Land 2", -- Swamp
+    "Red Land 1", "Red Land 2", "Blue Land 1", "Blue Land 2", "Green Land 1",
+    "Green Land 2", "White Land 1", "White Land 2", "Black Land 1", "Black Land 2",
 }
+
 
 local deckArchetypesList = {
     -- TODO: Add weights?
