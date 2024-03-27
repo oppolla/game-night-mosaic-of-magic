@@ -176,7 +176,11 @@ local deckArchetypesList = {
     "Boros", --Red/White -- [14]
     "Simic", --Blue/Green -- [15]
 
-    ---Lands could appear instead of common slots
+    ---Lands could appear in any of the spots
+    --The chance of getting a basic land instead of another card is approximately:
+    -- 4.13% for rares, 21.5% for uncommons and 38.84% for commons.
+    -- The only lands on the rare sheets were five copies of Island.
+
     "AlphaBoosterPack", -- 11 common, 3 uncommon, 1 rare -- [16]
     "AlphaStarterPack", -- 45 commons, 12 uncommon, 3 rares  -- [17]
 
