@@ -208,14 +208,14 @@ function applyItemDetails.MTG.rollCard(rarity)
     if rollLand then
         if rarity == "Rare" then
             -- The only lands on the rare sheets were five copies of Island.
-            return "Blue Land"
+            return "MTG Alpha Blue Land"
         else
-            return MTG.alphaLand[ZombRand(#MTG.alphaLand)+1]
+            return ("MTG Alpha "..MTG.alphaLand[ZombRand(#MTG.alphaLand)+1])
         end
     end
 
     local cardPool = MTG["alpha"..rarity]
-    return cardPool[ZombRand(#cardPool)+1]
+    return ("MTG Alpha "..cardPool[ZombRand(#cardPool)+1])
 end
 
 
@@ -241,7 +241,7 @@ function applyItemDetails.MTG.unpackBooster(cards, altNames)
         table.insert(altNames, MTG.altNames[card])
     end
 
-    return cards
+    return cards, altNames
 end
 
 
