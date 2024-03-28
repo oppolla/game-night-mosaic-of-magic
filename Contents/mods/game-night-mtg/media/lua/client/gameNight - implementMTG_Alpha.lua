@@ -242,7 +242,7 @@ end
 
 
 local gamePieceAndBoardHandler = require "gameNight - gamePieceAndBoardHandler"
-gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { actions = { tapCard=true}, applyCards = "applyCardsForMTG", textureSize = {100,142} })
+gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { actions = { tapCard=true}, applyCards = "applyCardsForMTG", textureSize = {100,140} })
 
 function applyItemDetails.applyCardsForMTG(item, deck)
     --TODO: Change this part to make random decks work
