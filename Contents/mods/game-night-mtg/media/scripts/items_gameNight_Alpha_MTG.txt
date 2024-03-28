@@ -20,7 +20,7 @@ module Base
     item mtgCards
     {
         DisplayCategory = Deck, Weight = 0.01, Type = Normal,
-        DisplayName = Magic The Gathering Cards, Icon = mtgAlphaDeck/deck, WorldStaticModel = MTG_Card,
+        DisplayName = Magic The Gathering Cards, Icon = mtgCards/deck, WorldStaticModel = MTG_Card,
     }
 
 }
