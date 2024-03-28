@@ -111,7 +111,7 @@ end
 applyItemDetails.addDeck("mtgCards", MTG.catalogue, MTG.altNames)
 
 
-local rares = {
+MTG.alphaRare = {
     "Artifacts 2", "Artifacts 5", "Artifacts 8", "Artifacts 11", "Artifacts 16", "Artifacts 17", "Artifacts 18",
     "Artifacts 19", "Artifacts 20", "Artifacts 22", "Artifacts 23", "Artifacts 28", "Artifacts 29", "Artifacts 35",
     "Artifacts 36", "Artifacts 37", "Artifacts 38", "Artifacts 44", "Artifacts 45", "Black 2", "Black 3", "Black 6",
@@ -124,7 +124,7 @@ local rares = {
     "White 22", "White 27", "White 31", "White Black Land 1", "White Green Land 1",
 }
 
-local uncommon = {
+MTG.alphaUncommon = {
     "Artifacts 1", "Artifacts 6", "Artifacts 7", "Artifacts 8", "Artifacts 9", "Artifacts 12", "Artifacts 13",
     "Artifacts 14", "Artifacts 15", "Artifacts 21", "Artifacts 25", "Artifacts 26", "Artifacts 27", "Artifacts 30",
     "Artifacts 33", "Artifacts 34", "Artifacts 39", "Artifacts 40", "Artifacts 41", "Artifacts 43", "Black 9",
@@ -138,7 +138,7 @@ local uncommon = {
     "White 34", "White 35", "White 39", "White 41", "White 42",
 }
 
-local common = {
+MTG.alphaCommon = {
     "Black 4", "Black 5", "Black 7", "Black 8", "Black 10", "Black 12", "Black 15", "Black 22", "Black 30",
     "Black 37", "Black 41", "Black 42", "Black 44", "Black 46", "Blue 1", "Blue 3", "Blue 5", "Blue 11",
     "Blue 13", "Blue 14", "Blue 20", "Blue 21", "Blue 28", "Blue 31", "Blue 35", "Blue 38", "Blue 39",
@@ -149,40 +149,29 @@ local common = {
     "White 25", "White 26", "White 29", "White 38", "White 40", "White 43", "White 44",
 }
 
-local lands = {
+MTG.alphaLand = {
     "Red Land 1", "Red Land 2", "Blue Land 1", "Blue Land 2", "Green Land 1",
     "Green Land 2", "White Land 1", "White Land 2", "Black Land 1", "Black Land 2",
 }
 
 
 local deckArchetypesList = {
-    -- TODO: Add weights?
     -- mono decks
-    "White", -- [1]
-    "Black", -- [2]
-    "Green", -- [3]
-    "Blue",  -- [4]
-    "Red", -- [5]
+    "White", "Black", "Green", "Blue", "Red",
 
     -- duo decks
-    "Azorius", --White/Blue -- [6]
-    "Dimir", --Blue/Black -- [7]
-    "Rakdos", --Black/Red -- [8]
-    "Gruul", --Red/Green -- [9]
-    "Selesnya", --White/Green -- [10]
-    "Orzhov", --White/Black -- [11]
-    "Izzet", --Blue/Red -- [12]
-    "Golgari", --Black/Green -- [13]
-    "Boros", --Red/White -- [14]
-    "Simic", --Blue/Green -- [15]
+    "Azorius", --White/Blue
+    "Dimir", --Blue/Black
+    "Rakdos", --Black/Red
+    "Gruul", --Red/Green
+    "Selesnya", --White/Green
+    "Orzhov", --White/Black
+    "Izzet", --Blue/Red
+    "Golgari", --Black/Green
+    "Boros", --Red/White
+    "Simic", --Blue/Green
 
-    ---Lands could appear in any of the spots
-    --The chance of getting a basic land instead of another card is approximately:
-    -- 4.13% for rares, 21.5% for uncommons and 38.84% for commons.
-    -- The only lands on the rare sheets were five copies of Island.
-
-    "AlphaBoosterPack", -- 11 common, 3 uncommon, 1 rare -- [16]
-    "AlphaStarterPack", -- 45 commons, 12 uncommon, 3 rares  -- [17]
+    --- "AlphaStarterPack", -- 45 commons, 12 uncommon, 3 rares -- 60 cards
 
     -- tri decks -- future option? too complex?
     --"Bant", --White/Blue/Green
@@ -196,6 +185,85 @@ local deckArchetypesList = {
     --"Mardu", --White/Black/Red
     --"Temur", --Blue/Red/Green
     }
+
+
+local gamePieceAndBoardHandler = require "gameNight - gamePieceAndBoardHandler"
+gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { applyCards = "applyCardsForMTG" })
+
+applyItemDetails.MTG = {}
+
+
+function applyItemDetails.MTG.rollLand(rarity)
+    --The chance of getting a basic land instead of another card is approximately:
+    -- 4.13% for rares, 21.5% for uncommon and 38.84% for commons.
+    local chance = rarity and (rarity == "rare" and 4.13 or rarity == "uncommon" and 21.5 or rarity == "common" and 38.84)
+    if chance then
+        return (ZombRandFloat(0.0,100.0) < chance)
+    end
+    return false
+end
+
+
+function applyItemDetails.MTG.rollCard(rarity)
+    --roll for land first
+    local rollLand = applyItemDetails.MTG.rollLand(rarity)
+    if rollLand then
+        if rarity == "rare" then
+            -- The only lands on the rare sheets were five copies of Island.
+            return "Blue Land"
+        else
+            return MTG.alphaLands[ZombRand(#MTG.alphaLands)+1]
+        end
+    end
+
+    local cardPool = MTG["alpha"..rarity]
+    return cardPool[ZombRand(#cardPool)+1]
+end
+
+
+function applyItemDetails.MTG.unpackBooster(cards, altNames)
+    -- 11 common, 3 uncommon, 1 rare -- 15
+
+    for i=1, 11 do
+        local card = applyItemDetails.MTG.rollCard("common")
+        table.insert(cards, card)
+        table.insert(altNames, MTG.altNames[card])
+
+    end
+
+    for i=1, 3 do
+        local card = applyItemDetails.MTG.rollCard("uncommon")
+        table.insert(cards, card)
+        table.insert(altNames, MTG.altNames[card])
+    end
+
+    for i=1, 1 do
+        local card = applyItemDetails.MTG.rollCard("rare")
+        table.insert(cards, card)
+        table.insert(altNames, MTG.altNames[card])
+    end
+
+    return cards
+end
+
+
+function applyItemDetails.applyCardsForMTG(item, deck)
+    --TODO: Change this part to make random decks work
+    --- For admins/spawnable decks we could use dummy items that ccn be replaced entirely.
+
+    if not item:getModData()["gameNight_cardDeck"] then
+
+        local cards, altNames = {}, {}
+        applyItemDetails.MTG.unpackBooster(cards, altNames)
+        applyItemDetails.MTG.unpackBooster(cards, altNames)
+        applyItemDetails.MTG.unpackBooster(cards, altNames)
+        applyItemDetails.MTG.unpackBooster(cards, altNames)
+
+        item:getModData()["gameNight_cardFlipped"] = {}
+        for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
+    end
+end
+
 
 --[[
 
