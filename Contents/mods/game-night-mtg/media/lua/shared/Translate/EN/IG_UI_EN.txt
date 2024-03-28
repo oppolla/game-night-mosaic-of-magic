@@ -1,6 +1,6 @@
 IGUI_EN = {
 
-    IGUI_tap = "Tap",
+    IGUI_tapCard = "Tap",
 
     IGUI_mtgCards = "Magic The Gathering Card",
 
