@@ -225,20 +225,16 @@ function applyItemDetails.MTG.unpackBooster(cards, altNames)
     for i=1, 11 do
         local card = applyItemDetails.MTG.rollCard("Common")
         table.insert(cards, card)
-        table.insert(altNames, MTG.altNames[card])
-
     end
 
     for i=1, 3 do
         local card = applyItemDetails.MTG.rollCard("Uncommon")
         table.insert(cards, card)
-        table.insert(altNames, MTG.altNames[card])
     end
 
     for i=1, 1 do
         local card = applyItemDetails.MTG.rollCard("Rare")
         table.insert(cards, card)
-        table.insert(altNames, MTG.altNames[card])
     end
 
     return cards, altNames
@@ -246,7 +242,7 @@ end
 
 
 local gamePieceAndBoardHandler = require "gameNight - gamePieceAndBoardHandler"
-gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { actions = { tapCard=true}, applyCards = "applyCardsForMTG" })
+gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { actions = { tapCard=true}, applyCards = "applyCardsForMTG", textureSize = {100,142} })
 
 function applyItemDetails.applyCardsForMTG(item, deck)
     --TODO: Change this part to make random decks work
@@ -261,7 +257,7 @@ function applyItemDetails.applyCardsForMTG(item, deck)
         applyItemDetails.MTG.unpackBooster(cards, altNames)
 
         item:getModData()["gameNight_cardDeck"] = cards
-        item:getModData()["gameNight_cardAltNames"] = altNames
+        item:getModData()["gameNight_cardAltNames"] = MTG.altNames
 
         item:getModData()["gameNight_cardFlipped"] = {}
         for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
