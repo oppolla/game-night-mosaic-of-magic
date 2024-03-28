@@ -187,8 +187,6 @@ local deckArchetypesList = {
     }
 
 
-local gamePieceAndBoardHandler = require "gameNight - gamePieceAndBoardHandler"
-gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { applyCards = "applyCardsForMTG" })
 
 applyItemDetails.MTG = {}
 
@@ -196,7 +194,7 @@ applyItemDetails.MTG = {}
 function applyItemDetails.MTG.rollLand(rarity)
     --The chance of getting a basic land instead of another card is approximately:
     -- 4.13% for rares, 21.5% for uncommon and 38.84% for commons.
-    local chance = rarity and (rarity == "rare" and 4.13 or rarity == "uncommon" and 21.5 or rarity == "common" and 38.84)
+    local chance = rarity and (rarity == "Rare" and 4.13 or rarity == "Uncommon" and 21.5 or rarity == "Common" and 38.84)
     if chance then
         return (ZombRandFloat(0.0,100.0) < chance)
     end
@@ -208,7 +206,7 @@ function applyItemDetails.MTG.rollCard(rarity)
     --roll for land first
     local rollLand = applyItemDetails.MTG.rollLand(rarity)
     if rollLand then
-        if rarity == "rare" then
+        if rarity == "Rare" then
             -- The only lands on the rare sheets were five copies of Island.
             return "Blue Land"
         else
@@ -225,20 +223,20 @@ function applyItemDetails.MTG.unpackBooster(cards, altNames)
     -- 11 common, 3 uncommon, 1 rare -- 15
 
     for i=1, 11 do
-        local card = applyItemDetails.MTG.rollCard("common")
+        local card = applyItemDetails.MTG.rollCard("Common")
         table.insert(cards, card)
         table.insert(altNames, MTG.altNames[card])
 
     end
 
     for i=1, 3 do
-        local card = applyItemDetails.MTG.rollCard("uncommon")
+        local card = applyItemDetails.MTG.rollCard("Uncommon")
         table.insert(cards, card)
         table.insert(altNames, MTG.altNames[card])
     end
 
     for i=1, 1 do
-        local card = applyItemDetails.MTG.rollCard("rare")
+        local card = applyItemDetails.MTG.rollCard("Rare")
         table.insert(cards, card)
         table.insert(altNames, MTG.altNames[card])
     end
@@ -246,6 +244,9 @@ function applyItemDetails.MTG.unpackBooster(cards, altNames)
     return cards
 end
 
+
+local gamePieceAndBoardHandler = require "gameNight - gamePieceAndBoardHandler"
+gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { actions = { tapCard=true}, applyCards = "applyCardsForMTG" })
 
 function applyItemDetails.applyCardsForMTG(item, deck)
     --TODO: Change this part to make random decks work
@@ -262,6 +263,15 @@ function applyItemDetails.applyCardsForMTG(item, deck)
         item:getModData()["gameNight_cardFlipped"] = {}
         for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
     end
+end
+
+
+function gamePieceAndBoardHandler.tapCard(deckItem, player)
+    local current = deckItem:getModData()["gameNight_rotation"] or 0
+    local state = (current+90) % 360 or current
+
+    gamePieceAndBoardHandler.playSound(deckItem, player)
+    gamePieceAndBoardHandler.pickupAndPlaceGamePiece(player, deckItem, {gamePieceAndBoardHandler.setModDataValue, deckItem, "gameNight_rotation", state})
 end
 
 
