@@ -210,7 +210,7 @@ function applyItemDetails.MTG.rollCard(rarity)
             -- The only lands on the rare sheets were five copies of Island.
             return "Blue Land"
         else
-            return MTG.alphaLands[ZombRand(#MTG.alphaLands)+1]
+            return MTG.alphaLand[ZombRand(#MTG.alphaLand)+1]
         end
     end
 
@@ -259,6 +259,9 @@ function applyItemDetails.applyCardsForMTG(item, deck)
         applyItemDetails.MTG.unpackBooster(cards, altNames)
         applyItemDetails.MTG.unpackBooster(cards, altNames)
         applyItemDetails.MTG.unpackBooster(cards, altNames)
+
+        item:getModData()["gameNight_cardDeck"] = cards
+        item:getModData()["gameNight_cardAltNames"] = altNames
 
         item:getModData()["gameNight_cardFlipped"] = {}
         for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
