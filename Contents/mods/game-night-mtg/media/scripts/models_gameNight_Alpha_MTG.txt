@@ -3,14 +3,14 @@ module Base
     model MTG_Deck
     {
         mesh = WorldItems/cardpack,
-        texture = Item_MTG_Alpha/deckTexture,
+        texture = Item_mtgCards/deckTexture,
         scale = 0.024,
     }
 
  model MTG_Card
     {
         mesh = WorldItems/cardpack,
-        texture = Item_MTG_Alpha/deckTexture,
+        texture = Item_mtgCards/deckTexture,
         scale = 0.024,
     }
 
