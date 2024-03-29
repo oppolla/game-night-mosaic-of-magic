@@ -70,6 +70,9 @@ MTG.alpha = { --"MTG Alpha "
         "Uthden Troll", "Dwarven Warriors", "Wall of Stone", "Hill Giant", "Dwarven Demolition Team",
     },
 
+    ["Spells"] = {},
+    ["Special Land"] = {},
+
     ["Black Land"] = { "Swamp", "Swamp", },
     ["White Land"] = { "Plains", "Plains", },
     ["Green Land"] = { "Forest", "Forest", },
