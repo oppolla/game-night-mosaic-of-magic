@@ -1,4 +1,6 @@
 local applyItemDetails = require "gameNight - applyItemDetails"
+local deckActionHandler = applyItemDetails.deckActionHandler
+local gamePieceAndBoardHandler = applyItemDetails.gamePieceAndBoardHandler
 
 local MTG = {}
 
@@ -111,7 +113,7 @@ for set,cards in pairs(MTG.alpha) do
     end
 end
 
-applyItemDetails.addDeck("mtgCards", MTG.catalogue, MTG.altNames)
+deckActionHandler.addDeck("mtgCards", MTG.catalogue, MTG.altNames)
 
 
 MTG.alphaRare = {
@@ -191,6 +193,7 @@ local deckArchetypesList = {
 
 
 
+
 applyItemDetails.MTG = {}
 
 
@@ -244,12 +247,12 @@ function applyItemDetails.MTG.unpackBooster(cards, altNames)
 end
 
 
-local gamePieceAndBoardHandler = require "gameNight - gamePieceAndBoardHandler"
-gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { actions = { tapCard=true}, applyCards = "applyCardsForMTG", textureSize = {100,140} })
-
 function applyItemDetails.applyCardsForMTG(item, deck)
     --TODO: Change this part to make random decks work
     --- For admins/spawnable decks we could use dummy items that ccn be replaced entirely.
+
+    --oops
+    item:getModData()["gameNight_cardAltNames"] = nil
 
     if not item:getModData()["gameNight_cardDeck"] then
 
@@ -260,15 +263,15 @@ function applyItemDetails.applyCardsForMTG(item, deck)
         applyItemDetails.MTG.unpackBooster(cards, altNames)
 
         item:getModData()["gameNight_cardDeck"] = cards
-        item:getModData()["gameNight_cardAltNames"] = MTG.altNames
-
         item:getModData()["gameNight_cardFlipped"] = {}
         for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
     end
 end
 
 
-function gamePieceAndBoardHandler.tapCard(deckItem, player)
+gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { actions = { tapCard=true, examineCard=true}, examineScale = 0.75, applyCards = "applyCardsForMTG", textureSize = {100,140} })
+
+function deckActionHandler.tapCard(deckItem, player)
     local current = deckItem:getModData()["gameNight_rotation"] or 0
     local state = (current+90) % 360 or current
 
