@@ -216,7 +216,7 @@ function applyItemDetails.MTG.rollCard(rarity)
     if rollLand then
         if rarity == "Rare" then
             -- The only lands on the rare sheets were five copies of Island.
-            return "MTG Alpha Blue Land"
+            return ("MTG Alpha Blue Land "..ZombRand(3)+1)
         else
             return ("MTG Alpha "..MTG.alphaLand[ZombRand(#MTG.alphaLand)+1])
         end
