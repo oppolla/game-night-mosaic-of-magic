@@ -122,12 +122,12 @@ MTG.alphaRare = {
     "Artifacts 19", "Artifacts 20", "Artifacts 22", "Artifacts 23", "Artifacts 28", "Artifacts 29", "Artifacts 35",
     "Artifacts 36", "Artifacts 37", "Artifacts 38", "Artifacts 44", "Artifacts 45", "Black 2", "Black 3", "Black 6",
     "Black 18", "Black 19", "Black 20", "Black 21", "Black 26", "Black 36", "Black Blue Land 1", "Black Green Land 1",
-    "Blue 4", "Blue 7", "Blue 10", "Blue 12", "Blue 15", "Blue 16", "Blue 18", "Blue 25", "Blue 26", "Blue 33",
-    "Blue 34", "Blue 37", "Blue 46", "Blue White Land 1", "Green 5", "Green 16", "Green 20", "Green 23", "Green 25",
-    "Green 27", "Green 31", "Green 37", "Green 39", "Green 41", "Green 45", "Green Blue Land 1", "Green Red Land 1",
-    "Red 1", "Red 2", "Red 5", "Red 6", "Red 22", "Red 24", "Red 31", "Red 32", "Red 33", "Red 34", "Red 35", "Red 39",
-    "Red Black Land 1", "Red White Land 1", "White 3", "White 12", "White 13", "White 14", "White 15", "White 20",
-    "White 22", "White 27", "White 31", "White Black Land 1", "White Green Land 1",
+    "Blue Red Land 1", "Blue 4", "Blue 7", "Blue 10", "Blue 12", "Blue 15", "Blue 16", "Blue 18", "Blue 25", "Blue 26",
+    "Blue 33", "Blue 34", "Blue 37", "Blue 46", "Blue White Land 1", "Green 5", "Green 16", "Green 20", "Green 23",
+    "Green 25", "Green 27", "Green 31", "Green 37", "Green 39", "Green 41", "Green 45", "Green Blue Land 1",
+    "Green Red Land 1", "Red 1", "Red 2", "Red 5", "Red 6", "Red 22", "Red 24", "Red 31", "Red 32", "Red 33",
+    "Red 34", "Red 35", "Red 39", "Red Black Land 1", "Red White Land 1", "White 3", "White 12", "White 13",
+    "White 14", "White 15", "White 20", "White 22", "White 27", "White 31", "White Black Land 1", "White Green Land 1",
 }
 
 MTG.alphaUncommon = {
@@ -156,8 +156,9 @@ MTG.alphaCommon = {
 }
 
 MTG.alphaLand = {
-    "Red Land 1", "Red Land 2", "Blue Land 1", "Blue Land 2", "Green Land 1",
-    "Green Land 2", "White Land 1", "White Land 2", "Black Land 1", "Black Land 2",
+    "Red Land 1", "Red Land 2", "Red Land 3", "Blue Land 1", "Blue Land 2", "Blue Land 3",
+    "Green Land 1", "Green Land 2", "Green Land 3", "White Land 1", "White Land 2", "White Land 3",
+    "Black Land 1", "Black Land 2", "Black Land 3",
 }
 
 
