@@ -37,7 +37,7 @@ MTG.alpha = { --"MTG Alpha "
         "Circle of Protection: Blue", "Balance", "Karma", "Pearled Unicorn", "Northern Paladin",
         "Armageddon", "White Knight", "Ressurection", "White Ward", "Swords to Plowshares",
         "Farmstead", "Purelace", "Disenchant", "Green Ward", "Circle of Protection: Green",
-        "Black Ward", "Conversion", "Benalish Hero", "Guardian Angel", "Crusade",
+        "Black Ward", "Conversion", "Benalish Hero", "Guardian Angel", "Crusade", "Circle of Protection: Black",
     },
 
     ["Green"] = {
@@ -75,11 +75,11 @@ MTG.alpha = { --"MTG Alpha "
     ["Spells"] = {},
     ["Special Land"] = {},
 
-    ["Black Land"] = { "Swamp", "Swamp", },
-    ["White Land"] = { "Plains", "Plains", },
-    ["Green Land"] = { "Forest", "Forest", },
-    ["Blue Land"] = { "Island", "Island", },
-    ["Red Land"] = { "Mountain", "Mountain", },
+    ["Black Land"] = { "Swamp", "Swamp", "Swamp"},
+    ["White Land"] = { "Plains", "Plains", "Plains"},
+    ["Green Land"] = { "Forest", "Forest", "Forest"},
+    ["Blue Land"] = { "Island", "Island", "Island"},
+    ["Red Land"] = { "Mountain", "Mountain", "Mountain"},
 
     ["Blue White Land"] = { "Tundra" },
     ["Black Blue Land"] = { "Underground Sea" },
@@ -90,6 +90,7 @@ MTG.alpha = { --"MTG Alpha "
     ["White Green Land"] = { "Savannah" },
     ["Green Blue Land"] = { "Tropical Island" },
     ["Black Green Land"] = { "Bayou" },
+    ["Blue Red Land"] = { "Volcanic Island" },
 
 }
 
