@@ -275,7 +275,7 @@ gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { actions = { tapCard=
 
 function deckActionHandler.tapCard(deckItem, player)
     local current = deckItem:getModData()["gameNight_rotation"] or 0
-    local state = (current+90) % 360 or current
+    local state = current == 90 and 0 or 90
 
     gamePieceAndBoardHandler.playSound(deckItem, player)
     gamePieceAndBoardHandler.pickupAndPlaceGamePiece(player, deckItem, {gamePieceAndBoardHandler.setModDataValue, deckItem, "gameNight_rotation", state})
