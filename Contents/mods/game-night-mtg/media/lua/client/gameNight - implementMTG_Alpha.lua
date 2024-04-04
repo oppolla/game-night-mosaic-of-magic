@@ -204,7 +204,7 @@ function applyItemDetails.MTG.probableRarity()
     local totalWeight = 0
     for rarity, weight in pairs(rarities) do totalWeight = totalWeight + weight end
 
-    local randomNumber = math.random(totalWeight)
+    local randomNumber = ZombRand(totalWeight)+1
     local cumulativeWeight = 0
     for rarity, weight in pairs(rarities) do
         cumulativeWeight = cumulativeWeight + weight
