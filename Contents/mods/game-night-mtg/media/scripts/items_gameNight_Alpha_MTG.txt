@@ -6,7 +6,7 @@ module Base
         DisplayCategory = GameBox, WeightReduction = 20, Weight = 0.1, Type = Container, Capacity = 2,
         DisplayName = Magic the Gathering Box,
 
-        Icon = Boxes/MTGStarterBox, WorldStaticModel = MTG_Deck,
+        Icon = Boxes/MTGStarterBox, WorldStaticModel = MTG_StarterBox,
     }
 
     item mtgStarterBox_sealed
@@ -14,7 +14,15 @@ module Base
         DisplayCategory = GameBox, WeightReduction = 20, Weight = 0.1, Type = Normal, Capacity = 2,
         DisplayName = Magic the Gathering Box (Sealed),
 
-        Icon = Boxes/MTGStarterBox, WorldStaticModel = MTG_Deck,
+        Icon = Boxes/MTGStarterBox, WorldStaticModel = MTG_StarterBox,
+    }
+
+    item mtgBoosterPack
+    {
+        DisplayCategory = GameBox, WeightReduction = 20, Weight = 0.1, Type = Normal, Capacity = 2,
+        DisplayName = Magic the Gathering Box (Sealed),
+
+        Icon = Boxes/MTGBoosterPack, WorldStaticModel = MTG_Booster,
     }
 
     item mtgCards
