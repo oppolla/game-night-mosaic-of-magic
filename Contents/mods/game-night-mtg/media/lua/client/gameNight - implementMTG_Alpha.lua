@@ -308,8 +308,12 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaWhiteLand[i])
         end
         shuffle(alphaWhite)
-        for i = 1, 36 do
+        for i = 1, 30 do
             table.insert(uniqueDeck, alphaWhite[i])
+        end
+         shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "Black" then
@@ -318,8 +322,12 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaBlackLand[i])
         end
         shuffle(alphaBlack)
-        for i = 1, 36 do
+        for i = 1, 30 do
             table.insert(uniqueDeck, alphaBlack[i])
+        end
+        shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "Green" then
@@ -328,8 +336,12 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaGreenLand[i])
         end
         shuffle(alphaGreen)
-        for i = 1, 36 do
+        for i = 1, 30 do
             table.insert(uniqueDeck, alphaGreen[i])
+        end
+        shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "Blue" then
@@ -338,8 +350,12 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaBlackLand[i])
         end
         shuffle(alphaBlack)
-        for i = 1, 36 do
+        for i = 1, 30 do
             table.insert(uniqueDeck, alphaBlack[i])
+        end
+        shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "Red" then
@@ -348,8 +364,12 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaRedLand[i])
         end
         shuffle(alphaRed)
-        for i = 1, 36 do
+        for i = 1, 30 do
             table.insert(uniqueDeck, alphaRed[i])
+        end
+        shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "Azorius" then
@@ -362,12 +382,16 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaBlueLand[i])
         end
         shuffle(alphaBlue)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaBlue[i])
         end
         shuffle(alphaWhite)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaWhite[i])
+        end
+        shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "Dimir" then
@@ -380,12 +404,16 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaBlueLand[i])
         end
         shuffle(alphaBlue)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaBlue[i])
         end
         shuffle(alphaBlack)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaBlack[i])
+        end
+        shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "Rakdos" then
@@ -398,12 +426,16 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaRedLand[i])
         end
         shuffle(alphaBlack)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaBlack[i])
         end
         shuffle(alphaRed)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaRed[i])
+        end
+        shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "Gruul" then
@@ -416,12 +448,16 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaGreenLand[i])
         end
         shuffle(alphaRed)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaRed[i])
         end
         shuffle(alphaGreen)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaGreen[i])
+        end
+        shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "Selesnya" then
@@ -434,12 +470,16 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaBlueLand[i])
         end
         shuffle(alphaWhite)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaWhite[i])
         end
         shuffle(alphaWhite)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaWhite[i])
+        end
+        shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "Orzhov" then
@@ -452,12 +492,16 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaBlueLand[i])
         end
         shuffle(alphaBlue)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaBlue[i])
         end
         shuffle(alphaWhite)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaWhite[i])
+        end
+        shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "Izzet" then
@@ -470,12 +514,16 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaBlueLand[i])
         end
         shuffle(alphaBlue)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaBlue[i])
         end
         shuffle(alphaRed)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaRed[i])
+        end
+        shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "Golgari" then
@@ -488,12 +536,16 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaGreenLand[i])
         end
         shuffle(alphaBlack)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaBlack[i])
         end
         shuffle(alphaGreen)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaGreen[i])
+        end
+        shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "Boros" then
@@ -506,12 +558,16 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaRedLand[i])
         end
         shuffle(alphaRed)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaRed[i])
         end
         shuffle(alphaWhite)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaWhite[i])
+        end
+        shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "Simic" then
@@ -524,12 +580,16 @@ local function buildDeck()
             table.insert(uniqueDeck, alphaBlueLand[i])
         end
         shuffle(alphaBlue)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaBlue[i])
         end
         shuffle(alphaGreen)
-        for i = 1, 18 do
+        for i = 1, 15 do
             table.insert(uniqueDeck, alphaGreen[i])
+        end
+        shuffle(alphaArtifacts)
+        for i = 1, 6 do
+            table.insert(uniqueDeck, alphaArtifacts[i])
         end
 
     elseif selectedDeck == "AlphaBoosterPack" then
