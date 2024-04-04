@@ -1,18 +1,10 @@
 module Base
 {
 
-    item mtgStarterBox
-    {
-        DisplayCategory = GameBox, WeightReduction = 20, Weight = 0.1, Type = Container, Capacity = 2,
-        DisplayName = Magic the Gathering Box,
-
-        Icon = Boxes/MTGStarterBox, WorldStaticModel = MTG_StarterBox,
-    }
-
-    item mtgStarterBox_sealed
+    item mtgStarterKit
     {
         DisplayCategory = GameBox, WeightReduction = 20, Weight = 0.1, Type = Normal, Capacity = 2,
-        DisplayName = Magic the Gathering Box (Sealed),
+        DisplayName = Magic the Gathering Starter Kit,
 
         Icon = Boxes/MTGStarterBox, WorldStaticModel = MTG_StarterBox,
     }

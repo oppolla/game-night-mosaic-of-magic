@@ -1,7 +1,6 @@
 ItemName_EN = {
     ItemName_Base.mtgCards = "Magic The Gathering Cards"
 
-    ItemName_Base.mtgStarterBox = "Magic the Gathering Box",
-    ItemName_Base.mtgStarterBox_sealed = "Magic the Gathering Box (Sealed)",
+    ItemName_Base.mtgStarterKit = "Magic the Gathering Starter Kit",
     ItemName_Base.mtgBoosterPack = "Magic the Gathering Booster Pack",
 }
