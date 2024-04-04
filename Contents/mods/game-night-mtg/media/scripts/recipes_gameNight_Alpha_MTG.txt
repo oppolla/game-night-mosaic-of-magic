@@ -1,7 +1,7 @@
 module Base
 {
 
-    recipe Unseal Box { mtgStarterBox_sealed, Result:mtgStarterBox, CanBeDoneFromFloor:true, OnCreate:Recipe.GameNight.UnboxMTG, Time:50.0, }
-    recipe Unseal Booster { mtgBoosterPack, Result:mtgBoosterPack, RemoveResultItem:true, CanBeDoneFromFloor:true, OnCreate:Recipe.GameNight.OpenBoosterMTG, Time:50.0, }
+    recipe Unseal Box { mtgStarterBox_sealed, Result:mtgCards, CanBeDoneFromFloor:true, OnCreate:Recipe.GameNight.UnboxMTG, Time:50.0, }
+    recipe Unseal Booster { mtgBoosterPack, Result:mtgCards, RemoveResultItem:true, CanBeDoneFromFloor:true, OnCreate:Recipe.GameNight.OpenBoosterMTG, Time:50.0, }
 
 }

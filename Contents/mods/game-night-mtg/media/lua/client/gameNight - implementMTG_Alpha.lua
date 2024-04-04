@@ -96,24 +96,14 @@ MTG.alpha = { --"MTG Alpha "
 
 MTG.catalogue = {}
 MTG.altNames = {}
-
-local test = {set = {}}
-
 --- Build entire catalogue as a deck
 for set,cards in pairs(MTG.alpha) do
-
-    if not test.set[set] then
-        test.set[set] = true
-        print(" SET: ", set, " ", #cards)
-    end
-
     for i,card in pairs(cards) do
         local cardID = "MTG Alpha "..set.." "..i
         MTG.altNames[cardID] = card
         table.insert(MTG.catalogue, cardID)
     end
 end
-
 deckActionHandler.addDeck("mtgCards", MTG.catalogue, MTG.altNames)
 
 
@@ -209,6 +199,20 @@ function applyItemDetails.MTG.rollLand(rarity)
     return false
 end
 
+function applyItemDetails.MTG.probableRarity()
+    local rarities = { Common = 11, Uncommon = 3, Rare = 1}
+    local totalWeight = 0
+    for rarity, weight in pairs(rarities) do totalWeight = totalWeight + weight end
+
+    local randomNumber = math.random(totalWeight)
+    local cumulativeWeight = 0
+    for rarity, weight in pairs(rarities) do
+        cumulativeWeight = cumulativeWeight + weight
+        if randomNumber <= cumulativeWeight then
+            return rarity
+        end
+    end
+end
 
 function applyItemDetails.MTG.rollCard(rarity)
     --roll for land first
@@ -225,6 +229,7 @@ function applyItemDetails.MTG.rollCard(rarity)
     local cardPool = MTG["alpha"..rarity]
     return ("MTG Alpha "..cardPool[ZombRand(#cardPool)+1])
 end
+
 
 
 function applyItemDetails.MTG.unpackBooster(cards, altNames)
@@ -249,29 +254,31 @@ function applyItemDetails.MTG.unpackBooster(cards, altNames)
 end
 
 
-function applyItemDetails.applyCardsForMTG(item, deck)
-    --TODO: Change this part to make random decks work
-    --- For admins/spawnable decks we could use dummy items that ccn be replaced entirely.
+function applyItemDetails.applyBoostersToCards(item, n)
+    item:getModData()["gameNight_cardAltNames"] = nil
+    local cards, altNames = {}, {}
+    n = n or 1
+    for i=1, n do applyItemDetails.MTG.unpackBooster(cards, altNames) end
+    item:getModData()["gameNight_cardDeck"] = cards
+    item:getModData()["gameNight_cardFlipped"] = {}
+    for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
+end
 
+
+function applyItemDetails.applyCardForMTG(item)
+    ---This spawns 1 single MTG card with appropriate chance %
     --oops
     item:getModData()["gameNight_cardAltNames"] = nil
-
     if not item:getModData()["gameNight_cardDeck"] then
-
-        local cards, altNames = {}, {}
-        applyItemDetails.MTG.unpackBooster(cards, altNames)
-        applyItemDetails.MTG.unpackBooster(cards, altNames)
-        applyItemDetails.MTG.unpackBooster(cards, altNames)
-        applyItemDetails.MTG.unpackBooster(cards, altNames)
-
-        item:getModData()["gameNight_cardDeck"] = cards
-        item:getModData()["gameNight_cardFlipped"] = {}
-        for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
+        local rarity = applyItemDetails.MTG.probableRarity()
+        local card = applyItemDetails.MTG.rollCard(rarity)
+        item:getModData()["gameNight_cardDeck"] = {card}
+        item:getModData()["gameNight_cardFlipped"] = {true}
     end
 end
 
 
-gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { actions = { tapCard=true, examineCard=true}, examineScale = 0.75, applyCards = "applyCardsForMTG", textureSize = {100,140} })
+gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { actions = { tapCard=true, examineCard=true}, examineScale = 0.75, applyCards = "applyCardForMTG", textureSize = {100,140} })
 
 function deckActionHandler.tapCard(deckItem, player)
     local current = deckItem:getModData()["gameNight_rotation"] or 0
@@ -280,6 +287,8 @@ function deckActionHandler.tapCard(deckItem, player)
     gamePieceAndBoardHandler.playSound(deckItem, player)
     gamePieceAndBoardHandler.pickupAndPlaceGamePiece(player, deckItem, {gamePieceAndBoardHandler.setModDataValue, deckItem, "gameNight_rotation", state})
 end
+
+
 
 
 --[[
