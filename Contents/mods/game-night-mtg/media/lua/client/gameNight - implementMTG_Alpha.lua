@@ -271,7 +271,7 @@ function applyItemDetails.applyCardForMTG(item)
 
     local applyBoosters = item:getModData()["gameNight_specialOnCardApplyBoosters"]
     if applyBoosters then
-        item:getModData()["gameNight_specialOnCardApplyBoosters"] = 0
+        item:getModData()["gameNight_specialOnCardApplyBoosters"] = nil
         applyItemDetails.applyBoostersToCards(item, applyBoosters)
         return
     end
