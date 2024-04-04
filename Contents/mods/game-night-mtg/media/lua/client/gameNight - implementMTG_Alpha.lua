@@ -297,7 +297,7 @@ end
 local function buildDeck()
     local uniqueDeck = {}
 
-    -- TODO: Still need to figure out how to include artifacts in decks
+    -- TODO: artifact inclusion could be fancier. Like instead of a fixed 6, it could a range like 4-8 and the main cards account for that variable range so the deck is still 60 cards
 
     local randArchetype = ZombRand(1, #deckArchetypesList)
     local selectedDeck = deckArchetypesList[randArchetype]
