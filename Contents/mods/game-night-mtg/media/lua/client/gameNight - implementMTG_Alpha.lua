@@ -633,29 +633,3 @@ local function buildDeck()
     end
 end
 --]]
-
--- TODO: connect to applyGameNightToItem? Not sure how to do this
---cards = uniqueDeck
---deck = uniqueDeck
-
---[[
--- TODO SPECIAL CONTEXT MENU FUNCTION : Tapping (turning card sideways)
-local deckActionHandler = require "gameNight - deckActionHandler"
-local gamePieceAndBoardHandler = require "gameNight - gamePieceAndBoardHandler"
-local gameNightPieceContextMenu = require "gameNight - gamePeiceAndBoardHandler"
---]]
-
---[[
-function deckActionHandler.onTapCard(deckItem)
-    local deckStates = deckActionHandler.getDeckStates(deckItem)
-    if deckStates then
-        local tap = context:addOptionOnTop(getText("IGUI_tapCard"), deckItem, deckActionHandler.tapCard, playerObj)
-        tap.iconTexture = gamePieceContext.gameNightContextMenuIcon.tap
-
-        local current = deckItem:getModData()["gameNight_rotation"] or 0
-        local state = (current+90) % 360 or current
-
-        gamePieceAndBoardHandler.setModDataValue(deckItem, "gameNight_rotation", state)
-    end
-end
---]]
