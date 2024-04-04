@@ -268,6 +268,14 @@ end
 function applyItemDetails.applyCardForMTG(item)
     ---This spawns 1 single MTG card with appropriate chance %
     --oops
+
+    local applyBoosters = item:getModData()["gameNight_specialOnCardApplyBoosters"]
+    if applyBoosters then
+        item:getModData()["gameNight_specialOnCardApplyBoosters"] = 0
+        applyItemDetails.applyBoostersToCards(item, applyBoosters)
+        return
+    end
+
     item:getModData()["gameNight_cardAltNames"] = nil
     if not item:getModData()["gameNight_cardDeck"] then
         local rarity = applyItemDetails.MTG.probableRarity()

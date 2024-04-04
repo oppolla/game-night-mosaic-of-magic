@@ -20,7 +20,7 @@ module Base
     item mtgBoosterPack
     {
         DisplayCategory = GameBox, WeightReduction = 20, Weight = 0.1, Type = Normal, Capacity = 2,
-        DisplayName = Magic the Gathering Box (Sealed),
+        DisplayName = Magic the Gathering Booster Pack,
 
         Icon = Boxes/MTGBoosterPack, WorldStaticModel = MTG_Booster,
     }
