@@ -150,13 +150,14 @@ for set,cards in pairs(MTG.alphaCards) do
         local cardID = "MTG Alpha "..set.." "..i
         MTG.altNames[cardID] = card
 
-        local keyed
+        local keyed = false
         for rarity,data in pairs(MTG.colorCodedRarity) do
             if not keyed then
                 for n,c in pairs(MTG["alpha"..rarity]) do
-                    if c == cardID then
+                    if c == (set.." "..i) then
                         MTG.colorCodedRarity[rarity][set] = MTG.colorCodedRarity[rarity][set] or {}
                         table.insert(MTG.colorCodedRarity[rarity][set], c)
+                        keyed = true
                     end
                 end
             end
