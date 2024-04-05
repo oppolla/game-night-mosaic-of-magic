@@ -324,7 +324,7 @@ function MTG.buildDeck(archetype)
     local cards = {}
 
     archetype = archetype or applyItemDetails.MTG.weighedProbability(
-            {White=4, Black=4, Green=4, Blue=4, Red=4,
+            {White=8, Black=8, Green=8, Blue=8, Red=8,
              Azorius=1, Dimir=1, Rakdos=1, Gruul=1, Selesnya=1, Orzhov=1, Izzet=1, Golgari=1, Boros=1, Simic=1
             })
 
