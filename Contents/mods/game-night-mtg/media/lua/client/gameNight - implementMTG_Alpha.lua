@@ -4,7 +4,7 @@ local gamePieceAndBoardHandler = applyItemDetails.gamePieceAndBoardHandler
 
 local MTG = {}
 
-MTG.alpha = { --"MTG Alpha "
+MTG.alphaCards = { --"MTG Alpha "
 
     ["Artifacts"] = {
         "Juggernaut", "Gauntlet of Might", "Glasses of Urza", "Jayemdae Tome", "Disrupting Scepter",
@@ -96,16 +96,6 @@ MTG.alpha = { --"MTG Alpha "
 
 MTG.catalogue = {}
 MTG.altNames = {}
---- Build entire catalogue as a deck
-for set,cards in pairs(MTG.alpha) do
-    for i,card in pairs(cards) do
-        local cardID = "MTG Alpha "..set.." "..i
-        MTG.altNames[cardID] = card
-        table.insert(MTG.catalogue, cardID)
-    end
-end
-deckActionHandler.addDeck("mtgCards", MTG.catalogue, MTG.altNames)
-
 
 MTG.alphaRare = {
     "Artifacts 2", "Artifacts 5", "Artifacts 8", "Artifacts 11", "Artifacts 16", "Artifacts 17", "Artifacts 18",
@@ -152,42 +142,33 @@ MTG.alphaLand = {
 }
 
 
-local deckArchetypesList = {
-    -- mono decks
-    "White", "Black", "Green", "Blue", "Red",
+MTG.colorCodedRarity = {Land={}, Common={}, Uncommon={}, Rare={}}
 
-    -- duo decks
-    "Azorius", --White/Blue
-    "Dimir", --Blue/Black
-    "Rakdos", --Black/Red
-    "Gruul", --Red/Green
-    "Selesnya", --White/Green
-    "Orzhov", --White/Black
-    "Izzet", --Blue/Red
-    "Golgari", --Black/Green
-    "Boros", --Red/White
-    "Simic", --Blue/Green
+--- Build entire catalogue as a deck
+for set,cards in pairs(MTG.alphaCards) do
+    for i,card in pairs(cards) do
+        local cardID = "MTG Alpha "..set.." "..i
+        MTG.altNames[cardID] = card
 
-    --- "AlphaStarterPack", -- 45 commons, 12 uncommon, 3 rares -- 60 cards
+        local keyed
+        for rarity,data in pairs(MTG.colorCodedRarity) do
+            if not keyed then
+                for n,c in pairs(MTG.alpha["rarity"]) do
+                    if c == cardID then
+                        MTG.colorCodedRarity[rarity][set] = MTG.colorCodedRarity[rarity][set] or {}
+                        table.insert(MTG.colorCodedRarity[rarity][set], c)
+                    end
+                end
+            end
+        end
 
-    -- tri decks -- future option? too complex?
-    --"Bant", --White/Blue/Green
-    --"Esper", --White/Blue/Black
-    --"Grixis", --Blue/Black/Red
-    --"Jund", --Black/Red/Green
-    --"Naya", --White/Red/Green
-    --"Abzan", --White/Black/Green
-    --"Jeskai", --White/Blue/Red
-    --"Sultai", --Blue/Black/Green
-    --"Mardu", --White/Black/Red
-    --"Temur", --Blue/Red/Green
-    }
-
-
+        table.insert(MTG.catalogue, cardID)
+    end
+end
+deckActionHandler.addDeck("mtgCards", MTG.catalogue, MTG.altNames)
 
 
 applyItemDetails.MTG = {}
-
 
 function applyItemDetails.MTG.rollLand(rarity)
     --The chance of getting a basic land instead of another card is approximately:
@@ -199,20 +180,26 @@ function applyItemDetails.MTG.rollLand(rarity)
     return false
 end
 
-function applyItemDetails.MTG.probableRarity()
-    local rarities = { Common = 11, Uncommon = 3, Rare = 1}
-    local totalWeight = 0
-    for rarity, weight in pairs(rarities) do totalWeight = totalWeight + weight end
 
+function applyItemDetails.MTG.weighedProbability(outcomesAndWeights)
+    local totalWeight = 0
+    for outcome, weight in pairs(outcomesAndWeights) do totalWeight = totalWeight + weight end
     local randomNumber = ZombRand(totalWeight)+1
     local cumulativeWeight = 0
-    for rarity, weight in pairs(rarities) do
+    for outcome, weight in pairs(outcomesAndWeights) do
         cumulativeWeight = cumulativeWeight + weight
         if randomNumber <= cumulativeWeight then
-            return rarity
+            return outcome
         end
     end
 end
+
+
+function applyItemDetails.MTG.rollCardOfParticularColor(rarity, set)
+    local cardPool = MTG.colorCodedRarity[rarity][set]
+    return ("MTG Alpha "..cardPool[ZombRand(#cardPool)+1])
+end
+
 
 function applyItemDetails.MTG.rollCard(rarity)
     --roll for land first
@@ -232,7 +219,7 @@ end
 
 
 
-function applyItemDetails.MTG.unpackBooster(cards, altNames)
+function applyItemDetails.MTG.unpackBooster(cards)
     -- 11 common, 3 uncommon, 1 rare -- 15
 
     for i=1, 11 do
@@ -250,15 +237,15 @@ function applyItemDetails.MTG.unpackBooster(cards, altNames)
         table.insert(cards, card)
     end
 
-    return cards, altNames
+    return cards
 end
 
 
 function applyItemDetails.applyBoostersToCards(item, n)
     item:getModData()["gameNight_cardAltNames"] = nil
-    local cards, altNames = {}, {}
+    local cards = {}
     n = n or 1
-    for i=1, n do applyItemDetails.MTG.unpackBooster(cards, altNames) end
+    for i=1, n do applyItemDetails.MTG.unpackBooster(cards) end
     item:getModData()["gameNight_cardDeck"] = cards
     item:getModData()["gameNight_cardFlipped"] = {}
     for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
@@ -266,10 +253,8 @@ end
 
 
 function applyItemDetails.applyCardForMTG(item)
-    ---This spawns 1 single MTG card with appropriate chance %
-    --oops
-
     local applyBoosters = item:getModData()["gameNight_specialOnCardApplyBoosters"]
+    --- recipe sets this modData to the resulting item, 1 booster = 15 cards, 4 = 60.
     if applyBoosters then
         item:getModData()["gameNight_specialOnCardApplyBoosters"] = nil
         applyItemDetails.applyBoostersToCards(item, applyBoosters)
@@ -278,15 +263,16 @@ function applyItemDetails.applyCardForMTG(item)
 
     item:getModData()["gameNight_cardAltNames"] = nil
     if not item:getModData()["gameNight_cardDeck"] then
-        local rarity = applyItemDetails.MTG.probableRarity()
-        local card = applyItemDetails.MTG.rollCard(rarity)
-        item:getModData()["gameNight_cardDeck"] = {card}
-        item:getModData()["gameNight_cardFlipped"] = {true}
+        local cards = MTG.buildDeck()
+        item:getModData()["gameNight_cardDeck"] = cards
+        item:getModData()["gameNight_cardFlipped"] = {}
+        for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
     end
 end
 
 
 gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { actions = { tapCard=true, examineCard=true}, examineScale = 0.75, applyCards = "applyCardForMTG", textureSize = {100,140} })
+
 
 function deckActionHandler.tapCard(deckItem, player)
     local current = deckItem:getModData()["gameNight_rotation"] or 0
@@ -297,356 +283,78 @@ function deckActionHandler.tapCard(deckItem, player)
 end
 
 
+MTG.deckArchetypesList = {
+    --- 5 mono decks
+    White = {"White"},
+    Black = {"Black"},
+    Green = {"Green"},
+    Blue = {"Blue"},
+    Red = {"Red"},
 
+    --- 10 duo decks
+    Azorius = {"White", "Blue"},
+    Dimir = {"Blue", "Black"},
+    Rakdos = {"Black", "Red"},
+    Gruul = {"Red", "Green"},
+    Selesnya = {"White", "Green"},
+    Orzhov = {"White", "Black"},
+    Izzet = {"Blue", "Red"},
+    Golgari = {"Black", "Green"},
+    Boros = {"Red", "White"},
+    Simic = {"Blue", "Green"},
 
---[[
+    --[[
+    -- tri decks -- future option? too complex?
+    "Bant", --White/Blue/Green
+    "Esper", --White/Blue/Black
+    "Grixis", --Blue/Black/Red
+    "Jund", --Black/Red/Green
+    "Naya", --White/Red/Green
+    "Abzan", --White/Black/Green
+    "Jeskai", --White/Blue/Red
+    "Sultai", --Blue/Black/Green
+    "Mardu", --White/Black/Red
+    "Temur", --Blue/Red/Green
+    --]]
+}
 
--- deck pre-construct shuffler
-local function shuffle(tbl)
-    for i = #tbl, 2, -1 do
-        local j = ZombRand(i)
-        tbl[i], tbl[j] = tbl[j], tbl[i]
+function MTG.buildDeck(archetype)
+
+    local cards = {}
+
+    archetype = archetype or applyItemDetails.MTG.weighedProbability(
+            {White=4, Black=4, Green=4, Blue=4, Red=4,
+             Azorius=1, Dimir=1, Rakdos=1, Gruul=1, Selesnya=1, Orzhov=1, Izzet=1, Golgari=1, Boros=1, Simic=1
+            })
+
+    local deckSize = ZombRand(55,66)
+
+    local colors = MTG.deckArchetypesList[archetype]
+
+    --avg goal of 6 artifacts
+    --11 instead of 10 skews the average lower
+    local artifactGoal = math.floor(deckSize/11)+ZombRand(3) -- 0 to 2 additional
+    for i=1, artifactGoal do
+        local rarity = applyItemDetails.MTG.weighedProbability({ Uncommon = 3, Rare = 1})
+        local card = applyItemDetails.MTG.rollCardOfParticularColor(rarity, "Artifacts")
+        table.insert(cards, card)
     end
-    return tbl
-end
 
-
-local function buildDeck()
-    local uniqueDeck = {}
-
-    -- TODO: artifact inclusion could be fancier. Like instead of a fixed 6, it could a range like 4-8 and the main cards account for that variable range so the deck is still 60 cards
-
-    local randArchetype = ZombRand(1, #deckArchetypesList)
-    local selectedDeck = deckArchetypesList[randArchetype]
-
-    if selectedDeck == "White" then
-        shuffle(alphaWhiteLand)
-        for i = 1, 24 do
-            table.insert(uniqueDeck, alphaWhiteLand[i])
-        end
-        shuffle(alphaWhite)
-        for i = 1, 30 do
-            table.insert(uniqueDeck, alphaWhite[i])
-        end
-         shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "Black" then
-        shuffle(alphaBlackLand)
-        for i = 1, 24 do
-            table.insert(uniqueDeck, alphaBlackLand[i])
-        end
-        shuffle(alphaBlack)
-        for i = 1, 30 do
-            table.insert(uniqueDeck, alphaBlack[i])
-        end
-        shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "Green" then
-        shuffle(alphaGreenLand)
-        for i = 1, 24 do
-            table.insert(uniqueDeck, alphaGreenLand[i])
-        end
-        shuffle(alphaGreen)
-        for i = 1, 30 do
-            table.insert(uniqueDeck, alphaGreen[i])
-        end
-        shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "Blue" then
-        shuffle(alphaBlackLand)
-        for i = 1, 24 do
-            table.insert(uniqueDeck, alphaBlackLand[i])
-        end
-        shuffle(alphaBlack)
-        for i = 1, 30 do
-            table.insert(uniqueDeck, alphaBlack[i])
-        end
-        shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "Red" then
-        shuffle(alphaRedLand)
-        for i = 1, 24 do
-            table.insert(uniqueDeck, alphaRedLand[i])
-        end
-        shuffle(alphaRed)
-        for i = 1, 30 do
-            table.insert(uniqueDeck, alphaRed[i])
-        end
-        shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "Azorius" then
-        shuffle(alphaWhiteLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaWhiteLand[i])
-        end
-        shuffle(alphaBlueLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaBlueLand[i])
-        end
-        shuffle(alphaBlue)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaBlue[i])
-        end
-        shuffle(alphaWhite)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaWhite[i])
-        end
-        shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "Dimir" then
-        shuffle(alphaBlackLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaBlackLand[i])
-        end
-        shuffle(alphaBlueLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaBlueLand[i])
-        end
-        shuffle(alphaBlue)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaBlue[i])
-        end
-        shuffle(alphaBlack)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaBlack[i])
-        end
-        shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "Rakdos" then
-        shuffle(alphaBlackLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaBlackLand[i])
-        end
-        shuffle(alphaRedLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaRedLand[i])
-        end
-        shuffle(alphaBlack)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaBlack[i])
-        end
-        shuffle(alphaRed)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaRed[i])
-        end
-        shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "Gruul" then
-        shuffle(alphaRedLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaRedLand[i])
-        end
-        shuffle(alphaGreenLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaGreenLand[i])
-        end
-        shuffle(alphaRed)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaRed[i])
-        end
-        shuffle(alphaGreen)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaGreen[i])
-        end
-        shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "Selesnya" then
-        shuffle(alphaWhiteLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaWhiteLand[i])
-        end
-        shuffle(alphaBlueLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaBlueLand[i])
-        end
-        shuffle(alphaWhite)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaWhite[i])
-        end
-        shuffle(alphaWhite)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaWhite[i])
-        end
-        shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "Orzhov" then
-        shuffle(alphaWhiteLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaWhiteLand[i])
-        end
-        shuffle(alphaBlueLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaBlueLand[i])
-        end
-        shuffle(alphaBlue)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaBlue[i])
-        end
-        shuffle(alphaWhite)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaWhite[i])
-        end
-        shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "Izzet" then
-        shuffle(alphaRedLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaRedLand[i])
-        end
-        shuffle(alphaBlueLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaBlueLand[i])
-        end
-        shuffle(alphaBlue)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaBlue[i])
-        end
-        shuffle(alphaRed)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaRed[i])
-        end
-        shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "Golgari" then
-        shuffle(alphaBlackLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaBlackLand[i])
-        end
-        shuffle(alphaGreenLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaGreenLand[i])
-        end
-        shuffle(alphaBlack)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaBlack[i])
-        end
-        shuffle(alphaGreen)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaGreen[i])
-        end
-        shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "Boros" then
-        shuffle(alphaWhiteLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaWhiteLand[i])
-        end
-        shuffle(alphaRedLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaRedLand[i])
-        end
-        shuffle(alphaRed)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaRed[i])
-        end
-        shuffle(alphaWhite)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaWhite[i])
-        end
-        shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "Simic" then
-        shuffle(alphaGreenLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaGreenLand[i])
-        end
-        shuffle(alphaBlueLand)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaBlueLand[i])
-        end
-        shuffle(alphaBlue)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaBlue[i])
-        end
-        shuffle(alphaGreen)
-        for i = 1, 15 do
-            table.insert(uniqueDeck, alphaGreen[i])
-        end
-        shuffle(alphaArtifacts)
-        for i = 1, 6 do
-            table.insert(uniqueDeck, alphaArtifacts[i])
-        end
-
-    elseif selectedDeck == "AlphaBoosterPack" then
-        shuffle(alphaCommons)
-        for i = 1, 10 do
-            table.insert(uniqueDeck, alphaCommons[i])
-        end
-        shuffle(alphaLands)
-        for i = 1, 1 do
-            table.insert(uniqueDeck, alphaLands[i])
-        end
-        shuffle(alphaUncommons)
-        for i = 1, 3 do
-            table.insert(uniqueDeck, alphaUncommons[i])
-        end
-        shuffle(alphaRares)
-        for i = 1, 1 do
-            table.insert(uniqueDeck, alphaRares[i])
-        end
-
-    elseif selectedDeck == "AlphaStarterPack" then
-        shuffle(alphaLands)
-        for i = 1, 22 do
-            table.insert(uniqueDeck, alphaLands[i])
-        end
-        shuffle(alphaCommons)
-        for i = 1, 30 do
-            table.insert(uniqueDeck, alphaCommons[i])
-        end
-        shuffle(alphaUncommons)
-        for i = 1, 12 do
-            table.insert(uniqueDeck, alphaUncommons[i])
-        end
-        shuffle(alphaRares)
-        for i = 1, 2 do
-            table.insert(uniqueDeck, alphaRares[i])
-        end
-
-    else
-        print("Invalid archetype")
+    --avg goal of 24 land
+    local landGoal = math.floor(deckSize/2.5)+ZombRand(4) --0 to 3
+    for i=1, landGoal do
+        local color = colors[ZombRand(#colors)+1]
+        local card = applyItemDetails.MTG.rollCardOfParticularColor("Land", color.." Land")
+        table.insert(cards, card)
     end
+
+    local remainingCount = deckSize - #cards
+    for i=1, remainingCount do
+        local color = colors[ZombRand(#colors)+1]
+        local rarity = applyItemDetails.MTG.weighedProbability({ Common = 11, Uncommon = 3, Rare = 1})
+        local card = applyItemDetails.MTG.rollCardOfParticularColor(rarity, color)
+        table.insert(cards, card)
+    end
+
+    return cards
 end
---]]
