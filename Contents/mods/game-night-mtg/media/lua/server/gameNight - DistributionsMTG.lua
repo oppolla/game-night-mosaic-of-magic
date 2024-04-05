@@ -35,5 +35,7 @@ gameNightDistro.proceduralDistGameNight.itemsToAdd["mtgCards"] = {
         ["Gifts"]=0,
         ["GigamartToys"]=0,
         ["HolidayStuff"]=0,
+        ["SchoolLockers"] = 1.5,
+        ["ClassroomDesk"] = 1.5,
     }
 }
