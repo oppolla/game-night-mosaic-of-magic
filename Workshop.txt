@@ -1,5 +1,13 @@
 version=1
 title=Game Night: Magic The Gathering
-description=Simple strategies... Infinite possibilities.
-tags=Items
-visibility=unlisted
+description=[h2]Add-On for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3058279917]GameNight[/url].[/h2]
+description=[h3]Simple strategies... Infinite possibilities.[/h3]
+description=
+description=[url=https://discord.gg/SReMnbV4V7][img]https://raw.githubusercontent.com/Chuckleberry-Finn/chuckImages/main/PZmodCommBanner2.png[/img][/url]
+description=
+description=
+description=description=[i][b]Magic: The Gathering[/b] is a registered trademark of Wizards of the Coast LLC, a subsidiary of Hasbro, Inc. All Rights Reserved.[/i]
+description=
+description=[h3]Copyright 2024 Oppolla and Chuckleberry Finn. This item is not authorized for posting on Steam, except under the Steam account(s) named Oppolla and Chuckleberry Finn.[/h3]
+tags=Build 41;Multiplayer;Pop Culture;Silly/Fun
+visibility=public
