@@ -304,19 +304,18 @@ MTG.deckArchetypesList = {
     Boros = {"Red", "White"},
     Simic = {"Blue", "Green"},
 
-    --[[
-    -- tri decks -- future option? too complex?
-    "Bant", --White/Blue/Green
-    "Esper", --White/Blue/Black
-    "Grixis", --Blue/Black/Red
-    "Jund", --Black/Red/Green
-    "Naya", --White/Red/Green
-    "Abzan", --White/Black/Green
-    "Jeskai", --White/Blue/Red
-    "Sultai", --Blue/Black/Green
-    "Mardu", --White/Black/Red
-    "Temur", --Blue/Red/Green
-    --]]
+    --- 10 trio decks
+    Bant = {"White", "Blue", "Green"},
+    Esper = {"White", "Blue", "Black"},
+    Grixis = {"Blue", "Black", "Red"},
+    Jund = {"Black", "Red", "Green"},
+    Naya = {"White", "Red", "Green"},
+    Abzan = {"White", "Black", "Green"},
+    Jeskai = {"White", "Blue", "Red"},
+    Sultai = {"Blue", "Black", "Green"},
+    Mardu = {"White", "Black", "Red"},
+    Temur = {"Blue", "Red", "Green"}
+
 }
 
 function MTG.buildDeck(archetype)
@@ -324,8 +323,9 @@ function MTG.buildDeck(archetype)
     local cards = {}
 
     archetype = archetype or applyItemDetails.MTG.weighedProbability(
-            {White=8, Black=8, Green=8, Blue=8, Red=8,
-             Azorius=1, Dimir=1, Rakdos=1, Gruul=1, Selesnya=1, Orzhov=1, Izzet=1, Golgari=1, Boros=1, Simic=1
+            {White=4, Black=4, Green=4, Blue=4, Red=4,
+             Azorius=8, Dimir=8, Rakdos=8, Gruul=8, Selesnya=8, Orzhov=8, Izzet=8, Golgari=8, Boros=8, Simic=8,
+             Bant = 1, Esper = 1, Grixis = 1, Jund = 1, Naya = 1, Abzan = 1, Jeskai = 1, Sultai = 1, Mardu = 1, Temur = 1
             })
 
     local deckSize = ZombRand(55,66)
