@@ -3,37 +3,34 @@ require "Items/SuburbsDistributions"
 local gameNightDistro = require "gameNight - Distributions"
 
 gameNightDistro.proceduralDistGameNight.itemsToAdd["mtgStarterKit"] = {
-    chanceFactor = 0.5,
     perDistFactor = {
-        ["ClassroomDesk"] = 0.001,
-        ["BedroomDresser"] = 0.001,
-        ["ClassroomMisc"] = 0.001,
-        ["SchoolLockers"] = 0.001,
+        ["ClassroomDesk"] = 0.01,
+        ["BedroomDresser"] = 0.01,
+        ["ClassroomMisc"] = 0.01,
+        ["SchoolLockers"] = 0.01,
         ["OfficeDeskHome"]=0,
         ["BarCounterMisc"]=0,
-        ["Hobbies"]=0.001,
-        ["WardrobeChild"]=0.001,
-        ["CrateRandomJunk"]=0.001,
+        ["Hobbies"]=0.01,
+        ["WardrobeChild"]=0.01,
+        ["CrateRandomJunk"]=0.01,
     }
 }
 
 gameNightDistro.proceduralDistGameNight.itemsToAdd["mtgBoosterPack"] = {
-    chanceFactor = 0.5,
     perDistFactor = {
-        ["ClassroomDesk"] = 0.001,
-        ["BedroomDresser"] = 0.001,
-        ["ClassroomMisc"] = 0.001,
-        ["SchoolLockers"] = 0.001,
+        ["ClassroomDesk"] = 0.01,
+        ["BedroomDresser"] = 0.01,
+        ["ClassroomMisc"] = 0.01,
+        ["SchoolLockers"] = 0.01,
         ["OfficeDeskHome"]=0,
         ["BarCounterMisc"]=0,
-        ["Hobbies"]=0.001,
-        ["WardrobeChild"]=0.001,
-        ["CrateRandomJunk"]=0.001,
+        ["Hobbies"]=0.01,
+        ["WardrobeChild"]=0.01,
+        ["CrateRandomJunk"]=0.01,
     }
 }
 
 gameNightDistro.proceduralDistGameNight.itemsToAdd["mtgCards"] = {
-    chanceFactor = 0.5,
     perDistFactor = {
         ["Gifts"]=0,
         ["GigamartToys"]=0,
