@@ -272,7 +272,7 @@ function applyItemDetails.applyCardForMTG(item)
 end
 
 
-gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { actions = { tapCard=true, examineCard=true}, examineScale = 0.75, applyCards = "applyCardForMTG", textureSize = {100,140} })
+gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { shiftAction = "tapCard", actions = { tapCard=true, examineCard=true}, examineScale = 0.75, applyCards = "applyCardForMTG", textureSize = {100,140} })
 
 
 function deckActionHandler.tapCard(deckItem, player)
