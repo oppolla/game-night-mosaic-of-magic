@@ -274,6 +274,8 @@ end
 
 gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { shiftAction = "tapCard", actions = { drawCards=7, tapCard=true, examineCard=true}, examineScale = 0.75, applyCards = "applyCardForMTG", textureSize = {100,140} })
 
+
+function deckActionHandler.tapCard_isValid(deckItem, player) if deckItem and deckItem:getWorldItem() then return true end end
 function deckActionHandler.tapCard(deckItem, player)
     local current = deckItem:getModData()["gameNight_rotation"] or 0
     local state = current == 90 and 0 or 90
