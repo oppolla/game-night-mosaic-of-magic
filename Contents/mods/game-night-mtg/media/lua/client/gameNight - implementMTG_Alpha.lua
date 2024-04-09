@@ -272,13 +272,20 @@ function applyItemDetails.applyCardForMTG(item)
 end
 
 
-gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { shiftAction = "tapCard", actions = { drawCards=7, tapCard=true, examineCard=true}, examineScale = 0.75, applyCards = "applyCardForMTG", textureSize = {100,140} })
+gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { shiftAction = "tapCard", actions = { drawCards=7, unTapCard=true, tapCard=true, examineCard=true}, examineScale = 0.75, applyCards = "applyCardForMTG", textureSize = {100,140} })
 
 
+function deckActionHandler.tapCard_isValid(deckItem, player) return ((deckItem:getModData()["gameNight_rotation"] or 0) ~= 90) end
 function deckActionHandler.tapCard(deckItem, player)
-    local current = deckItem:getModData()["gameNight_rotation"] or 0
-    local state = current == 90 and 0 or 90
+    local state = 90
+    gamePieceAndBoardHandler.playSound(deckItem, player)
+    gamePieceAndBoardHandler.pickupAndPlaceGamePiece(player, deckItem, {gamePieceAndBoardHandler.setModDataValue, deckItem, "gameNight_rotation", state})
+end
 
+
+function deckActionHandler.unTapCard_isValid(deckItem, player) return ((deckItem:getModData()["gameNight_rotation"] or 0) == 90) end
+function deckActionHandler.unTapCard(deckItem, player)
+    local state = 0
     gamePieceAndBoardHandler.playSound(deckItem, player)
     gamePieceAndBoardHandler.pickupAndPlaceGamePiece(player, deckItem, {gamePieceAndBoardHandler.setModDataValue, deckItem, "gameNight_rotation", state})
 end
