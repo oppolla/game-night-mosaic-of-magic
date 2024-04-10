@@ -3,7 +3,7 @@ module Base
 
     item mtgStarterKit
     {
-        DisplayCategory = GameBox, WeightReduction = 20, Weight = 0.1, Type = Normal, Capacity = 2,
+        DisplayCategory = GameBox, Weight = 0.1, Type = Normal,
         DisplayName = Magic the Gathering Starter Kit,
 
         Icon = Boxes/MTGStarterBox, WorldStaticModel = MTG_StarterBox,
@@ -11,7 +11,7 @@ module Base
 
     item mtgBoosterPack
     {
-        DisplayCategory = GameBox, WeightReduction = 20, Weight = 0.1, Type = Normal, Capacity = 2,
+        DisplayCategory = GameBox, Weight = 0.1, Type = Normal,
         DisplayName = Magic the Gathering Booster Pack,
 
         Icon = Boxes/MTGBoosterPack, WorldStaticModel = MTG_Booster,
