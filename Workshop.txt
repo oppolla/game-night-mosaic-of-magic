@@ -4,6 +4,12 @@ title=Game Night: Magic The Gathering
 description=[h2]Add-On for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3058279917]GameNight[/url].[/h2]
 description=[h3]Simple strategies... Infinite possibilities.[/h3]
 description=
+description=Features the complete Alpha set of Magic: The Gathering, released in 1993, including booster packs and starter sets with accurate rarity distribution!
+description=
+description=Explore the world, find cards, build your deck, and battle other wizards. Just remember to wash yourself every once in a while ;)
+description=
+description=This add-on can be easily expanded to include any MTG set you desire. The guide for how to add your own sets can be found on the project GitHub page.
+description=
 description=[url=https://discord.gg/SReMnbV4V7][img]https://raw.githubusercontent.com/Chuckleberry-Finn/chuckImages/main/PZmodCommBanner2.png[/img][/url]
 description=
 description=[url=https://github.com/Chuckleberry-Finn/game-night][img]https://raw.githubusercontent.com/Chuckleberry-Finn/game-night/main/images/addOnGuideBanner.png[/img][/url]
