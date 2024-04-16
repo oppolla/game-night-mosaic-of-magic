@@ -43,7 +43,7 @@ MTG.alphaCards = { --"MTG Alpha "
     ["Green"] = {
         "Aspect of Wolf", "Wild Growth", "Ley Druid", "Thicket Basilisk", "Gaea's Liege", "Lifeforce",
         "Berserk", "Llanowar Elves", "Fog", "Grizzly Bears", "Wall of Ice", "Living Artifact", "War Mammoth",
-        "Channel", "Craw Wurm", "Timber Wolves", "Regrowth", "Ironroot Treefolk", "Regenreation", "Kudzu",
+        "Channel", "Craw Wurm", "Timber Wolves", "Regrowth", "Ironroot Treefolk", "Regeneration", "Kudzu",
         "Wall of Brambles", "Stream of Life", "Natural Selection", "Fastbond", "Verduran Enchantress",
         "Tsunami", "Cockatrice", "Ice Storm", "Wall of Wood", "Shanodin Dryads", "Living Lands", "Giant Spider",
         "Tranquility", "Scryb Sprites", "Instill Energy", "Fungusaur", "Birds of Paradise", "Hurricane",
