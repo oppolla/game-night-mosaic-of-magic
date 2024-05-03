@@ -242,7 +242,7 @@ function applyItemDetails.MTG.unpackBooster(cards)
 end
 
 
-function applyItemDetails.applyBoostersToCards(item, n)
+function applyItemDetails.applyBoostersToMTGCards(item, n)
     item:getModData()["gameNight_cardAltNames"] = nil
     local cards = {}
     n = n or 1
@@ -258,7 +258,7 @@ function applyItemDetails.applyCardForMTG(item)
     --- recipe sets this modData to the resulting item, 1 booster = 15 cards, 4 = 60.
     if applyBoosters then
         item:getModData()["gameNight_specialOnCardApplyBoosters"] = nil
-        applyItemDetails.applyBoostersToCards(item, applyBoosters)
+        applyItemDetails.applyBoostersToMTGCards(item, applyBoosters)
         return
     end
 
