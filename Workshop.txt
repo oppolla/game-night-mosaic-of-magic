@@ -1,12 +1,12 @@
 version=1
 id=3222961867
-title=Game Night: Magic The Gathering [Unofficial]
+title=Game Night: MTG [Unofficial]
 description=[h2]Add-On for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3058279917]GameNight[/url].[/h2]
 description=[h3]Simple strategies... Infinite possibilities.[/h3]
 description=
 description=This Fan Content project can be accessed, for free, here: [i]https://github.com/oppolla/game-night-magic-the-gathering[/i]
 description=
-description=Features [url=https://company.wizards.com]Wizard[/url]'s Magic: The Gathering, released in 1993, including complete alpha set, booster packs, starter sets with accurate rarity distribution!
+description=Features [url=https://company.wizards.com]Wizard[/url]'s Magic: The Gathering, released in 1993, includes complete alpha set, booster packs, starter sets with accurate rarity distribution for your collecting pleasure!
 description=
 description=Explore the world, find cards, build your deck, and battle other wizards. Just remember to wash yourself every once in a while ;)
 description=
@@ -19,7 +19,7 @@ description=
 description=[i][b]Magic: The Gathering[/b] is a registered trademark of Wizards of the Coast LLC, a subsidiary of Hasbro, Inc. All Rights Reserved.[/i]
 description=[i]Card scans courtesy of: www.scryfall.com[/i]
 description=
-description=[h3][i]Game Night: Magic The Gathering [Unofficial][/i] is unofficial [i]Fan Content[/i] permitted under the [url=https://company.wizards.com/en/legal/fancontentpolicy]Fan Content Policy[/url]. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.[/h3]
+description=[h3][i]Game Night: MTG [Unofficial][/i] is unofficial [i]Fan Content[/i] permitted under the [url=https://company.wizards.com/en/legal/fancontentpolicy]Fan Content Policy[/url]. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.[/h3]
 description=
 description=[h3]The remainder of the content is Copyright 2024 Oppolla and Chuckleberry Finn. This item is not authorized for posting on Steam, except under the Steam account(s) named Oppolla and Chuckleberry Finn.[/h3]
 tags=Build 41;Multiplayer;Pop Culture;Silly/Fun
