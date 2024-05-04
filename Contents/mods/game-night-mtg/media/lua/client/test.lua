@@ -198,9 +198,9 @@ Magical Hack; {U}; Quick-Chant;; Change the text of target spell or permanent by
 Mahamoti Djinn; {4}{U}{U}; Being - Djinn;; Flying.; 5/6;@
 Mana Short; {2}{U}; Quick-Chant;; Tap all Domains target player controls and that player loses all unspent mana.;;@
 Merfolk of the Pearl Trident; {U}; Being - Merfolk;;; 1/1;@
-Phantasmal Forces; {3}{U}; Being - Illusion;; Flying; At the beginning of your upkeep, sacrifice Phantasmal Forces unless you pay {U}.; 4/1;@
-Phantasmal Terrain; {U}{U}; Empower - Aura;; Enchant Domain; As Phantasmal Terrain enters the battlefield, choose a basic Domain type.; Empowered Domain is the chosen type.;;@
-Phantom Monster; {3}{U}; Being - Illusion;; Flying; 3/3;@
+Phantasmal Forces; {3}{U}; Being - Illusion; Flying; At the beginning of your upkeep, sacrifice Phantasmal Forces unless you pay {U}.; 4/1;@
+Phantasmal Terrain; {U}{U}; Empower - Aura; Enchant Domain; As Phantasmal Terrain enters the battlefield, choose a basic Domain type.; Empowered Domain is the chosen type.;;@
+Phantom Monster; {3}{U}; Being - Illusion; Flying;; 3/3;@
 Pirate Ship; {4}{U}; Being - Human Pirate;; Pirate Ship can not attack unless defending player controls an Island. {T}: Pirate Ship deals 1 damage to any target.; When you control no Islands, sacrifice Pirate Ship.; 4/3;@
 Power Leak; {1}{U}; Empower: Empower: Any;; At the beginning of the upkeep of Empowered Empower’s controller, that player may pay any amount of mana. Power Leak deals 2 damage to that player. Prevent X of that damage, where X is the amount of mana that player paid this way.;;@
 Power Sink; {X}{U}; Quick-Chant;; Counter target spell unless its controller pays {X}. If that player does not, they tap all Domains with mana abilities they control and lose all unspent mana.;;@
@@ -223,7 +223,7 @@ Volcanic Eruption; {X}{U}{U}{U}; Incantation;; Destroy X target Mountains. Volca
 Wall of Air; {1}{U}{U}; Being - Wall; Defender, Flying;; 1/5;@
 Wall of Water; {1}{U}{U}; Being - Wall; Defender; {U}: Wall of Water gets +1/+0 until end of turn.; 0/5;@
 Water Elemental; {3}{U}{U}; Being - Elemental;;; 5/4;@
-Animate Dead; {1}{B}; Empower: Being in a Discard-Pile;; When Animate Dead enters the battlefield, if it’s on the battlefield, it loses “enchant Being card in a Discard-Pile” and gains “enchant Being put onto the battlefield with Animate Dead.”; Return Empowered Being card to the battlefield under your control and attach Animate Dead to it. When Animate Dead leaves the battlefield, that Being’s controller sacrifices it.; Empowered Being gets -1/-0.;;@
+Animate Dead; {1}{B}; Empower: Being in a Discard-Pile;; When Animate Dead enters the battlefield, if it’s on the battlefield, it loses “enchant Being card in a Discard-Pile” and gains “enchant Being put onto the battlefield with Animate Dead.” Return Empowered Being card to the battlefield under your control and attach Animate Dead to it. When Animate Dead leaves the battlefield, that Being’s controller sacrifices it. Empowered Being gets -1/-0.;;@
 Bad Moon; {1}{B}; Empower: Any;; Black Beings get +1/+1.;;@
 Black Knight; {B}{B}; Being - Human Knight; First Strike; Protection from White.; 2/2;@
 Bog Wraith; {3}{B}; Being - Wraith;; Swamp-Dweller.; 3/3;@
