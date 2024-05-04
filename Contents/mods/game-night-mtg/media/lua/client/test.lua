@@ -4,36 +4,36 @@ Animate Wall; {W}; Enchantment - Aura; Enchant Wall; Enchanted Wall can attack a
 Armageddon; {3}{W}; Sorcery;; Destroy all lands.;;@
 Balance; {1}{W}; Sorcery;; Each player chooses a number of lands they control equal to the number of lands controlled by the player who controls the fewest, then sacrifices the rest. Players discard cards and sacrifice creatures the same way.;;@
 Benalish Hero; {W}; Creature - Human Soldier;; Banding (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature’s combat damage, not its controller, among any of the creatures it’s being blocked by or is blocking.), 1/1;@
-Black Ward; {W}; Enchantment - Aura; Enchant creature; Enchanted creature has protection from black. This effect doesn’t remove Black Ward.;;@
+Black Ward; {W}; Enchantment - Aura; Enchant Creature; Enchanted creature has protection from black. This effect doesn’t remove Black Ward.;;@
 Blaze of Glory; {W}; Instant;; Cast this spell only during combat before blockers are declared. Target creature defending player controls can block any number of creatures this turn. It blocks each attacking creature this turn if able.;;@
-Blessing; {W}{W}; Enchantment - Aura; Enchant creature; {W}: Enchanted creature gets +1/+1 until end of turn.;;@
-Blue Ward; {W}; Enchantment - Aura; Enchant creature; Enchanted creature has protection from blue. This effect doesn’t remove Blue Ward;;@
+Blessing; {W}{W}; Enchantment - Aura; Enchant Creature; {W}: Enchanted creature gets +1/+1 until end of turn.;;@
+Blue Ward; {W}; Enchantment - Aura; Enchant Creature; Enchanted creature has protection from blue. This effect doesn’t remove Blue Ward;;@
 Castle; {3}{W}; Enchantment;; Untapped creatures you control get +0/+2.;;@
 Circle of Protection: Black; {1}{W}; Enchantment;; {1}: The next time a black source of your choice would deal damage to you this turn, prevent that damage.;;@
 Circle of Protection: Blue; {1}{W}; Enchantment;; {1}: The next time a blue source of your choice would deal damage to you this turn, prevent that damage.;;@
 Circle of Protection: Green; {1}{W}; Enchantment;; {1}: The next time a green source of your choice would deal damage to you this turn, prevent that damage.;;@
 Circle of Protection: Red; {1}{W}; Enchantment;; {1}: The next time a red source of your choice would deal damage to you this turn, prevent that damage.;;@
 Circle of Protection: White; {1}{W}; Enchantment;; {1}: The next time a white source of your choice would deal damage to you this turn, prevent that damage.;;@
-Consecrate Land; {W}; Enchantment - Aura; Enchant land; Enchanted land has indestructible and can’t be enchanted by other Auras.;;@
+Consecrate Land; {W}; Enchantment - Aura; Enchant Land; Enchanted land has indestructible and can’t be enchanted by other Auras.;;@
 Conversion; {2}{W}{W}; Enchantment;; At the beginning of your upkeep, sacrifice Conversion unless you pay {W}{W};;@
 Crusade; {W}{W}; Enchantment;; White creatures get +1/+1.;;@
 Death Ward; {W}; Instant;; Regenerate target creature.;;@
 Disenchant; {1}{W}; Instant;; Destroy target artifact or enchantment.;;@
-Farmstead; {W}{W}{W}; Enchantment - Aura; Enchant land; Enchanted land has “At the beginning of your upkeep, you may pay {W}{W}. If you do, you gain 1 life.”;;@
-Green Ward; {W}; Enchantment - Aura; Enchant creature; Enchanted creature has protection from green. This effect doesn’t remove Green Ward;;@
+Farmstead; {W}{W}{W}; Enchantment - Aura; Enchant Land; Enchanted land has “At the beginning of your upkeep, you may pay {W}{W}. If you do, you gain 1 life.”;;@
+Green Ward; {W}; Enchantment - Aura; Enchant Creature; Enchanted creature has protection from green. This effect doesn’t remove Green Ward;;@
 Guardian Angel; {X}{W}; Instant;; Prevent the next X damage that would be dealt to any target this turn. Until end of turn, you may pay {1} any time you could cast an instant. If you do, prevent the next 1 damage that would be dealt to that permanent or player this turn.;;@
 Healing Salve; {W}; Instant;; Choose one: • Target player gains 3 life. • Prevent the next 3 damage that would be dealt to any target this turn.;;@
-Holy Armor; {W}; Enchantment - Aura; Enchant creature; Enchanted creature gets +0/+2., {W}: Enchanted creature gets +0/+1 until end of turn.;;@
-Holy Strength; {W}; Enchantment - Aura; Enchant creature; Enchanted creature gets +1/+2.;;@
+Holy Armor; {W}; Enchantment - Aura; Enchant Creature; Enchanted creature gets +0/+2., {W}: Enchanted creature gets +0/+1 until end of turn.;;@
+Holy Strength; {W}; Enchantment - Aura; Enchant Creature; Enchanted creature gets +1/+2.;;@
 Island Sanctuary; {1}{W}; Enchantment;; If you would draw a card during your draw step, instead you may skip that draw. If you do, until your next turn, you can’t be attacked except by creatures with flying and/or islandwalk.;;@
 Karma; {2}{W}{W}; Enchantment;; At the beginning of each player’s upkeep, Karma deals damage to that player equal to the number of Swamps they control.;;@
-Lance; {W}; Enchantment - Aura; Enchant creature; Enchanted creature has first strike.;;@
+Lance; {W}; Enchantment - Aura; Enchant Creature; Enchanted creature has first strike.;;@
 Mesa Pegasus; {1}{W}; Creature - Pegasus; Flying; banding (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature’s combat damage, not its controller, among any of the creatures it’s being blocked by or is blocking.), 1/1;@
 Northern Paladin; {2}{W}{W}; Creature - Human Knight;; {W}{W}, {T}: Destroy target black permanent.; 3/3;@
 Pearled Unicorn; {2}{W}; Creature - Unicorn;;; 2/2;@
 Personal Incarnation; {3}{W}{W}{W}; Creature - Avatar;; Incarnation, {0}: The next 1 damage that would be dealt to Personal Incarnation this turn is dealt to its owner instead. Only Personal Incarnation’s owner may activate this ability. When Personal Incarnation dies, its owner loses half their life, rounded up.; 6/6;@
 Purelace; {W}; Instant;; Target spell or permanent becomes white. (Mana symbols on that permanent remain unchanged.);;@
-Red Ward; {W}; Enchantment - Aura; Enchant creature; Enchanted creature has protection from red. This effect doesn’t remove Red Ward;;@
+Red Ward; {W}; Enchantment - Aura; Enchant Creature; Enchanted creature has protection from red. This effect doesn’t remove Red Ward;;@
 Resurrection; {2}{W}{W}; Sorcery;; Return target creature card from your graveyard to the battlefield.;;@
 Reverse Damage; {1}{W}{W}; Instant;; The next time a source of your choice would deal damage to you this turn, prevent that damage. You gain life equal to the damage prevented this way.;;@
 Righteousness; {W}; Instant;; Target blocking creature gets +7/+7 until end of turn.;;@
@@ -44,11 +44,11 @@ Swords to Plowshares; {W}; Instant;; Exile target creature. Its controller gains
 Veteran Bodyguard; {3}{W}{W}; Creature - Human; As long as Veteran Bodyguard is untapped, all damage that would be dealt to you by unblocked creatures is dealt to Veteran Bodyguard instead.; 2/5;;@
 Wall of Swords; {3}{W}; Creature - Wall;; Defender (This creature can’t attack.) Flying; 3/5;@
 White Knight; {W}{W}; Creature - Human Knight;; First strike (This creature deals combat damage before creatures without first strike.), Protection from black (This creature can’t be blocked, targeted, dealt damage, or enchanted by anything black.), 2/2,;;@
-White Ward; {W}; Enchantment - Aura; Enchant creature; Enchanted creature has protection from white. This effect doesn’t remove White Ward;;@
+White Ward; {W}; Enchantment - Aura; Enchant Creature; Enchanted creature has protection from white. This effect doesn’t remove White Ward;;@
 Wrath of God; {2}{W}{W}; Sorcery;; Destroy all creatures. They can’t be regenerated.;;@
 Air Elemental; {3}{U}{U}; Creature - Elemental;; Flying; 4/4;@
 Ancestral Recall; {U}; Instant;; Target player draws three cards.;;@
-Animate Artifact; {3}{U}; Enchantment - Aura; Enchant artifact; As long as enchanted artifact isn’t a creature, it’s an artifact creature with power and toughness each equal to its mana value.;;@
+Animate Artifact; {3}{U}; Enchantment - Aura; Enchant Artifact; As long as enchanted artifact isn’t a creature, it’s an artifact creature with power and toughness each equal to its mana value.;;@
 Blue Elemental Blast; {U}; Instant;; Choose one: • Counter target red spell. • Destroy target red permanent.;;@
 Braingeyser; {X}{U}{U}; Sorcery;; Target player draws X cards.;;@
 Roc of Kher Ridges; {3}{R}; Creature - Bird; Flying; 3/3.;;@
@@ -64,7 +64,7 @@ Uthden Troll; {2}{R}; Creature - Troll; {R}: Regenerate Uthden Troll.; 2/2.;;@
 Wall of Fire; {1}{R}{R}; Creature - Wall; Defender (This creature can’t attack.); {R}: Wall of Fire gets +1/+0 until end of turn.; 0/5.;;@
 Wall of Stone; {1}{R}{R}; Creature - Wall; Defender (This creature can’t attack.); 0/8.;;@
 Wheel of Fortune; {2}{R}; Sorcery;; Each player discards their hand, then draws seven cards.;;@
-Aspect of Wolf; {1}{G}; Enchantment - Aura; Enchant creature; Enchanted creature gets +X/+Y, where X is half the number of Forests you control, rounded down, and Y is half the number of Forests you control, rounded up.;;@
+Aspect of Wolf; {1}{G}; Enchantment - Aura; Enchant Creature; Enchanted creature gets +X/+Y, where X is half the number of Forests you control, rounded down, and Y is half the number of Forests you control, rounded up.;;@
 Berserk; {G}; Instant; Cast this spell only before the combat damage step.; Target creature gains trample and gets +X/+0 until end of turn, where X is its power. At the beginning of the next end step, destroy that creature if it attacked this turn.;;@
 Birds of Paradise; {G}; Creature - Bird; Flying; {T}: Add one mana of any color.; 0/1.;;@
 Camouflage; {G}; Instant; Cast this spell only during your declare attackers step.; This turn, instead of declaring blockers, each defending player chooses any number of creatures they control and divides them into a number of piles equal to the number of attacking creatures for whom that player is the defending player. Creatures those players control that can block additional creatures may likewise be put into additional piles. Assign each pile to a different one of those attacking creatures at random. Each creature in a pile that can block the creature that pile is assigned to does so. (Piles can be empty.);;@
@@ -82,18 +82,18 @@ Giant Spider; {3}{G}; Creature - Spider; Reach (This creature can block creature
 Grizzly Bears; {1}{G}; Creature - Bear;; 2/2.;;@
 Hurricane; {X}{G}; Sorcery;; Hurricane deals X damage to each creature with flying and each player.;;@
 Ice Storm; {2}{G}; Sorcery;; Destroy target land.;;@
-Instill Energy; {G}; Enchantment - Aura; Enchant creature; Enchanted creature can attack as though it had haste.; {0}: Untap enchanted creature. Activate only during your turn and only once each turn.;;@
+Instill Energy; {G}; Enchantment - Aura; Enchant Creature; Enchanted creature can attack as though it had haste.; {0}: Untap enchanted creature. Activate only during your turn and only once each turn.;;@
 Ironroot Treefolk; {4}{G}; Creature - Treefolk;; 3/5.;;@
-Kudzu; {1}{G}{G}; Enchantment - Aura; Enchant land; When enchanted land becomes tapped, destroy it. That land’s controller may attach Kudzu to a land of their choice.;;@
+Kudzu; {1}{G}{G}; Enchantment - Aura; Enchant Land; When enchanted land becomes tapped, destroy it. That land’s controller may attach Kudzu to a land of their choice.;;@
 Ley Druid; {2}{G}; Creature - Human Druid; {T}: Untap target land.; 1/1.;;@
 Lifeforce; {G}{G}; Enchantment;; {G}{G}: Counter target black spell.;;@
 Lifelace; {G}; Instant;; Target spell or permanent becomes green. (Mana symbols on that permanent remain unchanged.);;@
-Living Artifact; {G}; Enchantment - Aura; Enchant artifact; Whenever you’re dealt damage, put that many vitality counters on Living Artifact.; At the beginning of your upkeep, you may remove a vitality counter from Living Artifact. If you do, you gain 1 life.;;@
+Living Artifact; {G}; Enchantment - Aura; Enchant Artifact; Whenever you’re dealt damage, put that many vitality counters on Living Artifact.; At the beginning of your upkeep, you may remove a vitality counter from Living Artifact. If you do, you gain 1 life.;;@
 Living Lands; {3}{G}; Enchantment;; All Forests are 1/1 creatures that are still lands.;;@
 Llanowar Elves; {G}; Creature - Elf Druid; {T}: Add {G}.; 1/1.;;@
-Lure; {1}{G}{G}; Enchantment - Aura; Enchant creature; All creatures able to block enchanted creature do so.;;@
+Lure; {1}{G}{G}; Enchantment - Aura; Enchant Creature; All creatures able to block enchanted creature do so.;;@
 Natural Selection; {G}; Instant;; Look at the top three cards of target player’s library, then put them back in any order. You may have that player shuffle.;;@
-Regeneration; {1}{G}; Enchantment - Aura; Enchant creature (Target a creature as you cast this. This card enters the battlefield attached to that creature.); {G}: Regenerate enchanted creature. (The next time that creature would be destroyed this turn, it isn’t. Instead tap it, remove all damage from it, and remove it from combat.);;@
+Regeneration; {1}{G}; Enchantment - Aura; Enchant Creature; (Target a creature as you cast this. This card enters the battlefield attached to that creature.) {G}: Regenerate enchanted creature. (The next time that creature would be destroyed this turn, it isn’t. Instead tap it, remove all damage from it, and remove it from combat.);;@
 Regrowth; {1}{G}; Sorcery;; Return target card from your graveyard to your hand.;;@
 Scryb Sprites; {G}; Creature - Faerie; Flying; 1/1.;;@
 Shanodin Dryads; {G}; Creature - Nymph Dryad; Forestwalk (This creature can’t be blocked as long as defending player controls a Forest.); 1/1.;;@
@@ -106,10 +106,10 @@ Verduran Enchantress; {1}{G}{G}; Creature - Human Druid; Whenever you cast an en
 Wall of Brambles; {2}{G}; Creature - Plant Wall; Defender (This creature can’t attack.); {G}: Regenerate Wall of Brambles.; 2/3.;;@
 Wall of Ice; {2}{G}; Creature - Wall; Defender (This creature can’t attack.); 0/7.;;@
 Wall of Wood; {G}; Creature - Wall; Defender (This creature can’t attack.); 0/3.;;@
-Wanderlust; {2}{G}; Enchantment - Aura; Enchant creature; At the beginning of the upkeep of enchanted creature’s controller, Wanderlust deals 1 damage to that player.;;@
+Wanderlust; {2}{G}; Enchantment - Aura; Enchant Creature; At the beginning of the upkeep of enchanted creature’s controller, Wanderlust deals 1 damage to that player.;;@
 War Mammoth; {3}{G}; Creature - Elephant; Trample; 3/3.;;@
 Web; {G}; Enchantment - Aura; Enchant creature (Target a creature as you cast this. This card enters the battlefield attached to that creature.); Enchanted creature gets +0/+2 and has reach. (It can block creatures with flying.);;@
-Wild Growth; {G}; Enchantment - Aura; Enchant land; Whenever enchanted land is tapped for mana, its controller adds an additional {G}.;;@
+Wild Growth; {G}; Enchantment - Aura; Enchant Land; Whenever enchanted land is tapped for mana, its controller adds an additional {G}.;;@
 Mox Pearl; {0}; Artifact;; {T}: Add {W}.;;@
 Mox Sapphire; {0}; Artifact;; {T}: Add {U}.;;@
 Mox Jet; {0}; Artifact;; {T}: Add {B}.;;@
@@ -181,14 +181,14 @@ Bayou;; Land - Swamp Forest;; ({T}: Add {B} or {G}.);;@
 Plateau;; Land - Mountain Plains;; ({T}: Add {R} or {W}.);;@
 Tropical Island;; Land - Forest Island;; ({T}: Add {G} or {U}.);;@
 Clone; {3}{U}; Creature - Shapeshifter;; You may have Clone enter the battlefield as a copy of any creature on the battlefield.; 0/0;@
-Control Magic; {2}{U}{U}; Enchantment - Aura; Enchant creature; You control enchanted creature.;;@
+Control Magic; {2}{U}{U}; Enchantment - Aura; Enchant Creature; You control enchanted creature.;;@
 Copy Artifact; {1}{U}; Enchantment;; You may have Copy Artifact enter the battlefield as a copy of any artifact on the battlefield, except it’s an enchantment in addition to its other types.;;@
 Counterspell; {U}{U}; Instant;; Counter target spell.;;@
-Creature Bond; {1}{U}; Enchantment - Aura; Enchant creature; When enchanted creature dies, Creature Bond deals damage equal to that creature’s toughness to the creature’s controller.;;@
+Creature Bond; {1}{U}; Enchantment - Aura; Enchant Creature; When enchanted creature dies, Creature Bond deals damage equal to that creature’s toughness to the creature’s controller.;;@
 Drain Power; {U}{U}; Sorcery;; Target player activates a mana ability of each land they control. Then that player loses all unspent mana and you add the mana lost this way.;;@
 Feedback; {2}{U}; Enchantment - Aura; Enchant enchantment; At the beginning of the upkeep of enchanted enchantment’s controller, Feedback deals 1 damage to that player.;;@
-Flight; {U}; Enchantment - Aura; Enchant creature; Enchanted creature has flying.;;@
-Invisibility; {U}{U}; Enchantment - Aura; Enchant creature; Enchanted creature can’t be blocked except by Walls.;;@
+Flight; {U}; Enchantment - Aura; Enchant Creature; Enchanted creature has flying.;;@
+Invisibility; {U}{U}; Enchantment - Aura; Enchant Creature; Enchanted creature can’t be blocked except by Walls.;;@
 Jump; {U}; Instant;; Target creature gains flying until end of turn.;;@
 Lifetap; {U}{U}; Enchantment;; Whenever a Forest an opponent controls becomes tapped, you gain 1 life.;;@
 Lord of Atlantis; {U}{U}; Creature - Merfolk;; Other Merfolk get +1/+1 and have islandwalk. (They can’t be blocked as long as defending player controls an Island.); 2/2;@
@@ -197,20 +197,20 @@ Mahamoti Djinn; {4}{U}{U}; Creature - Djinn;; Flying.; 5/6;@
 Mana Short; {2}{U}; Instant;; Tap all lands target player controls and that player loses all unspent mana.;;@
 Merfolk of the Pearl Trident; {U}; Creature - Merfolk;;; 1/1;@
 Phantasmal Forces; {3}{U}; Creature - Illusion;; Flying; At the beginning of your upkeep, sacrifice Phantasmal Forces unless you pay {U}.; 4/1;@
-Phantasmal Terrain; {U}{U}; Enchantment - Aura;; Enchant land; As Phantasmal Terrain enters the battlefield, choose a basic land type.; Enchanted land is the chosen type.;;@
+Phantasmal Terrain; {U}{U}; Enchantment - Aura;; Enchant Land; As Phantasmal Terrain enters the battlefield, choose a basic land type.; Enchanted land is the chosen type.;;@
 Phantom Monster; {3}{U}; Creature - Illusion;; Flying; 3/3;@
 Pirate Ship; {4}{U}; Creature - Human Pirate; Pirate Ship can’t attack unless defending player controls an Island.; {T}: Pirate Ship deals 1 damage to any target.; When you control no Islands, sacrifice Pirate Ship.; 4/3;@
 Power Leak; {1}{U}; Enchantment - Aura; Enchant enchantment; At the beginning of the upkeep of enchanted enchantment’s controller, that player may pay any amount of mana. Power Leak deals 2 damage to that player. Prevent X of that damage, where X is the amount of mana that player paid this way.;;@
 Power Sink; {X}{U}; Instant;; Counter target spell unless its controller pays {X}. If that player doesn’t, they tap all lands with mana abilities they control and lose all unspent mana.;;@
 Prodigal Sorcerer; {2}{U}; Creature - Human Wizard;; {T}: Prodigal Sorcerer deals 1 damage to any target.; 1/1;@
 Psionic Blast; {2}{U}; Instant;; Psionic Blast deals 4 damage to any target and 2 damage to you.;;@
-Psychic Venom; {1}{U}; Enchantment - Aura; Enchant land; Whenever enchanted land becomes tapped, Psychic Venom deals 2 damage to that land’s controller.;;@
+Psychic Venom; {1}{U}; Enchantment - Aura; Enchant Land; Whenever enchanted land becomes tapped, Psychic Venom deals 2 damage to that land’s controller.;;@
 Sea Serpent; {5}{U}; Creature - Serpent; Sea Serpent can’t attack unless defending player controls an Island.; When you control no Islands, sacrifice Sea Serpent.; 5/5;@
 Siren's Call; {U}; Instant; Cast this spell only during an opponent’s turn, before attackers are declared.; Creatures the active player controls attack this turn if able.; At the beginning of the next end step, destroy all non-Wall creatures that player controls that didn’t attack this turn. Ignore this effect for each creature the player didn’t control continuously since the beginning of the turn.;;@
 Sleight of Mind; {U}; Instant;; Change the text of target spell or permanent by replacing all instances of one color word with another.;;@
 Spell Blast; {X}{U}; Instant;; Counter target spell with mana value X.;;@
 Stasis; {1}{U}; Enchantment; Players skip their untap steps.; At the beginning of your upkeep, sacrifice Stasis unless you pay {U}.;;@
-Steal Artifact; {2}{U}{U}; Enchantment - Aura; Enchant artifact; You control enchanted artifact.;;@
+Steal Artifact; {2}{U}{U}; Enchantment - Aura; Enchant Artifact; You control enchanted artifact.;;@
 Thoughtlace; {U}; Instant;; Target spell or permanent becomes blue.;;@
 Timetwister; {2}{U}; Sorcery; Each player shuffles their hand and graveyard into their library, then draws seven cards.; Then put Timetwister into its owner’s graveyard.;;@
 Time Walk; {1}{U}; Sorcery;; Take an extra turn after this one.;;@
@@ -226,7 +226,7 @@ Bad Moon; {1}{B}; Enchantment;; Black creatures get +1/+1.;;@
 Black Knight; {B}{B}; Creature - Human Knight; First strike; Protection from white.; 2/2;@
 Bog Wraith; {3}{B}; Creature - Wraith;; Swampwalk.; 3/3;@
 Contract from Below; {B}; Sorcery; Remove Contract from Below from your deck before playing if you’re not playing for ante.; Discard your hand, ante the top card of your library, then draw seven cards.;;@
-Cursed Land; {2}{B}{B}; Enchantment - Aura; Enchant land; At the beginning of the upkeep of enchanted land’s controller, Cursed Land deals 1 damage to that player.;;@
+Cursed Land; {2}{B}{B}; Enchantment - Aura; Enchant Land; At the beginning of the upkeep of enchanted land’s controller, Cursed Land deals 1 damage to that player.;;@
 Darkpact; {B}{B}{B}; Sorcery; Remove Darkpact from your deck before playing if you’re not playing for ante.; You own target card in the ante. Exchange that card with the top card of your library.;;@
 Dark Ritual; {B}; Instant;; Add {B}{B}{B}.;;@
 Deathgrip; {B}{B}; Enchantment;; {B}{B}: Counter target green spell.;;@
@@ -236,8 +236,8 @@ Demonic Hordes; {3}{B}{B}{B}; Creature - Demon;; {T}: Destroy target land. At th
 Demonic Tutor; {1}{B}; Sorcery;; Search your library for a card, put that card into your hand, then shuffle.;;@
 Drain Life; {X}{1}{B}; Sorcery;; Spend only black mana on X. Drain Life deals X damage to any target. You gain life equal to the damage dealt, but not more life than the player’s life total before the damage was dealt, the planeswalker’s loyalty before the damage was dealt, or the creature’s toughness.;;@
 Drudge Skeletons; {1}{B}; Creature - Skeleton;; {B}: Regenerate Drudge Skeletons.;;@
-Evil Presence; {B}; Enchantment - Aura; Enchant land; Enchanted land is a Swamp.;;@
-Fear; {B}{B}; Enchantment - Aura; Enchant creature; Enchanted creature has fear.;;@
+Evil Presence; {B}; Enchantment - Aura; Enchant Land; Enchanted land is a Swamp.;;@
+Fear; {B}{B}; Enchantment - Aura; Enchant Creature; Enchanted creature has fear.;;@
 Frozen Shade; {2}{B}; Creature - Shade;; {B}: Frozen Shade gets +1/+1 until end of turn.; 0/1;@
 Gloom; {2}{B}; Enchantment;; White spells cost {3} more to cast. Activated abilities of white enchantments cost {3} more to activate.;;@
 Howl from Beyond; {X}{B}; Instant;; Target creature gets +X/+0 until end of turn.;;@
@@ -248,7 +248,7 @@ Mind Twist; {X}{B}; Sorcery;; Target player discards X cards at random.;;@
 Nether Shadow; {B}{B}; Creature - Spirit; Haste; At the beginning of your upkeep, if Nether Shadow is in your graveyard with three or more creature cards above it, you may put Nether Shadow onto the battlefield.; 1/1;@
 Nettling Imp; {2}{B}; Creature - Imp;; {T}: Choose target non-Wall creature the active player has controlled continuously since the beginning of the turn. That creature attacks this turn if able. Destroy it at the beginning of the next end step if it didn’t attack this turn. Activate only during an opponent’s turn, before attackers are declared.; 1/1;@
 Nightmare; {5}{B}; Creature - Nightmare Horse; Flying; Nightmare’s power and toughness are each equal to the number of Swamps you control.; */*;@
-Paralyze; {B}; Enchantment - Aura; Enchant creature; When Paralyze enters the battlefield, tap enchanted creature.; Enchanted creature doesn’t untap during its controller’s untap step.; At the beginning of the upkeep of enchanted creature’s controller, that player may pay {4}. If the player does, untap the creature.;;@
+Paralyze; {B}; Enchantment - Aura; Enchant Creature; When Paralyze enters the battlefield, tap enchanted creature.; Enchanted creature doesn’t untap during its controller’s untap step.; At the beginning of the upkeep of enchanted creature’s controller, that player may pay {4}. If the player does, untap the creature.;;@
 Pestilence; {2}{B}{B}; Enchantment; At the beginning of the end step, if no creatures are on the battlefield, sacrifice Pestilence.; {B}: Pestilence deals 1 damage to each creature and each player.;;@
 Plague Rats; {2}{B}; Creature - Rat;; Plague Rats’s power and toughness are each equal to the number of creatures named Plague Rats on the battlefield.; */*;@
 Raise Dead; {B}; Sorcery;; Return target creature card from your graveyard to your hand.;;@
@@ -260,25 +260,25 @@ Sengir Vampire; {3}{B}{B}; Creature - Vampire; Flying; Whenever a creature dealt
 Simulacrum; {1}{B}; Instant;; You gain life equal to the damage dealt to you this turn. Simulacrum deals damage to target creature you control equal to the damage dealt to you this turn.;;@
 Sinkhole; {B}{B}; Sorcery;; Destroy target land.;;@
 Terror; {1}{B}; Instant;; Destroy target nonartifact, nonblack creature. It can’t be regenerated.;;@
-Unholy Strength; {B}; Enchantment - Aura; Enchant creature; Enchanted creature gets +2/+1.;;@
+Unholy Strength; {B}; Enchantment - Aura; Enchant Creature; Enchanted creature gets +2/+1.;;@
 Wall of Bone; {2}{B}; Creature - Skeleton Wall; Defender; {B}: Regenerate Wall of Bone.; 1/4;@
-Warp Artifact; {B}{B}; Enchantment - Aura; Enchant artifact; At the beginning of the upkeep of enchanted artifact’s controller, Warp Artifact deals 1 damage to that player.;;@
-Weakness; {B}; Enchantment - Aura; Enchant creature; Enchanted creature gets -2/-1.;;@
+Warp Artifact; {B}{B}; Enchantment - Aura; Enchant Artifact; At the beginning of the upkeep of enchanted artifact’s controller, Warp Artifact deals 1 damage to that player.;;@
+Weakness; {B}; Enchantment - Aura; Enchant Creature; Enchanted creature gets -2/-1.;;@
 Will-o'-the-Wisp; {B}; Creature - Spirit; Flying; {B}: Regenerate Will-o’-the-Wisp.; 0/1;@
 Word of Command; {B}{B}; Instant;; Look at target opponent’s hand and choose a card from it. You control that player until Word of Command finishes resolving. The player plays that card if able. While doing so, the player can activate mana abilities only if they’re from lands that player controls and only if mana they produce is spent to activate other mana abilities of lands the player controls and/or to play that card. If the chosen card is cast as a spell, you control the player while that spell is resolving.;;@
 Zombie Master; {1}{B}{B}; Creature - Zombie;; Other Zombie creatures have swampwalk. Other Zombies have “{B}: Regenerate this permanent.”; 2/3;@
-Burrowing; {R}; Enchantment - Aura; Enchant creature; Enchanted creature has mountainwalk.;;@
+Burrowing; {R}; Enchantment - Aura; Enchant Creature; Enchanted creature has mountainwalk.;;@
 Chaoslace; {R}; Instant;; Target spell or permanent becomes red.;;@
 Disintegrate; {X}{R}; Sorcery;; Disintegrate deals X damage to any target. If it’s a creature, it can’t be regenerated this turn, and if it would die this turn, exile it instead.;;@
 Dragon Whelp; {2}{R}{R}; Creature - Dragon; Flying; {R}: Dragon Whelp gets +1/+0 until end of turn. If this ability has been activated four or more times this turn, sacrifice Dragon Whelp at the beginning of the next end step.; 2/3;@
 Dwarven Demolition Team; {2}{R}; Creature - Dwarf;; {T}: Destroy target Wall.; 1/1;@
 Dwarven Warriors; {2}{R}; Creature - Dwarf Warrior;; {T}: Target creature with power 2 or less can’t be blocked this turn.; 1/1;@
-Earthbind; {R}; Enchantment - Aura; Enchant creature; When Earthbind enters the battlefield, if enchanted creature has flying, Earthbind deals 2 damage to that creature and Earthbind gains “Enchanted creature loses flying.”;;@
+Earthbind; {R}; Enchantment - Aura; Enchant Creature; When Earthbind enters the battlefield, if enchanted creature has flying, Earthbind deals 2 damage to that creature and Earthbind gains “Enchanted creature loses flying.”;;@
 Earth Elemental; {3}{R}{R}; Creature - Elemental;;; 4/5;@
 Earthquake; {X}{R}; Sorcery;; Earthquake deals X damage to each creature without flying and each player.;;@
 False Orders; {R}; Instant;; Cast this spell only during the declare blockers step. Remove target creature defending player controls from combat. Creatures it was blocking that had become blocked by only that creature this combat become unblocked. You may have it block an attacking creature of your choice.;;@
 Fireball; {X}{R}; Sorcery;; This spell costs {1} more to cast for each target beyond the first. Fireball deals X damage divided evenly, rounded down, among any number of targets.;;@
-Firebreathing; {R}; Enchantment - Aura; Enchant creature; {R}: Enchanted creature gets +1/+0 until end of turn.;;@
+Firebreathing; {R}; Enchantment - Aura; Enchant Creature; {R}: Enchanted creature gets +1/+0 until end of turn.;;@
 Fire Elemental; {3}{R}{R}; Creature - Elemental;;; 5/4;@
 Flashfires; {3}{R}; Sorcery;; Destroy all Plains.;;@
 Fork; {R}{R}; Instant;; Copy target instant or sorcery spell, except that the copy is red. You may choose new targets for the copy.;;@
