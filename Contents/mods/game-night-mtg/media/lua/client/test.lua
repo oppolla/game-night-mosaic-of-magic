@@ -1,6 +1,6 @@
 --[[
 
-Animate Wall; {W}; Empower: Wall;; Empowered Wall can attack as though it did not have defender.;;@
+Animate Wall; {W}; Empower: Wall;; Empowered Wall can attack as though it did not have Defender.;;@
 Armageddon; {3}{W}; Incantation;; Destroy all Domains.;;@
 Balance; {1}{W}; Incantation;; Each player chooses a number of Domains they control equal to the number of Domains controlled by the player who controls the fewest, then sacrifices the rest. Players discard cards and sacrifice Beings the same way.;;@
 Benalish Hero; {W}; Being - Human Soldier; Formation; (Any Beings with Formation, and up to one without, can attack in a Formation. Bands are blocked as a group. If any Beings with Formation you control are blocking or being blocked by a Being, you divide that Being’s combat damage, not its controller, among any of the Beings it’s being blocked by or is blocking.), 1/1;@
@@ -25,7 +25,7 @@ Guardian Angel; {X}{W}; Quick-Chant;; Prevent the next X damage that would be de
 Healing Salve; {W}; Quick-Chant;; Choose one: • Target player gains 3 life. • Prevent the next 3 damage that would be dealt to any target this turn.;;@
 Holy Armor; {W}; Empower: Being;; Empowered Being gets +0/+2., {W}: Empowered Being gets +0/+1 until end of turn.;;@
 Holy Strength; {W}; Empower: Being;; Empowered Being gets +1/+2.;;@
-Island Sanctuary; {1}{W}; Empower: Any;; If you would draw a card during your draw step, instead you may skip that draw. If you do, until your next turn, you can not be attacked except by Beings with flying and/or islandwalk.;;@
+Island Sanctuary; {1}{W}; Empower: Any;; If you would draw a card during your draw step, instead you may skip that draw. If you do, until your next turn, you can not be attacked except by Beings with flying and/or Island-Dweller.;;@
 Karma; {2}{W}{W}; Empower: Any;; At the beginning of each player’s upkeep, Karma deals damage to that player equal to the number of Swamps they control.;;@
 Lance; {W}; Empower: Being;; Empowered Being has first strike.;;@
 Mesa Pegasus; {1}{W}; Being - Pegasus; Flying, Formation; (Any Beings with Formation, and up to one without, can attack in a Formation. Bands are blocked as a group. If any Beings with Formation you control are blocking or being blocked by a Being, you divide that Being’s combat damage, not its controller, among any of the Beings it’s being blocked by or is blocking.), 1/1;@
@@ -42,7 +42,7 @@ Savannah Lions; {W}; Being - Cat;; 2/1;@
 Serra Angel; {3}{W}{W}; Being - Angel;; Flying, vigilance; 4/4;@
 Swords to Plowshares; {W}; Quick-Chant;; Exile target Being. Its controller gains life equal to its power.;;@
 Veteran Bodyguard; {3}{W}{W}; Being - Human;; As long as Veteran Bodyguard is untapped, all damage that would be dealt to you by unblocked Beings is dealt to Veteran Bodyguard instead.; 2/5;;@
-Wall of Swords; {3}{W}; Being - Wall;; Defender (This Being can not attack.) Flying; 3/5;@
+Wall of Swords; {3}{W}; Being - Wall; Defender; (This Being can not attack.) Flying; 3/5;@
 White Knight; {W}{W}; Being - Human Knight;; First Strike (This Being deals combat damage before Beings without first strike.), Protection from Black (This Being can not be blocked, targeted, dealt damage, or Empowered by anything Black.), 2/2,;;@
 White Ward; {W}; Empower: Being;; Empowered Being has protection from White. This effect does not remove White Ward;;@
 Wrath of God; {2}{W}{W}; Incantation;; Destroy all Beings. They can not Resist-Death.;;@
@@ -74,7 +74,7 @@ Craw Wurm; {4}{G}{G}; Being - Wurm;; 6/4.;;@
 Elvish Archers; {1}{G}; Being - Elf Archer; First Strike; 2/1.;;@
 Fastbond; {G}; Empower;; You may play any number of Domains on each of your turns. Whenever you play a Domain, if it wasn’t the first Domain you played this turn, Fastbond deals 1 damage to you.;;@
 Fog; {G}; Quick-Chant;; Prevent all combat damage that would be dealt this turn.;;@
-Force of Nature; {2}{G}{G}{G}{G}; Being - Elemental;; Trample (This Being can deal excess combat damage to the player or planeswalker it’s attacking.) At the beginning of your upkeep, Force of Nature deals 8 damage to you unless you pay {G}{G}{G}{G}.; 8/8.;;@
+Force of Nature; {2}{G}{G}{G}{G}; Being - Elemental;; Trample (This Being can deal excess combat damage to the player or Planes-Dweller it’s attacking.) At the beginning of your upkeep, Force of Nature deals 8 damage to you unless you pay {G}{G}{G}{G}.; 8/8.;;@
 Fungusaur; {3}{G}; Being - Fungus Dinosaur;; Whenever Fungusaur is dealt damage, put a +1/+1 counter on it.; 2/2.;;@
 Gaea's Liege; {3}{G}{G}{G}; Being - Avatar;; As long as Gaea’s Liege isn’t attacking, its power and toughness are each equal to the number of Forests you control. As long as Gaea’s Liege is attacking, its power and toughness are each equal to the number of Forests defending player controls. {T}: Target Domain becomes a Forest until Gaea’s Liege leaves the battlefield.; */*.;;@
 Giant Growth; {G}; Quick-Chant;; Target Being gets +3/+3 until end of turn.;;@
@@ -96,7 +96,7 @@ Natural Selection; {G}; Quick-Chant;; Look at the top three cards of target play
 Regeneration; {1}{G}; Empower: Being;; (Target a Being as you cast this. This card enters the battlefield attached to that Being.) {G}: Resist-Death Empowered Being. (The next time that Being would be destroyed this turn, it isn’t. Instead tap it, remove all damage from it, and remove it from combat.);;@
 Regrowth; {1}{G}; Incantation;; Return target card from your Discard-Pile to your hand.;;@
 Scryb Sprites; {G}; Being - Faerie; Flying; 1/1.;;@
-Shanodin Dryads; {G}; Being - Nymph Dryad; Forestwalk; (This Being can not be blocked as long as defending player controls a Forest.) 1/1.;;@
+Shanodin Dryads; {G}; Being - Nymph Dryad; Forest-Dweller; (This Being can not be blocked as long as defending player controls a Forest.) 1/1.;;@
 Stream of Life; {X}{G}; Incantation;; Target player gains X life.;;@
 Thicket Basilisk; {3}{G}{G}; Being - Basilisk;; Whenever Thicket Basilisk blocks or becomes blocked by a non-Wall Being, destroy that Being at end of combat.; 2/4.;;@
 Timber Wolves; {G}; Being - Wolf; Formation; (Any Beings with Formation, and up to one without, can attack in a Formation. Bands are blocked as a group. If any Beings with Formation you control are blocking or being blocked by a Being, you divide that Being’s combat damage, not its controller, among any of the Beings it’s being blocked by or is blocking.); 1/1.;;@
@@ -108,7 +108,7 @@ Wall of Ice; {2}{G}; Being - Wall; Defender; (This Being can not attack.) 0/7.;;
 Wall of Wood; {G}; Being - Wall; Defender; (This Being can not attack.) 0/3.;;@
 Wanderlust; {2}{G}; Empower: Being;; At the beginning of the upkeep of Empowered Being’s controller, Wanderlust deals 1 damage to that player.;;@
 War Mammoth; {3}{G}; Being - Elephant; Trample; 3/3.;;@
-Web; {G}; Empower: Being; (Target a Being as you cast this. This card enters the battlefield attached to that Being.) Empowered Being gets +0/+2 and has reach. (It can block Beings with flying.);;@
+Web; {G}; Empower: Being;; (Target a Being as you cast this. This card enters the battlefield attached to that Being.) Empowered Being gets +0/+2 and has reach. (It can block Beings with flying.);;@
 Wild Growth; {G}; Empower: Domain;; Whenever Empowered Domain is tapped for mana, its controller adds an additional {G}.;;@
 Mox Pearl; {0}; Relic;; {T}: Add {W}.;;@
 Mox Sapphire; {0}; Relic;; {T}: Add {U}.;;@
@@ -116,7 +116,7 @@ Mox Jet; {0}; Relic;; {T}: Add {B}.;;@
 Gauntlet of Might; {4}; Relic;; Red Beings get +1/+1. Whenever a Mountain is tapped for mana, its controller adds an additional {R}.;;@
 Mox Ruby; {0}; Relic;; {T}: Add {R}.;;@
 Mox Emerald; {0}; Relic;; {T}: Add {G}.;;@
-Ankh of Mishra; {2}; Relic; Whenever a Domain enters the battlefield, Ankh of Mishra deals 2 damage to that Domain’s controller.;;@
+Ankh of Mishra; {2}; Relic;; Whenever a Domain enters the battlefield, Ankh of Mishra deals 2 damage to that Domain’s controller.;;@
 Basalt Monolith; {3}; Relic;; Basalt Monolith does not untap during your untap step. {T}: Add {C}{C}{C}. {3}: Untap Basalt Monolith.;;@
 Black Lotus; {0}; Relic;; {T}, Sacrifice Black Lotus: Add three mana of any one color.;;@
 Black Vise; {1}; Relic;; As Black Vise enters the battlefield, choose an opponent. At the beginning of the chosen player’s upkeep, Black Vise deals X damage to that player, where X is the number of cards in their hand minus 4.;;@
@@ -193,7 +193,7 @@ Flight; {U}; Empower: Being;; Empowered Being has flying.;;@
 Invisibility; {U}{U}; Empower: Being;; Empowered Being can not be blocked except by Walls.;;@
 Jump; {U}; Quick-Chant;; Target Being gains flying until end of turn.;;@
 Lifetap; {U}{U}; Empower: Any;; Whenever a Forest an opponent controls becomes tapped, you gain 1 life.;;@
-Lord of Atlantis; {U}{U}; Being - Merfolk;; Other Merfolk get +1/+1 and have islandwalk. (They can not be blocked as long as defending player controls an Island.); 2/2;@
+Lord of Atlantis; {U}{U}; Being - Merfolk;; Other Merfolk get +1/+1 and have Island-Dweller. (They can not be blocked as long as defending player controls an Island.); 2/2;@
 Magical Hack; {U}; Quick-Chant;; Change the text of target spell or permanent by replacing all instances of one basic Domain type with another.;;@
 Mahamoti Djinn; {4}{U}{U}; Being - Djinn;; Flying.; 5/6;@
 Mana Short; {2}{U}; Quick-Chant;; Tap all Domains target player controls and that player loses all unspent mana.;;@
@@ -215,18 +215,18 @@ Stasis; {1}{U}; Empower;; Players skip their untap steps. At the beginning of yo
 Steal Relic; {2}{U}{U}; Empower: Relic;; You control Empowered Relic.;;@
 Thoughtlace; {U}; Quick-Chant;; Target spell or permanent becomes Blue.;;@
 Timetwister; {2}{U}; Incantation;; Each player shuffles their hand and Discard-Pile into their Deck, then draws seven cards. Then put Timetwister into its owner’s Discard-Pile.;;@
-Time Walk; {1}{U}; Incantation;; Take an extra turn after this one.;;@
+Time Warp; {1}{U}; Incantation;; Take an extra turn after this one.;;@
 Twiddle; {U}; Quick-Chant;; You may tap or untap target Relic, Being, or Domain.;;@
 Unsummon; {U}; Quick-Chant;; Return target Being to its owner’s hand.;;@
 Vesuvan Doppelganger; {3}{U}{U}; Being - Shapeshifter;; You may have Vesuvan Doppelganger enter the battlefield as a copy of any Being on the battlefield, except it does not copy that Being’s color and it has “At the beginning of your upkeep, you may have this Being become a copy of target Being, except it does not copy that Being’s color and it has this ability.”; 0/0;@
 Volcanic Eruption; {X}{U}{U}{U}; Incantation;; Destroy X target Mountains. Volcanic Eruption deals damage to each Being and each player equal to the number of Mountains put into a Discard-Pile this way.;;@
-Wall of Air; {1}{U}{U}; Being - Wall;; Defender, flying.; 1/5;@
+Wall of Air; {1}{U}{U}; Being - Wall; Defender, flying.;; 1/5;@
 Wall of Water; {1}{U}{U}; Being - Wall; Defender; {U}: Wall of Water gets +1/+0 until end of turn.; 0/5;@
 Water Elemental; {3}{U}{U}; Being - Elemental;;; 5/4;@
 Animate Dead; {1}{B}; Empower: Being in a Discard-Pile;; When Animate Dead enters the battlefield, if it’s on the battlefield, it loses “enchant Being card in a Discard-Pile” and gains “enchant Being put onto the battlefield with Animate Dead.”; Return Empowered Being card to the battlefield under your control and attach Animate Dead to it. When Animate Dead leaves the battlefield, that Being’s controller sacrifices it.; Empowered Being gets -1/-0.;;@
 Bad Moon; {1}{B}; Empower: Any;; Black Beings get +1/+1.;;@
 Black Knight; {B}{B}; Being - Human Knight; First Strike; Protection from White.; 2/2;@
-Bog Wraith; {3}{B}; Being - Wraith;; Swampwalk.; 3/3;@
+Bog Wraith; {3}{B}; Being - Wraith;; Swamp-Dweller.; 3/3;@
 Contract from Below; {B}; Incantation;; Remove Contract from Below from your deck before playing if you’re not playing for ante. Discard your hand, ante the top card of your Deck, then draw seven cards.;;@
 Cursed Domain; {2}{B}{B}; Empower: Domain;; At the beginning of the upkeep of Empowered Domain’s controller, Cursed Domain deals 1 damage to that player.;;@
 Darkpact; {B}{B}{B}; Incantation;; Remove Darkpact from your deck before playing if you’re not playing for ante. You own target card in the ante. Exchange that card with the top card of your Deck.;;@
@@ -236,7 +236,7 @@ Deathlace; {B}; Quick-Chant;; Target spell or permanent becomes Black.;;@
 Demonic Attorney; {1}{B}{B}; Incantation;; Remove Demonic Attorney from your deck before playing if you’re not playing for ante. Each player antes the top card of their Deck.;;@
 Demonic Hordes; {3}{B}{B}{B}; Being - Demon;; {T}: Destroy target Domain. At the beginning of your upkeep, unless you pay {B}{B}{B}, tap Demonic Hordes and sacrifice a Domain of an opponent’s choice.; 5/5;@
 Demonic Tutor; {1}{B}; Incantation;; Search your Deck for a card, put that card into your hand, then shuffle.;;@
-Drain Life; {X}{1}{B}; Incantation;; Spend only Black mana on X. Drain Life deals X damage to any target. You gain life equal to the damage dealt, but not more life than the player’s life total before the damage was dealt, the planeswalker’s loyalty before the damage was dealt, or the Being’s toughness.;;@
+Drain Life; {X}{1}{B}; Incantation;; Spend only Black mana on X. Drain Life deals X damage to any target. You gain life equal to the damage dealt, but not more life than the player’s life total before the damage was dealt, the Planes-Dweller’s loyalty before the damage was dealt, or the Being’s toughness.;;@
 Drudge Skeletons; {1}{B}; Being - Skeleton;; {B}: Resist-Death Drudge Skeletons.;;@
 Evil Presence; {B}; Empower: Domain;; Empowered Domain is a Swamp.;;@
 Fear; {B}{B}; Empower: Being;; Empowered Being has fear.;;@
@@ -268,8 +268,8 @@ Warp Relic; {B}{B}; Empower: Relic;; At the beginning of the upkeep of Empowered
 Weakness; {B}; Empower: Being;; Empowered Being gets -2/-1.;;@
 Will-o'-the-Wisp; {B}; Being - Spirit; Flying; {B}: Resist-Death Will-o’-the-Wisp.; 0/1;@
 Word of Command; {B}{B}; Quick-Chant;; Look at target opponent’s hand and choose a card from it. You control that player until Word of Command finishes resolving. The player plays that card if able. While doing so, the player can activate mana abilities only if they’re from Domains that player controls and only if mana they produce is spent to activate other mana abilities of Domains the player controls and/or to play that card. If the chosen card is cast as a spell, you control the player while that spell is resolving.;;@
-Zombie Master; {1}{B}{B}; Being - Zombie;; Other Zombie Beings have swampwalk. Other Zombies have “{B}: Resist-Death this permanent.”; 2/3;@
-Burrowing; {R}; Empower: Being;; Empowered Being has mountainwalk.;;@
+Zombie Master; {1}{B}{B}; Being - Zombie;; Other Zombie Beings have Swamp-Dweller. Other Zombies have “{B}: Resist-Death this permanent.”; 2/3;@
+Burrowing; {R}; Empower: Being;; Empowered Being has Mountain-Dweller.;;@
 Chaoslace; {R}; Quick-Chant;; Target spell or permanent becomes Red.;;@
 Disintegrate; {X}{R}; Incantation;; Disintegrate deals X damage to any target. If it’s a Being, it can not Resist-Death this turn, and if it would die this turn, exile it instead.;;@
 Dragon Whelp; {2}{R}{R}; Being - Dragon; Flying; {R}: Dragon Whelp gets +1/+0 until end of turn. If this ability has been activated four or more times this turn, sacrifice Dragon Whelp at the beginning of the next end step.; 2/3;@
@@ -285,7 +285,7 @@ Fire Elemental; {3}{R}{R}; Being - Elemental;;; 5/4;@
 Flashfires; {3}{R}; Incantation;; Destroy all Plains.;;@
 Fork; {R}{R}; Quick-Chant;; Copy target instant or sorcery spell, except that the copy is Red. You may choose new targets for the copy.;;@
 Goblin Balloon Brigade; {R}; Being - Goblin Warrior;; {R}: Goblin Balloon Brigade gains flying until end of turn.; 1/1;@
-Goblin King; {1}{R}{R}; Being - Goblin;; Other Goblins get +1/+1 and have mountainwalk.; 2/2;@
+Goblin King; {1}{R}{R}; Being - Goblin;; Other Goblins get +1/+1 and have Mountain-Dweller.; 2/2;@
 Granite Gargoyle; {2}{R}; Being - Gargoyle; Flying; {R}: Granite Gargoyle gets +0/+1 until end of turn.; 2/2;@
 Gray Ogre; {2}{R}; Being - Ogre;;; 2/2;@
 Hill Giant; {3}{R}; Being - Giant;;; 3/3;@
