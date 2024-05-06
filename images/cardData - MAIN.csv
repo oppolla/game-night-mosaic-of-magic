@@ -1,4 +1,4 @@
-in,Artwork,Name,CostA,CostB,CostLeftVisi,CostLeftColor,CostLeftValue,CostRightColor,CostRightValue,FrameColor,Class,Ability,AbilityVisi,Desc,DescVisi,AtkDef,AtkDefVisi
+ID,Artwork,Name,CostA,CostB,CostLeftVisi,CostLeftColor,CostLeftValue,CostRightColor,CostRightValue,FrameColor,Class,Ability,AbilityVisi,Desc,DescVisi,AtkDef,AtkDefVisi
 Black 1,Artwork\Black 1.png,Demonic Attorney,1any,2black,TRUE,Cards\anyCost.png,1,Cards\blackCost.png,2,Cards\black.png,Incantation,FALSE,FALSE,"""Remove Demonic Attorney from your deck before playing if you're not playing for ante. Each player antes the top card of their Deck.",TRUE,FALSE,FALSE
 Black 10,Artwork\Black 10.png,Raise Dead,1black,FALSE,FALSE,Cards\blackCost.png,FALSE,Cards\blackCost.png,1,Cards\black.png,Incantation,FALSE,FALSE,"""Return target Being card from your Discard-Pile to your hand.",TRUE,FALSE,FALSE
 Black 11,Artwork\Black 11.png,Black Knight,2black,FALSE,FALSE,Cards\blackCost.png,FALSE,Cards\blackCost.png,2,Cards\black.png,Being - Human Knight,First Strike,TRUE,"""Protection from White.",TRUE,2 | 2,TRUE
