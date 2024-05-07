@@ -2,9 +2,9 @@ local applyItemDetails = require "gameNight - applyItemDetails"
 local deckActionHandler = applyItemDetails.deckActionHandler
 local gamePieceAndBoardHandler = applyItemDetails.gamePieceAndBoardHandler
 
-local MTG = {}
+local MOM = {}
 
-MTG.alphaCards = { --"MTG Alpha "
+MOM.alphaCards = { --"MOM Alpha "
 
     ["Relics"] = {
         "Juggernaut", "Gauntlet of Might", "Glasses of Urza", "Jayemdae Tome", "Disrupting Scepter",
@@ -94,10 +94,10 @@ MTG.alphaCards = { --"MTG Alpha "
 
 }
 
-MTG.catalogue = {}
-MTG.altNames = {}
+MOM.catalogue = {}
+MOM.altNames = {}
 
-MTG.alphaRare = {
+MOM.alphaRare = {
     "Relics 2", "Relics 5", "Relics 8", "Relics 11", "Relics 16", "Relics 17", "Relics 18",
     "Relics 19", "Relics 20", "Relics 22", "Relics 23", "Relics 28", "Relics 29", "Relics 35",
     "Relics 36", "Relics 37", "Relics 38", "Relics 44", "Relics 45", "Black 2", "Black 3", "Black 6",
@@ -110,7 +110,7 @@ MTG.alphaRare = {
     "White 14", "White 15", "White 20", "White 22", "White 27", "White 31", "White Black Domain 1", "White Green Domain 1",
 }
 
-MTG.alphaUncommon = {
+MOM.alphaUncommon = {
     "Relics 1", "Relics 6", "Relics 7", "Relics 8", "Relics 9", "Relics 12", "Relics 13",
     "Relics 14", "Relics 15", "Relics 21", "Relics 25", "Relics 26", "Relics 27", "Relics 30",
     "Relics 33", "Relics 34", "Relics 39", "Relics 40", "Relics 41", "Relics 43", "Black 9",
@@ -124,7 +124,7 @@ MTG.alphaUncommon = {
     "White 34", "White 35", "White 39", "White 41", "White 42",
 }
 
-MTG.alphaCommon = {
+MOM.alphaCommon = {
     "Black 4", "Black 5", "Black 7", "Black 8", "Black 10", "Black 12", "Black 15", "Black 22", "Black 30",
     "Black 37", "Black 41", "Black 42", "Black 44", "Black 46", "Blue 1", "Blue 3", "Blue 5", "Blue 11",
     "Blue 13", "Blue 14", "Blue 20", "Blue 21", "Blue 28", "Blue 31", "Blue 35", "Blue 38", "Blue 39",
@@ -135,43 +135,43 @@ MTG.alphaCommon = {
     "White 25", "White 26", "White 29", "White 38", "White 40", "White 43", "White 44",
 }
 
-MTG.alphaDomain = {
+MOM.alphaDomain = {
     "Red Domain 1", "Red Domain 2", "Red Domain 3", "Blue Domain 1", "Blue Domain 2", "Blue Domain 3",
     "Green Domain 1", "Green Domain 2", "Green Domain 3", "White Domain 1", "White Domain 2", "White Domain 3",
     "Black Domain 1", "Black Domain 2", "Black Domain 3",
 }
 
 
-MTG.colorCodedRarity = {Domain={}, Common={}, Uncommon={}, Rare={}}
+MOM.colorCodedRarity = {Domain={}, Common={}, Uncommon={}, Rare={}}
 
 --- Build entire catalogue as a deck
-for set,cards in pairs(MTG.alphaCards) do
+for set,cards in pairs(MOM.alphaCards) do
     for i,card in pairs(cards) do
-        local cardID = "MTG Alpha "..set.." "..i
-        MTG.altNames[cardID] = card
+        local cardID = "MOM Alpha "..set.." "..i
+        MOM.altNames[cardID] = card
 
         local keyed = false
-        for rarity,data in pairs(MTG.colorCodedRarity) do
+        for rarity,data in pairs(MOM.colorCodedRarity) do
             if not keyed then
-                for n,c in pairs(MTG["alpha"..rarity]) do
+                for n,c in pairs(MOM["alpha"..rarity]) do
                     if c == (set.." "..i) then
-                        MTG.colorCodedRarity[rarity][set] = MTG.colorCodedRarity[rarity][set] or {}
-                        table.insert(MTG.colorCodedRarity[rarity][set], c)
+                        MOM.colorCodedRarity[rarity][set] = MOM.colorCodedRarity[rarity][set] or {}
+                        table.insert(MOM.colorCodedRarity[rarity][set], c)
                         keyed = true
                     end
                 end
             end
         end
 
-        table.insert(MTG.catalogue, cardID)
+        table.insert(MOM.catalogue, cardID)
     end
 end
-deckActionHandler.addDeck("mtgCards", MTG.catalogue, MTG.altNames)
+deckActionHandler.addDeck("momCards", MOM.catalogue, MOM.altNames)
 
 
-applyItemDetails.MTG = {}
+applyItemDetails.MOM = {}
 
-function applyItemDetails.MTG.rollDomain(rarity)
+function applyItemDetails.MOM.rollDomain(rarity)
     --The chance of getting a basic Domain instead of another card is approximately:
     -- 4.13% for rares, 21.5% for uncommon and 38.84% for commons.
     local chance = rarity and (rarity == "Rare" and 4.13 or rarity == "Uncommon" and 21.5 or rarity == "Common" and 38.84)
@@ -182,7 +182,7 @@ function applyItemDetails.MTG.rollDomain(rarity)
 end
 
 
-function applyItemDetails.MTG.weighedProbability(outcomesAndWeights)
+function applyItemDetails.MOM.weighedProbability(outcomesAndWeights)
     local totalWeight = 0
     for outcome, weight in pairs(outcomesAndWeights) do totalWeight = totalWeight + weight end
     local randomNumber = ZombRand(totalWeight)+1
@@ -196,45 +196,45 @@ function applyItemDetails.MTG.weighedProbability(outcomesAndWeights)
 end
 
 
-function applyItemDetails.MTG.rollCardOfParticularColor(rarity, set)
-    local cardPool = MTG.colorCodedRarity[rarity][set]
-    return ("MTG Alpha "..cardPool[ZombRand(#cardPool)+1])
+function applyItemDetails.MOM.rollCardOfParticularColor(rarity, set)
+    local cardPool = MOM.colorCodedRarity[rarity][set]
+    return ("MOM Alpha "..cardPool[ZombRand(#cardPool)+1])
 end
 
 
-function applyItemDetails.MTG.rollCard(rarity)
+function applyItemDetails.MOM.rollCard(rarity)
     --roll for Domain first
-    local rollDomain = applyItemDetails.MTG.rollDomain(rarity)
+    local rollDomain = applyItemDetails.MOM.rollDomain(rarity)
     if rollDomain then
         if rarity == "Rare" then
             -- The only Domains on the rare sheets were five copies of Island.
-            return ("MTG Alpha Blue Domain "..ZombRand(3)+1)
+            return ("MOM Alpha Blue Domain "..ZombRand(3)+1)
         else
-            return ("MTG Alpha "..MTG.alphaDomain[ZombRand(#MTG.alphaDomain)+1])
+            return ("MOM Alpha "..MOM.alphaDomain[ZombRand(#MOM.alphaDomain)+1])
         end
     end
 
-    local cardPool = MTG["alpha"..rarity]
-    return ("MTG Alpha "..cardPool[ZombRand(#cardPool)+1])
+    local cardPool = MOM["alpha"..rarity]
+    return ("MOM Alpha "..cardPool[ZombRand(#cardPool)+1])
 end
 
 
 
-function applyItemDetails.MTG.unpackBooster(cards)
+function applyItemDetails.MOM.unpackBooster(cards)
     -- 11 common, 3 uncommon, 1 rare -- 15
 
     for i=1, 11 do
-        local card = applyItemDetails.MTG.rollCard("Common")
+        local card = applyItemDetails.MOM.rollCard("Common")
         table.insert(cards, card)
     end
 
     for i=1, 3 do
-        local card = applyItemDetails.MTG.rollCard("Uncommon")
+        local card = applyItemDetails.MOM.rollCard("Uncommon")
         table.insert(cards, card)
     end
 
     for i=1, 1 do
-        local card = applyItemDetails.MTG.rollCard("Rare")
+        local card = applyItemDetails.MOM.rollCard("Rare")
         table.insert(cards, card)
     end
 
@@ -242,29 +242,29 @@ function applyItemDetails.MTG.unpackBooster(cards)
 end
 
 
-function applyItemDetails.applyBoostersToMTGCards(item, n)
+function applyItemDetails.applyBoostersToMOMCards(item, n)
     item:getModData()["gameNight_cardAltNames"] = nil
     local cards = {}
     n = n or 1
-    for i=1, n do applyItemDetails.MTG.unpackBooster(cards) end
+    for i=1, n do applyItemDetails.MOM.unpackBooster(cards) end
     item:getModData()["gameNight_cardDeck"] = cards
     item:getModData()["gameNight_cardFlipped"] = {}
     for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
 end
 
 
-function applyItemDetails.applyCardForMTG(item)
+function applyItemDetails.applyCardForMOM(item)
     local applyBoosters = item:getModData()["gameNight_specialOnCardApplyBoosters"]
     --- recipe sets this modData to the resulting item, 1 booster = 15 cards, 4 = 60.
     if applyBoosters then
         item:getModData()["gameNight_specialOnCardApplyBoosters"] = nil
-        applyItemDetails.applyBoostersToMTGCards(item, applyBoosters)
+        applyItemDetails.applyBoostersToMOMCards(item, applyBoosters)
         return
     end
 
     item:getModData()["gameNight_cardAltNames"] = nil
     if not item:getModData()["gameNight_cardDeck"] then
-        local cards = MTG.buildDeck()
+        local cards = MOM.buildDeck()
         item:getModData()["gameNight_cardDeck"] = cards
         item:getModData()["gameNight_cardFlipped"] = {}
         for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
@@ -272,7 +272,7 @@ function applyItemDetails.applyCardForMTG(item)
 end
 
 
-gamePieceAndBoardHandler.registerSpecial("Base.mtgCards", { shiftAction = {"channelCard"}, actions = { channelCard=true, examineCard=true}, examineScale = 0.75, applyCards = "applyCardForMTG", textureSize = {100,140} })
+gamePieceAndBoardHandler.registerSpecial("Base.momCards", { shiftAction = {"channelCard"}, actions = { channelCard=true, examineCard=true}, examineScale = 0.75, applyCards = "applyCardForMOM", textureSize = {100,140} })
 
 
 function deckActionHandler.channelCard_isValid(deckItem, player) if deckItem and deckItem:getWorldItem() then return true end end
@@ -285,7 +285,7 @@ function deckActionHandler.channelCard(deckItem, player)
 end
 
 
-MTG.deckArchetypesList = {
+MOM.deckArchetypesList = {
     --- 5 mono decks
     White = {"White"},
     Black = {"Black"},
@@ -319,11 +319,11 @@ MTG.deckArchetypesList = {
 
 }
 
-function MTG.buildDeck(archetype)
+function MOM.buildDeck(archetype)
 
     local cards = {}
 
-    archetype = archetype or applyItemDetails.MTG.weighedProbability(
+    archetype = archetype or applyItemDetails.MOM.weighedProbability(
             {White=4, Black=4, Green=4, Blue=4, Red=4,
              Azorius=8, Dimir=8, Rakdos=8, Gruul=8, Selesnya=8, Orzhov=8, Izzet=8, Golgari=8, Boros=8, Simic=8,
              Bant = 1, Esper = 1, Grixis = 1, Jund = 1, Naya = 1, Abzan = 1, Jeskai = 1, Sultai = 1, Mardu = 1, Temur = 1
@@ -331,7 +331,7 @@ function MTG.buildDeck(archetype)
 
     local deckSize = ZombRand(55,66)
 
-    local colors = MTG.deckArchetypesList[archetype]
+    local colors = MOM.deckArchetypesList[archetype]
 
     --[[DEBUG]] local colorString = ""
     for i,c in ipairs(colors) do colorString = colorString..c..((#colors>1 and i~=#colors) and "/" or "") end
@@ -340,9 +340,9 @@ function MTG.buildDeck(archetype)
     --11 instead of 10 skews the average lower
     local artifactGoal = math.floor(deckSize/11)+ZombRand(3) -- 0 to 2 additional
     for i=1, artifactGoal do
-        local rarity = applyItemDetails.MTG.weighedProbability({ Uncommon = 3, Rare = 1})
+        local rarity = applyItemDetails.MOM.weighedProbability({ Uncommon = 3, Rare = 1})
         --[[DEBUG]] rarities[rarity] = rarities[rarity]+1
-        local card = applyItemDetails.MTG.rollCardOfParticularColor(rarity, "Relics")
+        local card = applyItemDetails.MOM.rollCardOfParticularColor(rarity, "Relics")
         table.insert(cards, card)
     end
 
@@ -350,16 +350,16 @@ function MTG.buildDeck(archetype)
     local DomainGoal = math.floor(deckSize/2.5)+ZombRand(4) --0 to 3
     for i=1, DomainGoal do
         local color = colors[ZombRand(#colors)+1]
-        local card = applyItemDetails.MTG.rollCardOfParticularColor("Domain", color.." Domain")
+        local card = applyItemDetails.MOM.rollCardOfParticularColor("Domain", color.." Domain")
         table.insert(cards, card)
     end
 
     local remainingCount = deckSize - #cards
     for i=1, remainingCount do
         local color = colors[ZombRand(#colors)+1]
-        local rarity = applyItemDetails.MTG.weighedProbability({ Common = 11, Uncommon = 3, Rare = 1})
+        local rarity = applyItemDetails.MOM.weighedProbability({ Common = 11, Uncommon = 3, Rare = 1})
         --[[DEBUG]] rarities[rarity] = rarities[rarity]+1
-        local card = applyItemDetails.MTG.rollCardOfParticularColor(rarity, color)
+        local card = applyItemDetails.MOM.rollCardOfParticularColor(rarity, color)
         table.insert(cards, card)
     end
 
