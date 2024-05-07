@@ -1,6 +1,0 @@
-ItemName_EN = {
-    ItemName_Base.mtgCards = "Magic The Gathering Cards"
-
-    ItemName_Base.mtgStarterKit = "Magic the Gathering Starter Kit",
-    ItemName_Base.mtgBoosterPack = "Magic the Gathering Booster Pack",
-}

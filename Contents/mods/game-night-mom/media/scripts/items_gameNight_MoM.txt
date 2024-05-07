@@ -1,0 +1,26 @@
+module Base
+{
+
+    item momStarterKit
+    {
+        DisplayCategory = GameBox, Weight = 0.1, Type = Normal,
+        DisplayName = Magic the Gathering Starter Kit,
+
+        Icon = Boxes/MoMStarterBox, WorldStaticModel = MoM_StarterBox,
+    }
+
+    item momBoosterPack
+    {
+        DisplayCategory = GameBox, Weight = 0.1, Type = Normal,
+        DisplayName = Magic the Gathering Booster Pack,
+
+        Icon = Boxes/MoMBoosterPack, WorldStaticModel = MoM_Booster,
+    }
+
+    item momCards
+    {
+        DisplayCategory = Deck, Weight = 0.01, Type = Normal,
+        DisplayName = Magic The Gathering Cards, Icon = momCards/deck, WorldStaticModel = MoM_Card,
+    }
+
+}

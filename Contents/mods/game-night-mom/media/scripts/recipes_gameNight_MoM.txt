@@ -1,0 +1,7 @@
+module Base
+{
+
+    recipe Unseal Box { momStarterKit, Result:momCards, CanBeDoneFromFloor:true, OnCreate:Recipe.GameNight.OpenKitMoM, Time:50.0, }
+    recipe Unseal Booster { momBoosterPack, Result:momCards, CanBeDoneFromFloor:true, OnCreate:Recipe.GameNight.OpenBoosterMoM, Time:50.0, }
+
+}

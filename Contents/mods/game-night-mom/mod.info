@@ -1,0 +1,5 @@
+name=Game Night - Mosaic of Magic
+id=gamenight_mosaic_of_magic
+description=
+poster=poster.png
+require=gamenight
