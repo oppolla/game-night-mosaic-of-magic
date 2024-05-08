@@ -1,5 +1,5 @@
 version=1
-title=Game Night: Mosaic of Magic [Unofficial]
+title=Game Night: Mosaic of Magic
 description=[h2]Add-On for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3058279917]GameNight[/url].[/h2]
 description=[h3]Dive into a world of magic.[/h3]
 description=
