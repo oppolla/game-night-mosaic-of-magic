@@ -3,7 +3,7 @@ title=Game Night: Mosaic of Magic
 description=[h2]Add-On for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3058279917]GameNight[/url].[/h2]
 description=[h3]Dive into a world of magic.[/h3]
 description=
-description=Features Mosaic of Magic, released in 1990, includes found decks in the world, booster packs, and starter sets for your collecting pleasure!
+description=Features a fictitious card game called [i]Mosaic of Magic[/i], released in early-1993 and widespread, booster-packs, starter-sets, and built-decks can be found for your collecting pleasure! Thanks to the Game Night API the game is also fully playable.
 description=
 description=
 description=[url=https://discord.gg/SReMnbV4V7][img]https://raw.githubusercontent.com/Chuckleberry-Finn/chuckImages/main/PZmodCommBanner2.png[/img][/url]
