@@ -1,4 +1,5 @@
 version=1
+id=3243889212
 title=Game Night: Mosaic of Magic
 description=[h2]Add-On for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3058279917]GameNight[/url].[/h2]
 description=[h3]With hundreds of cards to collect, each more powerful than the last, Mosaic of Magic offers endless possibilities for deck customization and strategic gameplay.[/h3]
