@@ -271,7 +271,7 @@ function applyItemDetails.applyCardForMOM(item)
 end
 
 
-gamePieceAndBoardHandler.registerSpecial("Base.momCards", { shiftAction = {"channelCard"}, actions = { channelCard=true, examineCard=true}, examineScale = 0.75, applyCards = "applyCardForMOM", textureSize = {100,140} })
+gamePieceAndBoardHandler.registerSpecial("Base.momCards", { shiftAction = {"channelCard"}, actions = { channelCard=true, examine=true}, examineScale = 0.75, applyCards = "applyCardForMOM", textureSize = {100,140} })
 
 
 function deckActionHandler.channelCard_isValid(deckItem, player) if deckItem and deckItem:getWorldItem() then return true end end
