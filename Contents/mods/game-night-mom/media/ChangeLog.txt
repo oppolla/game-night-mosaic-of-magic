@@ -3,5 +3,5 @@
 [ ------ ]
 
 [ 5/18/24 ]
-- Coins and Cards Update
+- Tweaks and underlying updates in preparation for new Add-On.
 [ ------ ]
