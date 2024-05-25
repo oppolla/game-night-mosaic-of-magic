@@ -267,6 +267,7 @@ function applyItemDetails.applyCardForMOM(item)
         item:getModData()["gameNight_cardDeck"] = cards
         item:getModData()["gameNight_cardFlipped"] = {}
         for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
+        return
     end
 end
 
