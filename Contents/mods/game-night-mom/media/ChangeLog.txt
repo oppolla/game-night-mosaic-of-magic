@@ -5,3 +5,7 @@
 [ 5/25/24 ]
 - Tweaks and underlying updates in preparation for new Add-On.
 [ ------ ]
+
+[ 6/9/24 ]
+- New Artwork. Using AUTOMATIC1111/SimpleDiffusion. Appreciation to: theharber.
+[ ------ ]
