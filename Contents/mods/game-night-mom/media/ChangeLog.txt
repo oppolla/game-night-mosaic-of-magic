@@ -7,5 +7,5 @@
 [ ------ ]
 
 [ 6/9/24 ]
-- New Artwork. Using AUTOMATIC1111/SimpleDiffusion. Appreciation to: theharber.
+- New Artwork. Using AUTOMATIC1111/SimpleDiffusion. Appreciation to: theharber (mattharber).
 [ ------ ]
