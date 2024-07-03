@@ -218,6 +218,14 @@ function applyItemDetails.MOM.rollCard(rarity)
 end
 
 
+function applyItemDetails.MOM.spawnRandomCard(zombie)
+    local rare = zombie and 1 or 2
+    local common = zombie and 7 or 5
+    local rarity = applyItemDetails.MOM.weighedProbability({ common=common, uncommon=3, rare=rare})
+    local card = applyItemDetails.MOM.rollCard(rarity)
+    return card
+end
+
 
 function applyItemDetails.MOM.unpackBooster(cards)
     -- 11 common, 3 uncommon, 1 rare -- 15
@@ -263,11 +271,21 @@ function applyItemDetails.applyCardForMOM(item)
 
     item:getModData()["gameNight_cardAltNames"] = nil
     if not item:getModData()["gameNight_cardDeck"] then
-        local cards = MOM.buildDeck()
-        item:getModData()["gameNight_cardDeck"] = cards
-        item:getModData()["gameNight_cardFlipped"] = {}
-        for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
-        return
+
+        local itemCont = item:getContainer()
+        local itemContParent = itemCont:getParent()
+        local zombie = itemContParent and instanceof(itemContParent, "IsoDeadBody")
+        if (ZombRand(10) < 1) or zombie then
+            local card = applyItemDetails.MOM.spawnRandomCard(true)
+            item:getModData()["gameNight_cardDeck"] = { card }
+            item:getModData()["gameNight_cardFlipped"] = { true }
+            item:getModData()["gameNight_specialOnCardApplyDeck"] = nil
+        else
+            local cards = MOM.buildDeck()
+            item:getModData()["gameNight_cardDeck"] = cards
+            item:getModData()["gameNight_cardFlipped"] = {}
+            for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
+        end
     end
 end
 
