@@ -273,8 +273,8 @@ function applyItemDetails.applyCardForMOM(item)
     if not item:getModData()["gameNight_cardDeck"] then
 
         local itemCont = item:getContainer()
-        local itemContParent = itemCont:getParent()
-        local zombie = itemContParent and instanceof(itemContParent, "IsoDeadBody")
+        local zombie = itemCont and (itemCont:getType() == "inventorymale" or itemCont:getType() == "inventoryfemale")
+
         if (ZombRand(10) < 1) or zombie then
             local card = applyItemDetails.MOM.spawnRandomCard(true)
             item:getModData()["gameNight_cardDeck"] = { card }
