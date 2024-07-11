@@ -221,7 +221,7 @@ end
 function applyItemDetails.MOM.spawnRandomCard(zombie)
     local rare = zombie and 1 or 2
     local common = zombie and 7 or 5
-    local rarity = applyItemDetails.MOM.weighedProbability({ common=common, uncommon=3, rare=rare})
+    local rarity = applyItemDetails.MOM.weighedProbability({ Common=common, Uncommon=3, Rare=rare})
     local card = applyItemDetails.MOM.rollCard(rarity)
     return card
 end
