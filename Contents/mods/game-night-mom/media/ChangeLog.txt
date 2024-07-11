@@ -13,3 +13,7 @@
 [ 7/4/24 ]
 - Added tweaks for Zombies Drop Games
 [ ------ ]
+
+[ 7/11/2024 ]
+- Fixed issue with single card spawns
+[ ------ ]
