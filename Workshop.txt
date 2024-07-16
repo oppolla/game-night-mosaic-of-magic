@@ -6,6 +6,7 @@ description=[h3]With hundreds of cards to collect, each more powerful than the l
 description=
 description=[i]Mosaic of Magic[/i], released in early-1993 and widespread, can be collected through booster-packs, starter-sets, and already built-decks, throughout the world. Thanks to the Game Night API the game is also fully playable!
 description=
+description=[img]https://raw.githubusercontent.com/oppolla/game-night-mosaic-of-magic/main/images/steamDescsGranny.png[/img]
 description=
 description=[url=https://discord.gg/SReMnbV4V7][img]https://raw.githubusercontent.com/Chuckleberry-Finn/chuckImages/main/PZmodCommBanner2.png[/img][/url]
 description=
