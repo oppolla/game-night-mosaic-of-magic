@@ -325,6 +325,7 @@ function applyItemDetails.applyCardForMOM(item)
     local prebuiltID = item:getModData()["gameNight_momPrebuilt"]
     local prebuilt = prebuiltID and MOM.preBuiltSets[prebuiltID]
     if prebuilt then
+        item:getModData()["gameNight_momPrebuilt"] = nil
         item:getModData()["gameNight_cardDeck"] = {}
         local cards = item:getModData()["gameNight_cardDeck"]
         item:getModData()["gameNight_cardFlipped"] = {}
@@ -334,7 +335,7 @@ function applyItemDetails.applyCardForMOM(item)
         end
         return
     end
-    
+
     local applyBoosters = item:getModData()["gameNight_specialOnCardApplyBoosters"]
     --- recipe sets this modData to the resulting item, 1 booster = 15 cards, 4 = 60.
     if applyBoosters then
