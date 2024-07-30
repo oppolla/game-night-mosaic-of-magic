@@ -2,7 +2,7 @@
 if true then return end --TODO: REMOVE THIS WHEN YOU MAKE YOUR OWN FILE.
 --TODO: REMOVE THIS WHEN YOU MAKE YOUR OWN FILE.
 
---- This file expansion file is required to be in /client/ to work.
+--- This expansion file is required to be in /client/ to work.
 --- Rename file to replace `NAME_OF_EXPANSION` in  `gameNight - implementMoMEx - NAME_OF_EXPANSION`
 
 --- FOR ART
