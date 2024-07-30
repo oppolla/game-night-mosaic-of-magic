@@ -325,7 +325,9 @@ function applyItemDetails.applyCardForMOM(item)
         return
     end
 
+    ---FIX LEFT OVER ALT NAMES IN ITEMS
     item:getModData()["gameNight_cardAltNames"] = nil
+
     if not item:getModData()["gameNight_cardDeck"] then
 
         local itemCont = item:getContainer()
