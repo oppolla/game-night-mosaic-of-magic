@@ -194,11 +194,14 @@ MOM.deckArchetypesList = {
 MOM.catalogue = {}
 MOM.altNames = {}
 MOM.altIcons = {}
-
+MOM._sets = {}
 
 --- Build entire catalogue as a deck
 function MOM.buildCatalogue()
     for set,setData in pairs(MOM.sets) do
+
+        table.insert(MOM._sets, set)
+
         for cardType,cardSubset in pairs(setData.cards) do
             for i,card in pairs(cardSubset) do
                 local cardID = cardType.." "..i
@@ -256,16 +259,17 @@ function applyItemDetails.MOM.weighedProbability(outcomesAndWeights)
 end
 
 
-function applyItemDetails.MOM.rollCardOfParticularColor(rarity, set)
-    local cardPool = MOM.colorCodedRarity[rarity][set]
+function applyItemDetails.MOM.rollCardOfParticularType(rarity, type)
+    local cardPool = MOM.colorCodedRarity[rarity][type]
     return (cardPool[ZombRand(#cardPool)+1])
 end
 
 
-function applyItemDetails.MOM.rollCard(rarity)
+function applyItemDetails.MOM.rollCard(rarity, set)
+    set = set or MOM.sets[MOM._sets[ZombRand(#MOM._sets)+1]]
     local rollDomain = applyItemDetails.MOM.rollDomain(rarity)
-    if rollDomain then return (MOM.Domain[ZombRand(#MOM.Domain)+1]) end
-    local cardPool = MOM[rarity]
+    if rollDomain then return (set.rarities.Domain[ZombRand(#set.rarities.Domain)+1]) end
+    local cardPool = set.rarities[rarity]
     return (cardPool[ZombRand(#cardPool)+1])
 end
 
@@ -375,7 +379,7 @@ function MOM.buildDeck(archetype)
     for i=1, artifactGoal do
         local rarity = applyItemDetails.MOM.weighedProbability({ Uncommon = 3, Rare = 1})
         --[[DEBUG]] rarities[rarity] = rarities[rarity]+1
-        local card = applyItemDetails.MOM.rollCardOfParticularColor(rarity, "Relics")
+        local card = applyItemDetails.MOM.rollCardOfParticularType(rarity, "Relics")
         table.insert(cards, card)
     end
 
@@ -383,7 +387,7 @@ function MOM.buildDeck(archetype)
     local DomainGoal = math.floor(deckSize/2.5)+ZombRand(4) --0 to 3
     for i=1, DomainGoal do
         local color = colors[ZombRand(#colors)+1]
-        local card = applyItemDetails.MOM.rollCardOfParticularColor("Domain", color.." Domain")
+        local card = applyItemDetails.MOM.rollCardOfParticularType("Domain", color.." Domain")
         table.insert(cards, card)
     end
 
@@ -392,7 +396,7 @@ function MOM.buildDeck(archetype)
         local color = colors[ZombRand(#colors)+1]
         local rarity = applyItemDetails.MOM.weighedProbability({ Common = 11, Uncommon = 3, Rare = 1})
         --[[DEBUG]] rarities[rarity] = rarities[rarity]+1
-        local card = applyItemDetails.MOM.rollCardOfParticularColor(rarity, color)
+        local card = applyItemDetails.MOM.rollCardOfParticularType(rarity, color)
         table.insert(cards, card)
     end
 
