@@ -17,3 +17,8 @@
 [ 7/11/2024 ]
 - Fixed issue with single card spawns
 [ ------ ]
+
+[ 7/30/24 ]
+- Changed internal structure to allow for future expansion packs.
+- Fixed a misnamed card.
+[ ------ ]
