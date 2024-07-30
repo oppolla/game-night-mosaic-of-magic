@@ -83,3 +83,8 @@ MOM.sets.SETNAME = {
         },
     }
 }
+
+---PREBUILT SETS ARE STORED HERE AND ACCESSED IN THE MOD DATA OF THE RECIPE ITEM.
+MOM.preBuiltSets.PREBUILT_ID = {
+    "Black 1", "Black 2", "Black 3",
+}

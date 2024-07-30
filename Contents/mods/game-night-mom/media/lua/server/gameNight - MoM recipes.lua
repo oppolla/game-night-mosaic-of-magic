@@ -7,13 +7,8 @@ require "gameNight - recipes"
 function Recipe.GameNight.OpenKitMoM(items, result, player)
 
     local item = items:get(0)
-    local cards = item:getModData()["gameNight_cardDeck"]
-    if cards then
-        result:getModData()["gameNight_cardDeck"] = cards
-        result:getModData()["gameNight_cardFlipped"] = {}
-        for i=1, #cards do result:getModData()["gameNight_cardFlipped"][i] = true end
-        return
-    end
+    local prebuiltID = item:getModData()["gameNight_momPrebuilt"]
+    if prebuiltID then result:getModData()["gameNight_momPrebuilt"] = prebuiltID end
 
     result:getModData()["gameNight_specialOnCardApplyBoosters"] = 4
 end
@@ -25,13 +20,8 @@ end
 function Recipe.GameNight.OpenBoosterMoM(items, result, player)
 
     local item = items:get(0)
-    local cards = item:getModData()["gameNight_cardDeck"]
-    if cards then
-        result:getModData()["gameNight_cardDeck"] = cards
-        result:getModData()["gameNight_cardFlipped"] = {}
-        for i=1, #cards do result:getModData()["gameNight_cardFlipped"][i] = true end
-        return
-    end
-    
+    local prebuiltID = item:getModData()["gameNight_momPrebuilt"]
+    if prebuiltID then result:getModData()["gameNight_momPrebuilt"] = prebuiltID end
+
     result:getModData()["gameNight_specialOnCardApplyBoosters"] = 1
 end

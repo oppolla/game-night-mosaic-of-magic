@@ -195,6 +195,7 @@ MOM.catalogue = {}
 MOM.altNames = {}
 MOM.altIcons = {}
 MOM._sets = {}
+MOM.preBuiltSets = {}
 
 --- Build entire catalogue as a deck
 function MOM.buildCatalogue()
@@ -304,9 +305,12 @@ function applyItemDetails.MOM.unpackBooster(cards)
     return cards
 end
 
+--result:getModData()["gameNight_momPrebuilt"]
 
 function applyItemDetails.applyBoostersToMOMCards(item, n)
+    ---FIX LEFT OVER ALT NAMES IN ITEMS
     item:getModData()["gameNight_cardAltNames"] = nil
+
     local cards = {}
     n = n or 1
     for i=1, n do applyItemDetails.MOM.unpackBooster(cards) end
@@ -317,6 +321,20 @@ end
 
 
 function applyItemDetails.applyCardForMOM(item)
+
+    local prebuiltID = item:getModData()["gameNight_momPrebuilt"]
+    local prebuilt = prebuiltID and MOM.preBuiltSets[prebuiltID]
+    if prebuilt then
+        item:getModData()["gameNight_cardDeck"] = {}
+        local cards = item:getModData()["gameNight_cardDeck"]
+        item:getModData()["gameNight_cardFlipped"] = {}
+        for _,cardID in pairs(prebuilt) do
+            table.insert(cards, cardID)
+            item:getModData()["gameNight_cardFlipped"][cardID] = true
+        end
+        return
+    end
+    
     local applyBoosters = item:getModData()["gameNight_specialOnCardApplyBoosters"]
     --- recipe sets this modData to the resulting item, 1 booster = 15 cards, 4 = 60.
     if applyBoosters then
