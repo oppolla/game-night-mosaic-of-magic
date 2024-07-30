@@ -32,7 +32,7 @@ MOM.sets.Prima = {
             "Sigil of Defense: Blue", "Balance", "Karma", "Pearled Unicorn", "Northern Paladin",
             "Armageddon", "White Knight", "Resurrection", "White Ward", "Swords to Plowshares",
             "Farmstead", "Divine Sigil", "Disempower", "Green Ward", "Sigil of Defense: Green",
-            "Black Ward", "Conversion", "Benalish Hero", "Guardian Angel", "Crusade",
+            "Black Ward", "Conversion", "Great Hero", "Guardian Angel", "Crusade",
             "Sigil of Defense: Black",
         },
 
