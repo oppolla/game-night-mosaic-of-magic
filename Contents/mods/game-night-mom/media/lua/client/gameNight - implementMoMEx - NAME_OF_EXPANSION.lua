@@ -1,8 +1,17 @@
---- This file is required to be in /client/
-local MOM = require "gameNight - implementMoM"
--- This lne is also required as a means to load the MOM module.
+return --TODO: REMOVE THIS WHEN YOU MAKE YOUR OWN FILE.
 
---- SETNAME needs to be equal to the directory under Item_momCards
+--- This file expansion file is required to be in /client/ to work.
+--- Rename file to replace `NAME_OF_EXPANSION` in  `gameNight - implementMoMEx - NAME_OF_EXPANSION`
+
+--- FOR ART
+-- Place artwork with in a sub folder named `SETNAME` (to be changed) in `Item_momCards/`
+--- For example: `Item_momCards/Prima/`
+-- `SET NAME` should match the set you're adding.
+
+-- This line is required as a means to load the MOM module.
+local MOM = require "gameNight - implementMoM"
+
+--- SETNAME needs to be equal to the directory inside of Item_momCards/
 MOM.sets.SETNAME = {
 
     --- CARDS ARE SORTED BY COLOR, RELIC, AND DOMAINS
