@@ -8,9 +8,13 @@ function Recipe.GameNight.OpenKitMoM(items, result, player)
 
     local item = items:get(0)
     local prebuiltID = item:getModData()["gameNight_momPrebuilt"]
-    if prebuiltID then result:getModData()["gameNight_momPrebuilt"] = prebuiltID end
+    if prebuiltID then
+        result:getModData()["gameNight_momPrebuilt"] = prebuiltID
+        return
+    end
 
-    result:getModData()["gameNight_specialOnCardApplyBoosters"] = 4
+    result:getModData()["gameNight_specialOnCardApplyBoosterSet"] = item:getModData()["gameNight_specialOnCardApplyBoosterSet"]
+    result:getModData()["gameNight_specialOnCardApplyBoosterCount"] = 4
 end
 
 
@@ -21,7 +25,11 @@ function Recipe.GameNight.OpenBoosterMoM(items, result, player)
 
     local item = items:get(0)
     local prebuiltID = item:getModData()["gameNight_momPrebuilt"]
-    if prebuiltID then result:getModData()["gameNight_momPrebuilt"] = prebuiltID end
+    if prebuiltID then
+        result:getModData()["gameNight_momPrebuilt"] = prebuiltID
+        return
+    end
 
-    result:getModData()["gameNight_specialOnCardApplyBoosters"] = 1
+    result:getModData()["gameNight_specialOnCardApplyBoosterSet"] = item:getModData()["gameNight_specialOnCardApplyBoosterSet"]
+    result:getModData()["gameNight_specialOnCardApplyBoosterCount"] = 1
 end

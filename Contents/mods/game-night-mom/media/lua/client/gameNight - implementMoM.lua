@@ -205,9 +205,14 @@ function MOM.buildCatalogue()
 
         for cardType,cardSubset in pairs(setData.cards) do
             for i,card in pairs(cardSubset) do
-                local cardID = cardType.." "..i
+
+                local IdForSet = ""
+                if set ~= "Prima" then IdForSet = set.."_" end
+
+                local cardID = IdForSet..cardType.." "..i
+
                 MOM.altNames[cardID] = card
-                MOM.altIcons[cardID] = set.."/"..cardID
+                MOM.altIcons[cardID] = set.."/"..cardType.." "..i
 
                 local keyed = false
                 for rarity,data in pairs(MOM.colorCodedRarity) do
@@ -228,6 +233,9 @@ function MOM.buildCatalogue()
     end
     deckActionHandler.addDeck("momCards", MOM.catalogue, MOM.altNames, MOM.altIcons)
     gamePieceAndBoardHandler.registerSpecial("Base.momCards", { shiftAction = {"channelCard"}, actions = { channelCard=true, examine=true}, examineScale = 0.75, applyCards = "applyCardForMOM", textureSize = {100,140} })
+
+    gamePieceAndBoardHandler.registerSpecial("Base.momBoosterPack", {nonGamePieceOnApplyDetails = "applyMomSealedSetType"})
+    gamePieceAndBoardHandler.registerSpecial("Base.momStarterKit", {nonGamePieceOnApplyDetails = "applyMomSealedSetType"})
 end
 
 
@@ -266,12 +274,20 @@ function applyItemDetails.MOM.rollCardOfParticularType(rarity, type)
 end
 
 
-function applyItemDetails.MOM.rollCard(rarity, set)
-    set = set or MOM.sets[MOM._sets[ZombRand(#MOM._sets)+1]]
+function applyItemDetails.MOM.rollCard(rarity, setID)
+
+    setID = setID or MOM._sets[ZombRand(#MOM._sets)+1]
+    local set = MOM.sets[setID]
+
+    local IdForSet = ""
+    if setID ~= "Prima" then IdForSet = setID.."_" end
+
     local rollDomain = applyItemDetails.MOM.rollDomain(rarity)
-    if rollDomain then return (set.rarities.Domain[ZombRand(#set.rarities.Domain)+1]) end
+    if rollDomain then
+        return IdForSet..(set.rarities.Domain[ZombRand(#set.rarities.Domain)+1])
+    end
     local cardPool = set.rarities[rarity]
-    return (cardPool[ZombRand(#cardPool)+1])
+    return IdForSet..(cardPool[ZombRand(#cardPool)+1])
 end
 
 
@@ -284,21 +300,21 @@ function applyItemDetails.MOM.spawnRandomCard(zombie)
 end
 
 
-function applyItemDetails.MOM.unpackBooster(cards)
+function applyItemDetails.MOM.unpackBooster(cards, set)
     -- 11 common, 3 uncommon, 1 rare -- 15
 
     for i=1, 11 do
-        local card = applyItemDetails.MOM.rollCard("Common")
+        local card = applyItemDetails.MOM.rollCard("Common", set)
         table.insert(cards, card)
     end
 
     for i=1, 3 do
-        local card = applyItemDetails.MOM.rollCard("Uncommon")
+        local card = applyItemDetails.MOM.rollCard("Uncommon", set)
         table.insert(cards, card)
     end
 
     for i=1, 1 do
-        local card = applyItemDetails.MOM.rollCard("Rare")
+        local card = applyItemDetails.MOM.rollCard("Rare", set)
         table.insert(cards, card)
     end
 
@@ -307,13 +323,23 @@ end
 
 --result:getModData()["gameNight_momPrebuilt"]
 
-function applyItemDetails.applyBoostersToMOMCards(item, n)
+---@param item InventoryItem
+function applyItemDetails.applyMomSealedSetType(item)
+    local typeOf = item:getModData()["gameNight_specialOnCardApplyBoosterSet"]
+    if typeOf then return end
+    local set = MOM._sets[ZombRand(#MOM._sets)+1]
+    item:getModData()["gameNight_specialOnCardApplyBoosterSet"] = set
+    item:setName(item:getDisplayName().." ("..set..")")
+end
+
+
+function applyItemDetails.applyBoostersToMOMCards(item, n, set)
     ---FIX LEFT OVER ALT NAMES IN ITEMS
     item:getModData()["gameNight_cardAltNames"] = nil
 
     local cards = {}
     n = n or 1
-    for i=1, n do applyItemDetails.MOM.unpackBooster(cards) end
+    for i=1, n do applyItemDetails.MOM.unpackBooster(cards, set) end
     item:getModData()["gameNight_cardDeck"] = cards
     item:getModData()["gameNight_cardFlipped"] = {}
     for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
@@ -326,21 +352,31 @@ function applyItemDetails.applyCardForMOM(item)
     local prebuilt = prebuiltID and MOM.preBuiltSets[prebuiltID]
     if prebuilt then
         item:getModData()["gameNight_momPrebuilt"] = nil
+        ---avoid applying boosters later
+        item:getModData()["gameNight_specialOnCardApplyBoosterCount"] = nil
         item:getModData()["gameNight_cardDeck"] = {}
         local cards = item:getModData()["gameNight_cardDeck"]
         item:getModData()["gameNight_cardFlipped"] = {}
-        for _,cardID in pairs(prebuilt) do
-            table.insert(cards, cardID)
-            item:getModData()["gameNight_cardFlipped"][cardID] = true
+        for _,cardID in pairs(prebuilt.cards) do
+            local setIdForCard = prebuilt.set and prebuilt.set~="Prima" and prebuilt.set.."_" or ""
+            local cardIdWithSet = setIdForCard..cardID
+            table.insert(cards, cardIdWithSet)
         end
+        for i=1, #cards do item:getModData()["gameNight_cardFlipped"][i] = true end
         return
     end
 
-    local applyBoosters = item:getModData()["gameNight_specialOnCardApplyBoosters"]
+    local applyBoosters = item:getModData()["gameNight_specialOnCardApplyBoosterCount"]
     --- recipe sets this modData to the resulting item, 1 booster = 15 cards, 4 = 60.
     if applyBoosters then
-        item:getModData()["gameNight_specialOnCardApplyBoosters"] = nil
-        applyItemDetails.applyBoostersToMOMCards(item, applyBoosters)
+
+        local setType = item:getModData()["gameNight_specialOnCardApplyBoosterSet"]
+        setType = setType or MOM._sets[ZombRand(#MOM._sets)+1]
+
+        item:getModData()["gameNight_specialOnCardApplyBoosterSet"] = nil
+        item:getModData()["gameNight_specialOnCardApplyBoosterCount"] = nil
+
+        applyItemDetails.applyBoostersToMOMCards(item, applyBoosters, setType)
         return
     end
 
