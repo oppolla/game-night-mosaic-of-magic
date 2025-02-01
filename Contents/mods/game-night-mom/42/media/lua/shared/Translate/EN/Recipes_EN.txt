@@ -1,0 +1,5 @@
+RecipesEN {
+
+    Recipe_UnsealMoMStarterKit = "Unseal",
+    Recipe_UnsealMoMBooster = "Unseal",
+    }
