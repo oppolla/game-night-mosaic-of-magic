@@ -1,22 +1,12 @@
 module Base
 {
-    craftRecipe UnsealMoMStarterKit
+    craftRecipe UnsealMoMCards
     {
         Time = 25,
         category = Miscellaneous,
         tags = CanBeDoneInDark;InHandCraft;CanBeDoneFromFloor;RightClickOnly,
-        inputs { item 1 [Base.momStarterKit] flags[Prop2], }
-        OnCreate = Recipe.GameNight.OpenKitMoM,
-        outputs { item 1 Base.momCards, }
-    }
-
-    craftRecipe UnsealMoMBooster
-    {
-        Time = 25,
-        category = Miscellaneous,
-        tags = CanBeDoneInDark;InHandCraft;CanBeDoneFromFloor;RightClickOnly,
-        inputs { item 1 [Base.momBoosterPack] flags[Prop2], }
-        OnCreate = Recipe.GameNight.OpenBoosterMoM,
+        inputs { item 1 tags[SealedMomCards] flags[Prop2], }
+        OnCreate = Recipe.GameNight.OpenSealedMoMCards,
         outputs { item 1 Base.momCards, }
     }
 }
