@@ -8,6 +8,8 @@ description=[i]Mosaic of Magic[/i], released in early-1993 and widespread, can b
 description=
 description=[img]https://raw.githubusercontent.com/oppolla/game-night-mosaic-of-magic/main/images/steamDescsGranny.png[/img]
 description=
+description=[i]Disclaimer: Art for the cards used image generation using Free-to-Use trained models. The card backing/border/etc were completed by myself.[/i]
+description=
 description=[url=https://discord.gg/SReMnbV4V7][img]https://raw.githubusercontent.com/Chuckleberry-Finn/chuckImages/main/PZmodCommBanner2.png[/img][/url]
 description=
 description=[img]https://raw.githubusercontent.com/Chuckleberry-Finn/game-night/main/images/regardingLoot.png[/img]
