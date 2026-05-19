@@ -1,6 +1,6 @@
-local applyItemDetails = require "gameNight - applyItemDetails"
+local applyItemDetails = require("gameNight-applyItemDetails.lua")
 local deckActionHandler = applyItemDetails.deckActionHandler
-local gamePieceAndBoardHandler = applyItemDetails.gamePieceAndBoardHandler
+local gamePieceHandler = applyItemDetails.gamePieceHandler
 
 local MOM = {}
 
@@ -232,10 +232,10 @@ function MOM.buildCatalogue()
         end
     end
     deckActionHandler.addDeck("momCards", MOM.catalogue, MOM.altNames, MOM.altIcons)
-    gamePieceAndBoardHandler.registerSpecial("Base.momCards", { shiftAction = {"channelCard"}, actions = { channelCard=true, examine=true}, examineScale = 0.75, applyCards = "applyCardForMOM", textureSize = {100,140} })
+    gamePieceHandler.registerSpecial("Base.momCards", { shiftAction = {"channelCard"}, actions = { channelCard=true, examine=true}, examineScale = 0.75, applyCards = "applyCardForMOM", textureSize = {100,140} })
 
-    gamePieceAndBoardHandler.registerSpecial("Base.momBoosterPack", {nonGamePieceOnApplyDetails = "applyMomSealedSetType"})
-    gamePieceAndBoardHandler.registerSpecial("Base.momStarterKit", {nonGamePieceOnApplyDetails = "applyMomSealedSetType"})
+    gamePieceHandler.registerSpecial("Base.momBoosterPack", { hideUI = true, nonGamePieceOnApplyDetails = "applyMomSealedSetType"})
+    gamePieceHandler.registerSpecial("Base.momStarterKit", { hideUI = true, nonGamePieceOnApplyDetails = "applyMomSealedSetType"})
 end
 
 
@@ -329,7 +329,7 @@ function applyItemDetails.applyMomSealedSetType(item)
     if typeOf then return end
     local set = MOM._sets[ZombRand(#MOM._sets)+1]
     item:getModData()["gameNight_specialOnCardApplyBoosterSet"] = set
-    item:setName(item:getDisplayName().." ("..set..")")
+
 end
 
 
@@ -408,8 +408,8 @@ function deckActionHandler.channelCard(deckItem, player)
     local current = deckItem:getModData()["gameNight_rotation"] or 0
     local state = current == 90 and 0 or 90
 
-    gamePieceAndBoardHandler.playSound(deckItem, player)
-    gamePieceAndBoardHandler.pickupAndPlaceGamePiece(player, deckItem, {gamePieceAndBoardHandler.setModDataValue, deckItem, "gameNight_rotation", state})
+    gamePieceHandler.playSound(deckItem, player)
+    gamePieceHandler.pickupAndPlaceGamePiece(player, deckItem, {gamePieceHandler.setModDataValue, deckItem, "gameNight_rotation", state})
 end
 
 

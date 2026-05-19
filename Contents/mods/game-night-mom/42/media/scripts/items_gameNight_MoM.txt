@@ -1,31 +1,30 @@
 module Base
 {
-
-    item momStarterKit
-    {
-        DisplayCategory = GameBox, Weight = 0.1, Type = Normal,
-        DisplayName = Mosaic of Magic Starter Kit,
-        Tags = SealedMomCards,
-        Icon = Boxes/MoMStarterBox, WorldStaticModel = MoM_StarterBox,
+    item momStarterKit {
+        DisplayCategory = GameBox,
+        Weight = 0.1,
+        ItemType = base:normal,
+        Tags = gamenight:SEALED_MOM_CARDS,
+        Icon = Boxes/MoMStarterBox,
+        WorldStaticModel = MoM_StarterBox,
         gameNight_specialOnCardApplyBoosterCount = 4,
-        /*gameNight_specialOnCardApplyBoosterSet*/
-    }
+     }
 
-
-    item momBoosterPack
-    {
-        DisplayCategory = GameBox, Weight = 0.1, Type = Normal,
-        DisplayName = Mosaic of Magic Booster Pack,
-        Tags = SealedMomCards,
-        Icon = Boxes/MoMBoosterPack, WorldStaticModel = MoM_Booster,
+    item momBoosterPack {
+        DisplayCategory = GameBox,
+        Weight = 0.1,
+        ItemType = base:normal,
+        Tags = gamenight:SEALED_MOM_CARDS,
+        Icon = Boxes/MoMBoosterPack,
+        WorldStaticModel = MoM_Booster,
         gameNight_specialOnCardApplyBoosterCount = 1,
-        /*gameNight_specialOnCardApplyBoosterSet*/
     }
 
-    item momCards
-    {
-        DisplayCategory = Deck, Weight = 0.01, Type = Normal,
-        DisplayName = Mosaic of Magic Cards, Icon = momCards/deck, WorldStaticModel = MoM_Card,
+    item momCards {
+        DisplayCategory = Deck,
+        Weight = 0.01,
+        ItemType = base:normal,
+        Icon = momCards/deck,
+        WorldStaticModel = MoM_Card,
     }
-
 }

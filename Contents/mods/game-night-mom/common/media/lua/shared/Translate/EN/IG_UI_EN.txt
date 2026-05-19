@@ -1,7 +1,0 @@
-IGUI_EN = {
-
-    IGUI_channelCard = "Channel",
-    IGUI_unChannelCard = "Unchannel",
-    IGUI_momCards = "Mosaic of Magic Card",
-
-}

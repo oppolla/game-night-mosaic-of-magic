@@ -11,7 +11,7 @@ if true then return end --TODO: REMOVE THIS WHEN YOU MAKE YOUR OWN FILE.
 -- `SET NAME` should match the set you're adding.
 
 -- This line is required as a means to load the MOM module.
-local MOM = require "gameNight - implementMoM"
+local MOM = require("gameNight-implementMoM.lua")
 
 --- SETNAME needs to be equal to the directory inside of Item_momCards/
 MOM.sets.SETNAME = {

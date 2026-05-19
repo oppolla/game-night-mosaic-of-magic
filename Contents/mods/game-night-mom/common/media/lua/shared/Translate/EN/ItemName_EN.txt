@@ -1,6 +1,0 @@
-ItemName_EN = {
-    ItemName_Base.momCards = "Mosaic of Magic Cards"
-
-    ItemName_Base.momStarterKit = "Mosaic of Magic Starter Kit",
-    ItemName_Base.momBoosterPack = "Mosaic of Magic Booster Pack",
-}

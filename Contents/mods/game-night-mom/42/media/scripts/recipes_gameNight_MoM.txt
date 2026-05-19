@@ -5,7 +5,7 @@ module Base
         Time = 25,
         category = Miscellaneous,
         tags = CanBeDoneInDark;InHandCraft;CanBeDoneFromFloor;RightClickOnly,
-        inputs { item 1 tags[SealedMomCards] flags[Prop2], }
+        inputs { item 1 tags[gamenight:SEALED_MOM_CARDS] flags[Prop2], }
         OnCreate = Recipe.GameNight.OpenSealedMoMCards,
         outputs { item 1 Base.momCards, }
     }
