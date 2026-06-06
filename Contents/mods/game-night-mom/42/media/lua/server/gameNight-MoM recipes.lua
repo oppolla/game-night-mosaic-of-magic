@@ -1,6 +1,4 @@
-require "recipecode"
 require("gameNight-recipes.lua")
-
 
 function Recipe.GameNight.OpenSealedMoMCards(craftRecipeData, character)
 
