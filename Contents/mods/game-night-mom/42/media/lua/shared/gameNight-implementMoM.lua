@@ -1,11 +1,11 @@
-local applyItemDetails = require("gameNight-applyItemDetails.lua")
-local deckActionHandler = applyItemDetails.deckActionHandler
-local gamePieceHandler = applyItemDetails.gamePieceHandler
+local gamePieceHandler = require("gameNight-gamePieceHandler.lua")
+local deckActionHandler = gamePieceHandler.card
 local MOM = require("gameNight-cardDataMoM.lua")
 
 
 function MOM.registerCardsUI()
     deckActionHandler.addDeck("momCards", MOM.catalogue, MOM.altNames, MOM.altIcons)
+    deckActionHandler.registerApplyCards("applyCardForMOM", MOM.applyCardForMOM)
     gamePieceHandler.registerSpecial("Base.momCards", { shiftAction = {"channelCard"}, actions = { channelCard=true, examine=true}, examineScale = 0.75, applyCards = "applyCardForMOM", textureSize = {100,140} })
 
     gamePieceHandler.registerSpecial("Base.momBoosterPack", { hideUI = true })
@@ -14,7 +14,7 @@ end
 Events.OnGameBoot.Add(MOM.registerCardsUI)
 
 
-function applyItemDetails.applyBoostersToMOMCards(item, n, set)
+function MOM.applyBoostersToMOMCards(item, n, set)
     ---FIX LEFT OVER ALT NAMES IN ITEMS
     item:getModData()["gameNight_cardAltNames"] = nil
 
@@ -27,7 +27,7 @@ function applyItemDetails.applyBoostersToMOMCards(item, n, set)
 end
 
 
-function applyItemDetails.applyCardForMOM(item)
+function MOM.applyCardForMOM(item)
 
     local prebuiltID = item:getModData()["gameNight_momPrebuilt"]
     local prebuilt = prebuiltID and MOM.preBuiltSets[prebuiltID]
@@ -60,7 +60,7 @@ function applyItemDetails.applyCardForMOM(item)
         item:getModData()["gameNight_specialOnCardApplyBoosterSet"] = nil
         item:getModData()["gameNight_specialOnCardApplyBoosterCount"] = nil
 
-        applyItemDetails.applyBoostersToMOMCards(item, applyBoosters, setType)
+        MOM.applyBoostersToMOMCards(item, applyBoosters, setType)
         return
     end
 
@@ -95,3 +95,6 @@ function deckActionHandler.channelCard(deckItem, player)
     gamePieceHandler.playSound(deckItem, player)
     gamePieceHandler.pickupAndPlaceGamePiece(player, deckItem, {gamePieceHandler.setModDataValue, deckItem, "gameNight_rotation", state})
 end
+
+
+return MOM
